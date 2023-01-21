@@ -208,15 +208,18 @@ main {
             grid-column-gap: 2rem;
             grid-template-columns: 1fr 1fr;
             align-items: center;
-            &:nth-of-type(2) { // changing the grid order
-               //grid-auto-flow: dense;
-                //direction: rtl;
-                div:nth-of-type(1) {
-                    grid-column: 2;
-                    grid-row: 1;
-                }
-            }
+           
         }
+        article:nth-child(2) { // changing the grid order
+            //grid-auto-flow: dense;
+             //direction: rtl;
+             background-color: red;
+             div:nth-child(1) {
+                // grid-column: 2;
+                // grid-row: 1;
+                 background-color: red;
+            }
+         }
     }
     .line2 {
         display: none;
@@ -314,7 +317,7 @@ main {
         background:  linear-gradient(99.99deg, #4693ED -26.21%, #79C2D2 22.16%, rgba(192, 86, 9, 0.49) 111.62%);
         width: 100%;
         height: 100%;
-       padding: 1.7rem;
+       padding: 1.5rem;
     }
    
 }
@@ -329,43 +332,150 @@ main {
     h3 {
         font-weight: 400;
         font-size: 19px;
+        margin-left: 1.9rem;
     }
-    > * {
-        padding-top: 2rem;
+     .card {
+        padding-top: 1.5rem;
         display: flex;
-        align-items: flex-start;
+        flex-direction: column;
+       // align-items: flex-start;
+        font-weight: 300;
+        color: white;
+        font-weight: 300;
+        div {
+            display: flex;
+        }
+        
+    }
+    p:nth-child(3) {
+       
+        margin-left: 2.9rem;
+        font-size: 10px;
+        line-height: 1rem;
     }
 }
 .upcoming-header {
     display: none;
 }
-.underline {
-    height: 1px;
-    background-color: rgb(40, 218, 16);
-    width: 300px;
-    margin: 3rem auto 3rem 1rem;
-   
-}
+
 .upcoming-title {
-    
+    align-items: flex-start;
     h3 {
         font-weight: 300;
+        max-width: 354px;
     }
  > span {
     background: white;
-    height: 5vmin;
-    width: 5.2vmin;
+    min-height: 15px;
+    min-width: 15px;
     border-radius: 50%;
     display: block;
     margin-top: 0.4rem;
-    margin-right: 2rem;
+   // margin-right: 2rem;
  }
 }
 .one {
-    font-size: 40px;
+    font-size: 38px;
     color: #E1E1E1;
 }
 .time {
     margin-top: 0.6rem;
-    margin-left: 0.48rem;
+    color: white;
+    font-size: 10px;
+    margin-left: 0.5rem;
+    
 }
+.links {
+    display: flex;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    justify-content: flex-end;
+    margin-right: 1rem;
+    align-items: center;
+    button {
+        margin-left: 1.5rem;
+        background-color: transparent;
+        color: white;
+        border: 1px solid white;
+        height: 36px;
+        padding-left: 0.4rem;
+        padding-right: 0.4rem;
+        border-radius: 10px;
+    }
+    a {
+        border-bottom: 2px solid white;
+    }
+}
+
+
+@media only screen and (min-width: 760px) {
+    .upcoming-header {
+        //width: 100%;
+        display: block;
+        h3 {
+            font-size: 40px;
+        }
+    }
+    .underline {
+        height: 1px;
+        background-color: white;
+        width: 640px;
+        margin: 1rem auto 1rem 2rem;
+       
+    }
+    #upcoming {
+        article {
+            
+            padding: 1.5rem 5.5rem 2rem;
+        }
+
+    }
+    .upcoming{
+        height: 500px;
+        display: flex;
+       align-items: flex-end;
+       justify-content: space-between;
+       margin-top: 1.2rem;
+       padding: 0.25rem 3rem 5rem;
+        .card {
+            
+           > p:nth-child(3), .time   {
+                font-size: 16px;
+                
+                
+            }
+            > p:nth-child(3) {
+                max-width: 615px;
+                line-height: 1.5rem;
+            }
+
+        }
+        
+       
+
+       
+    }
+    .links {
+        margin-bottom: 0;
+        button {
+            height: 62px;
+            font-size: 24px;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            margin-left: 2rem;
+        }
+        a {
+            font-size: 24px;
+        }
+    }
+    .upcoming-title{ 
+        margin-bottom: 1rem;
+        h3 {
+            font-size: 30px;
+        }
+    }
+    .one {
+        font-size: 68px;
+    }
+}
+
