@@ -1,0 +1,153 @@
+$ashyblack: #333333;
+@mixin capital {
+    text-transform: uppercase;
+    margin-bottom: 1.3rem;
+}
+footer {
+    margin: 6rem 1rem 2rem;
+    form {
+        display: flex;
+        flex-direction: column;
+        button {
+            height: 53px;
+            width: 50%;
+            background: #272727;
+            @include capital;
+            border: none;
+            color: white;
+            margin-top: 1.7rem;
+            transition: all 0.2s linear;
+            &:hover {
+                background: #464545;
+            }
+        }
+        input {
+            height: 46px;
+            margin-top: 0.5rem;
+            text-indent: 1.2rem;
+            text-transform: uppercase;
+            &:focus {
+                outline: none;
+                border: 2px solid #5c5858;
+            }
+        }
+    }
+   
+}
+.footer-top {
+    h4 {
+       
+        font-size: 24px;
+        color: $ashyblack;
+        font-weight: 400;
+        @include capital
+    }
+    
+    p {
+        font-size: 12px;
+        @include capital;
+        line-height: 1rem;
+       
+    }
+}
+.contact {
+    h4 {
+        @include capital;
+        font-size: 24px;
+        font-weight: 300;
+        color: $ashyblack;
+        margin-top: 1.3rem;
+    }
+    div {
+        margin-top: 1rem;
+        color: $ashyblack;
+        font-size: 15px;
+    }
+
+
+}
+.hide-mobile {
+    display: none;
+}
+.foot {
+    margin-top: 3rem;
+    text-align: center;
+    color: #999999;
+    font-weight: 500;
+}
+
+@media only screen and (min-width: 760px) {
+    footer {
+        width: 100%;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+    .footer-top {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border:  1px solid $ashyblack;
+        height: 320px;
+       
+        h4 {
+            font-size: 30.5px;
+        }
+        p {
+            font-size: 32px;
+            text-transform: initial;
+            margin-top: 1.3rem;
+        }
+        form {
+            flex-direction: row;
+            align-items: center;
+            
+            input, button {
+                height: 60px;
+                font-size: 16px;
+            }
+            input {
+                width: 446px;
+                margin-right: 1.5rem;
+                text-indent: 3rem;
+            }
+        }
+    }
+    .hide-desktop {
+        display: none;
+    }
+    .hide-mobile {
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-bottom {
+        h4 {
+            font-size: 48px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-top: 6rem;
+        }
+        display: flex;
+        justify-content: space-between;
+        margin: 4rem 2.5rem 1rem 7rem;
+        font-size: 24px;
+        align-items: flex-start;
+        div > * {
+            margin-bottom: 1.7rem;
+        }
+    }
+    .contact {
+
+        div {
+            margin-top: 0;
+            margin-bottom: 2.5rem;
+            font-size: 24px;
+        }
+    }
+    .foot {
+       
+        font-size: 24px;
+        margin-top: 3rem;
+    }
+
+}

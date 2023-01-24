@@ -16,7 +16,7 @@ export default function Navbar() {
     }
   return (
    <>
-    <header>
+    <header id="navbar">
         <div className='head'>
             <nav style={{transform : display && window.matchMedia('(max-width:759px)').matches ? 'translateX(90%)' : '0'}} onClick={() => setDisplay(!display)} className='hamburger'>
                 <div></div>

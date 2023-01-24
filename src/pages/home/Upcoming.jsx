@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Arrow from '../../assets/home/Arrow'
 export default function Upcoming() {
   return (
     <section id ='upcoming'>
@@ -13,7 +14,7 @@ export default function Upcoming() {
         <div className="upcoming">
           <div className='card'>
             <div className='upcoming-title'>
-            <span></span>
+            <span className='circle'></span>
               <h3>MONALISA REDEFINED IN STYLE.</h3>
             </div>
 
@@ -36,11 +37,40 @@ export default function Upcoming() {
           </div>
         </div>
         
-        
-      </article>
-        <div>
+        <div className='slideshow'>
+          <div className='progress'>
+            <div className='progress-bar'></div>
+          </div>
+          <div className='change-slide'>
+            <span style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>&lt;</span>
+            <span style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>&gt;</span>
+          </div>
 
         </div>
+        
+      </article>
+        <table className='navigate'>
+          <tr>
+            <Link>
+              <p>Explore marketplace</p>
+              <Arrow className='arrow'/>
+
+            </Link>
+
+          </tr>
+          <tr>
+            <Link>
+              <p>See auctions</p>
+              <Arrow className='arrow' />
+
+            </Link>
+
+          </tr>
+          
+
+
+
+        </table>
     </section>
   )
 }

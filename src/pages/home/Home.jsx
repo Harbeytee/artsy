@@ -5,6 +5,7 @@ import Upcoming from './Upcoming'
 import TopCreators from './TopCreators'
 import Footer from '../../components/Footer/Footer'
 import './Home.scss'
+
 export default function Home() {
   return (
     <main>

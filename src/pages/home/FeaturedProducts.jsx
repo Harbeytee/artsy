@@ -7,7 +7,7 @@ export default function FeaturedProducts() {
   const products = feat.map((product, index) => (
     <div key={index}>
     <div className="line"></div>
-    <article >
+    <article>
       
 
       <div className='product' style={{backgroundImage: `url(${product.img})`}}>
