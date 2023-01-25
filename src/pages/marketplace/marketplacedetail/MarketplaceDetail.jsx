@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import artwork from '../artwork'
 import { Link } from 'react-router-dom'
 import './MarketplaceDetail.scss'
+import Like from '../../../assets/marketplace/Like'
 
 export default function MarketplaceDetail() {
     const { id } = useParams()
@@ -40,22 +41,22 @@ export default function MarketplaceDetail() {
 
                 </div>
                 <div>
-                    <p>Creator: <span className="creator-name">Ali Dawa</span></p> 
+                    <p className="creator">Creator: <span className="creator-name">Ali Dawa</span></p> 
                     <p>Made in Italy</p>
                     <p>Total views: 1.7K views</p>
-                    <div>
-                        <span>+</span>
-                        <span>1</span>
+                    <div className='cart-controls'>
                         <span>-</span>
+                        <span>1</span>
+                        <span>+</span>
                     </div>
                     <div className="detail-btn">
-                        <button>Add to cart</button>
-                        <button>Like</button>
+                        <button className='add-to-cart'>Add to cart</button>
+                        <button className='like'><Like /></button>
                     </div>
                 </div>
-                <div>Description</div>
-                <div>Listings</div>
-                <div>Status</div>
+                <div className='detail-dropdown'>Description</div>
+                <div className='detail-dropdown'>Listings</div>
+                <div className='detail-dropdown'>Status</div>
             </div>
 
         </div>
