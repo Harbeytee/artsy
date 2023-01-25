@@ -19,10 +19,10 @@ export default function MarketPlace() {
 
         </div>
         
-        <div className='hide-mobile'>
+        <div className='hide-mobile see-more'>
           See more
         </div>
-        <div className='hide-desktop'>
+        <div className='hide-desktop load-more'>
           Load more
           <Arrow className='arrow' fill='#616161'/>
         </div>

@@ -1,0 +1,37 @@
+.detail-header {
+    font-size: 18px;
+    border-bottom: 0.5px solid #333333;
+    padding-bottom: 1.3rem;
+    margin: 1.2rem 0.5rem;
+   
+}
+.detail-deets {
+    
+    display: grid;
+    place-items: center;
+}
+.detail-img {
+    width: 85%;
+    margin-top: 1rem;
+}
+.detail-info {
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 1.3rem;
+    color: #333333;
+    
+}
+.detail-second {
+    div:nth-child(2) {
+        margin: 2.3rem 1.5rem;
+       
+        > p {
+            margin-bottom: 1.6rem;
+            color: #616161; 
+            font-size: 16px;
+        }
+    }
+}

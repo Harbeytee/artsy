@@ -1,10 +1,11 @@
 import React from 'react'
 import artwork from '../artwork'
+import { Link } from 'react-router-dom'
 
 export default function Artwork() {
   const art = artwork.map(val => (
     <div className='art-card' key={val.id}>
-      <img className='art-img' src={val.img} alt="artwork image" />
+      <Link to={`/marketplace/${val.id}`}><img className='art-img' src={val.img} alt="artwork image" /></Link>
       <div className='deets'>
         <p>{val.name}</p>
         <p>$ {val.price}</p>

@@ -2,7 +2,7 @@ import React from 'react'
 import filter from '../../../assets/icons/filter.svg'
 export default function Filter() {
   return (
-    <aside className='hide-mobile'>
+    <aside id="filter" className='hide-mobile'>
           <h4 className='filter-icon'><img src={filter} alt="filter icon" />  Filter</h4>
           <div className="accordions">
             <h5 className="accordion-head">

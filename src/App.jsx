@@ -6,6 +6,8 @@ import Home from './pages/home/Home'
 import MarketPlace from './pages/marketplace/MarketPlace'
 import Auctions from './pages/auctions/Auctions'
 import Drop from './pages/drop/Drop'
+import MarketplaceDetail from './pages/marketplace/marketplacedetail/MarketplaceDetail'
+
 function App() {
   
 
@@ -16,8 +18,10 @@ function App() {
          <Route path ='/' element={<Navbar />}>
           <Route index element ={<Home /> } />
           <Route path='/marketplace' element={<MarketPlace />} />
+          <Route path='/marketplace/:id' element={<MarketplaceDetail />} />
           <Route path='/auctions' element={<Auctions />} />
           <Route path='/drop' element={<Drop />} />
+          
 
          </Route>
          
