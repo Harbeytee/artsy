@@ -112,3 +112,32 @@
     margin-bottom: 2rem;
    }
 }
+
+@media only screen and (min-width: 760px) {
+    #marketplace-detail {
+        padding-left: 4.5rem;
+        padding-right: 4.5rem;
+        .detail-header {
+            border-bottom: 0;
+            font-size: 24px;
+            margin-top: 3rem;
+        }
+    }
+    .detail-card {
+        display: flex;
+        border: 1px solid #333333;
+        margin-left: 0.5rem;
+        margin-top: 3rem;
+    }
+    .detail-img {
+        width: 525px;
+        height: 926px;
+        margin: 2rem 1rem;
+        background-size: cover;
+        
+        
+    }
+    .detail-second {
+        border-left: 1px solid #333333;
+    }
+}

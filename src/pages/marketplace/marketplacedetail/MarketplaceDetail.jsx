@@ -26,7 +26,7 @@ export default function MarketplaceDetail() {
         
         <div className="detail-card">
             <div className="detail-deets">
-                <img src={detail.img} alt="artwork image" className="detail-img" />
+                <div style={{backgroundImage: `url(${detail.img})`}} className="detail-img"></div>
                 <div className='detail-info'>
                     <p>{detail.name}</p>
                     <p>$ {detail.price}</p>
