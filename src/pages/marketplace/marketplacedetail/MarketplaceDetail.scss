@@ -128,6 +128,7 @@
         border: 1px solid #333333;
         margin-left: 0.5rem;
         margin-top: 3rem;
+        width: 100%;
     }
     .detail-img {
         width: 525px;
@@ -139,5 +140,20 @@
     }
     .detail-second {
         border-left: 1px solid #333333;
+    }
+
+    .detail-name {
+        text-transform: capitalize;
+        font-size: 46px;
+        font-weight: 700;
+    }
+    .detail-card-head {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #333333;
+        width: 637px;
+        height: 100px;
     }
 }

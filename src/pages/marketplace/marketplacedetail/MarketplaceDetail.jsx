@@ -36,8 +36,8 @@ export default function MarketplaceDetail() {
             
             <div className='detail-second'>
                 <div className="detail-card-head hide-mobile">
-                    <p className="detail-name"></p>
-                    <span className="detail-price"></span>
+                    <p className="detail-name">{detail.name}</p>
+                    <span className="detail-price">{detail.price / 50}</span>
 
                 </div>
                 <div>
