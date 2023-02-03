@@ -4,6 +4,10 @@ import artwork from '../artwork'
 import { Link } from 'react-router-dom'
 import './MarketplaceDetail.scss'
 import Like from '../../../assets/marketplace/Like'
+import eth from '../../../assets/icons/eth.svg'
+import Left from '../../../assets/marketplace/left'
+import Right from '../../../assets/marketplace/right'
+import carousel from './carousel'
 
 export default function MarketplaceDetail() {
     const { id } = useParams()
@@ -12,6 +16,21 @@ export default function MarketplaceDetail() {
     const style = {
        color: '#BCB7B7'
     }
+
+    const slide = carousel.map(val => (
+        <div className="slide" key={val.id}>
+            <div style={{backgroundImage: `url(${val.img})`}} className='slide-img' >
+            
+            </div>
+            <div className="detail-info">
+                <div>{val.name}</div>
+                <div className='detail-price'><img src={eth} alt="" />{val.price}</div>
+            </div>
+
+        </div>
+       
+    ))
+
   return (
     <div id='marketplace-detail'>
         <nav className='detail-header'>
@@ -27,7 +46,7 @@ export default function MarketplaceDetail() {
         <div className="detail-card">
             <div className="detail-deets">
                 <div style={{backgroundImage: `url(${detail.img})`}} className="detail-img"></div>
-                <div className='detail-info'>
+                <div className='detail-info hide-desktop'>
                     <p>{detail.name}</p>
                     <p>$ {detail.price}</p>
                 </div>
@@ -35,9 +54,9 @@ export default function MarketplaceDetail() {
             </div>
             
             <div className='detail-second'>
-                <div className="detail-card-head hide-mobile">
+                <div className="detail-card-head ">
                     <p className="detail-name">{detail.name}</p>
-                    <span className="detail-price">{detail.price / 50}</span>
+                    <span className="detail-price"> <img src={eth} alt="" /> {detail.price / 50}</span>
 
                 </div>
                 <div>
@@ -60,9 +79,20 @@ export default function MarketplaceDetail() {
             </div>
 
         </div>
-        <div className="detail-nav"></div>
+        <p className='more'>More from this collection</p>
+        <div className="detail-nav"> 
+            <div>Explore more from this collection</div>
+            <div>
+                <span>
+                    <Left className='chevron'/>
+                </span>
+                <span>
+                    <Right className='chevron'/>
+                </span>
+            </div>
+        </div>
         <div className="detail-flex">
-            
+            {slide}
 
         </div>
     </div>

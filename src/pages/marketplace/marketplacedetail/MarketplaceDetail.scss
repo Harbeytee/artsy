@@ -13,6 +13,9 @@
 .detail-img {
     width: 85%;
     margin-top: 1rem;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
 }
 .detail-info {
     display: flex;
@@ -24,6 +27,7 @@
     color: #333333;
     
 }
+
 .detail-second {
     div:nth-child(2) {
         margin: 2.3rem 1.5rem;
@@ -72,6 +76,7 @@
     border: none;
     font-size: 17.2px;
     transition: all 0.2s linear;
+    cursor: pointer;
     &:hover {
         background: #4c5ad4;
     }
@@ -80,8 +85,8 @@
 .detail-btn {
     display: flex;
     align-items: center;
-    margin-top: 1rem;
-    margin-bottom: 3rem;
+    margin: 1rem 0 3rem;
+    //margin-bottom: 3rem;
     
 }
 .like {
@@ -92,7 +97,13 @@
     background-color: white;
     margin-left: 1.2rem;
     transition: all 0.2s linear;
-   
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    cursor: pointer;
+    svg {
+        width: 25px;
+    }
     &:hover {
         background: #f9f9f9;
     }
@@ -112,8 +123,29 @@
     margin-bottom: 2rem;
    }
 }
+.detail-nav, .detail-card-head {
+    display: none;
+}
 
-@media only screen and (min-width: 760px) {
+.detail-flex {
+    display: flex;
+
+}
+
+.more {
+    font-weight: 500;
+    font-size: 24px;
+}
+.detail-flex {
+    overflow: hidden;
+}
+.slide-img {
+    background-size: cover;
+    background-position: center;
+    height: 420px;
+    width: 500px;
+}
+@media only screen and (min-width: 960px) {
     #marketplace-detail {
         padding-left: 4.5rem;
         padding-right: 4.5rem;
@@ -123,29 +155,57 @@
             margin-top: 3rem;
         }
     }
+    .detail-info{
+        display: none;
+    }
     .detail-card {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0;
         border: 1px solid #333333;
         margin-left: 0.5rem;
         margin-top: 3rem;
         width: 100%;
+        margin-bottom: 3rem;
+        //justify-content: center;
+        //align-items: center;
+        //background-color: red;
     }
     .detail-img {
-        width: 525px;
+        width: 95%;
         height: 926px;
         margin: 2rem 1rem;
-        background-size: cover;
+        
         
         
     }
     .detail-second {
         border-left: 1px solid #333333;
+        //width: 50%;
+        //display: grid;
+        //grid-template-rows: repeat(5, 1fr);
+        //background-color: #3341C1;
+        div:nth-child(2) {
+           
+            > p {
+            
+                font-size: 30px;
+                
+               
+            }
+        }
     }
-
+    
     .detail-name {
         text-transform: capitalize;
         font-size: 46px;
         font-weight: 700;
+    }
+    .detail-price {
+        font-size: 40px;
+        display: flex;
+        align-items: center;
+        text-indent: 0.6rem;
     }
     .detail-card-head {
         display: flex;
@@ -153,7 +213,93 @@
         justify-content: space-between;
         align-items: center;
         border-bottom: 1px solid #333333;
-        width: 637px;
-        height: 100px;
+        //width: 100%;
+        height: 140px;
+        padding: 0 3.5rem 0 1.5rem;
     }
+    .creator {
+        font-size: 30px;
+    }
+    .cart-controls {
+        margin-top: 2rem;
+       
+        
+        * {
+            font-size: 36px;
+        }
+    }
+    .add-to-cart {
+        height: 79.01px;
+        width: 315.53px;
+        font-size: 26px;
+    }
+    .like {
+        width: 110px;
+        height: 79px;
+        
+        svg {
+            width: 45px;
+           
+        }
+    }
+    .detail-btn {
+        margin: 4rem auto 3.5rem;
+    }
+
+    .detail-dropdown {
+        margin: 0;
+        font-size: 32px;
+        height: 130px;
+        &:nth-of-type(5) {
+            border-bottom: 0;
+            margin-bottom: 0;
+           }
+    }
+    .detail-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #FFFFFF;
+        box-shadow: 4px 4px 64px rgba(0, 0, 0, 0.08);
+        border-radius: 15px;
+        height: 114px;
+        width: 100%;
+        padding: 1.5rem;
+        font-size: 32px;
+        margin: 5rem 0;
+        
+
+    }
+    .chevron {
+        border: 1px solid #333333;
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+        padding: 0.9rem;
+        margin-left: 2rem;
+    }
+    .detail-flex {
+        overflow-x: scroll;
+        width: 100%;
+    }
+    .slide{
+        
+        margin: auto 1rem;
+        padding: 0;
+       
+        
+        
+    }
+    .slide-img {
+        background-size: cover;
+        background-position: center;
+        width: 446px;
+        height: 421px;
+        
+
+    }
+    .more {
+        display: none;
+    }
+    
 }

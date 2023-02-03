@@ -9,6 +9,7 @@ footer {
         display: flex;
         flex-direction: column;
         button {
+            cursor: pointer;
             height: 53px;
             width: 50%;
             background: #272727;
@@ -19,13 +20,16 @@ footer {
             transition: all 0.2s linear;
             &:hover {
                 background: #464545;
+                
             }
         }
         input {
             height: 46px;
             margin-top: 0.5rem;
             text-indent: 1.2rem;
+           &::placeholder {
             text-transform: uppercase;
+           }
             &:focus {
                 outline: none;
                 border: 2px solid #5c5858;
