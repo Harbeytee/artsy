@@ -127,23 +127,91 @@
     display: none;
 }
 
-.detail-flex {
-    display: flex;
-
-}
 
 .more {
     font-weight: 500;
     font-size: 24px;
+    margin: 6rem 0.5rem 2rem;
+    
 }
-.detail-flex {
+.slider-wrapper {
+    width: 97%;
+    margin: auto;
+    max-width: 400px;
+   // margin: auto 0.3rem;
     overflow: hidden;
+    display: flex;
+    border: 1px solid black;  
+    position: relative;
+    height: 509px;
+    
+}
+.slider {
+   //width: 5000px;
+    display: flex;
+   // left: -400px;
+    height: 100%;
+    //width: 100%;
+    position: absolute;
+    transition: left 700ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    //justify-content: center;
+    //align-items: center;
+    //background-color: red;
 }
 .slide-img {
     background-size: cover;
     background-position: center;
     height: 420px;
-    width: 500px;
+    width: 100%;
+    position: relative;
+    padding: 0.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+   
+    
+}
+.slide{
+    flex: 0 0 auto;  
+    
+   float: left;
+   position: relative;
+  //width: 800px;
+   
+   padding: 0.7rem;
+  // max-width: 398px;
+  // background-color: #006CA2;
+}
+.slide-info, .slide-price {
+    display: flex;
+    align-items: center;
+    
+}
+.slide-info {
+    justify-content: space-between;
+    margin-top: 0.6rem;
+    font-size: 24px;
+    img {
+        width: 27px;
+    }
+}
+.slide-control {
+    border: 1px solid white;
+    width: 59px;
+    height: 59px;
+    border-radius: 50%;
+    padding: 0.8rem;
+   
+}
+.slide-controls {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+    width: 90%;
+    left: 5%;
+    top: 40%;
 }
 @media only screen and (min-width: 960px) {
     #marketplace-detail {
@@ -278,18 +346,12 @@
         padding: 0.9rem;
         margin-left: 2rem;
     }
-    .detail-flex {
+    .slider {
         overflow-x: scroll;
-        width: 100%;
+        max-width: 100%;
+        border: none;
     }
-    .slide{
-        
-        margin: auto 1rem;
-        padding: 0;
-       
-        
-        
-    }
+   
     .slide-img {
         background-size: cover;
         background-position: center;
@@ -301,5 +363,8 @@
     .more {
         display: none;
     }
-    
+    .slide{
+        
+        margin: auto 1rem;
+    }
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './MarketPlace.scss'
 import Filter from './components/Filter'
 import MarketPlaceHeader from './components/MarketPlaceHeader'
@@ -8,6 +8,8 @@ import Footer from '../../components/Footer/Footer'
 
 
 export default function MarketPlace() {
+
+  //useEffect()
   return (
     <div id='marketplace'>
       

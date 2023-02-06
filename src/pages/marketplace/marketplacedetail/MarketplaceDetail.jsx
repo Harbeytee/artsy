@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import artwork from '../artwork'
 import { Link } from 'react-router-dom'
@@ -16,15 +16,83 @@ export default function MarketplaceDetail() {
     const style = {
        color: '#BCB7B7'
     }
+   const [sLength, setLength] = useState();
+    const [position, setPosition] = useState({
+        left: 0,
+        width: 0
+    })
+    useEffect(() => {
 
-    const slide = carousel.map(val => (
-        <div className="slide" key={val.id}>
+        setLength(document.querySelector('.slider-wrapper').offsetWidth)
+        console.log(sLength)
+        setPosition(prev => ({...prev, width: sLength}))
+        
+    }, [sLength])
+
+   
+     const sliderStyle={
+        length: sLength
+     }
+    
+   // const [wrapper, setWrapper] = useState('')
+     const [count, setCount] = useState(0)
+
+   const nextSlide = () => {
+        setCount(prev => prev + 1)
+
+        if(count == carousel.length) {
+            
+            setCount(0)
+            
+
+            
+        
+
+        }
+        else {
+            setPosition(prev => ({...prev, left: `-${count * sLength}px`}))
+            console.log('working fine')
+        }
+   
+   }
+
+   const prevSlide = () => {
+        console.log('prev slide')
+        console.log(count)
+        setCount(prev => prev - 1)
+        if(count < 0) {
+            setCount(carousel.length - 1)
+            
+            
+            
+        
+
+        }
+        else {
+            setPosition(prev => ({...prev, left: `-${count * sLength}px`}))
+            console.log('working fine')
+            
+        }
+
+    }
+
+   useEffect(() => {
+        console.log(position.left)
+        console.log(count)
+   }, [position.left])
+
+    
+    const slide = carousel.map((val, index) => (
+        <div style={{width: position.width}} className="slide" key={val.id}>
+            
+            
             <div style={{backgroundImage: `url(${val.img})`}} className='slide-img' >
+                
             
             </div>
-            <div className="detail-info">
+            <div className="slide-info">
                 <div>{val.name}</div>
-                <div className='detail-price'><img src={eth} alt="" />{val.price}</div>
+                <div className='slide-price'><img src={eth} alt="" />{val.price}</div>
             </div>
 
         </div>
@@ -91,10 +159,19 @@ export default function MarketplaceDetail() {
                 </span>
             </div>
         </div>
-        <div className="detail-flex">
-            {slide}
+        <div className='slider-wrapper'>
+            <div className="slide-controls">
+                    <Left fill='white' className='slide-control' handleClick={prevSlide}/>
+                    <Right fill='white' className='slide-control' handleClick={nextSlide} />
+
+                </div>
+            <div style={{left: position.left}} className="slider">
+                {slide}
+
+            </div>
 
         </div>
+        
     </div>
   )
 }
