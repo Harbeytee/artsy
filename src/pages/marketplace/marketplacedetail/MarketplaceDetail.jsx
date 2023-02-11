@@ -9,82 +9,72 @@ import Left from '../../../assets/marketplace/left'
 import Right from '../../../assets/marketplace/right'
 import carousel from './carousel'
 
+
 export default function MarketplaceDetail() {
     const { id } = useParams()
     const detail = artwork.find(val => val.id == id)
-    console.log(detail)
+    
     const style = {
        color: '#BCB7B7'
     }
-   const [sLength, setLength] = useState();
+   //const [position.width, setLength] = useState();
     const [position, setPosition] = useState({
         left: 0,
         width: 0
     })
-    useEffect(() => {
+    /*window.matchMedia('(max-width: 959px)').matches && */useEffect(() => {
+        setPosition(prev => ({...prev, width: document.querySelector('.slider-wrapper').offsetWidth}))
 
-        setLength(document.querySelector('.slider-wrapper').offsetWidth)
-        console.log(sLength)
-        setPosition(prev => ({...prev, width: sLength}))
+    }, [])
+    //setPosition(prev => ({...prev, width: document.querySelector('.slider-wrapper').offsetWidth}))
+    useEffect(() => {
+        //setLength(document.querySelector('.slider-wrapper').offsetWidth)
         
-    }, [sLength])
+        //setPosition(prev => ({...prev, width: document.querySelector('.slider-wrapper').offsetWidth}))
+        window.addEventListener("resize", function() {
+           
+            setPosition(prev => ({...prev, width: document.querySelector('.slider-wrapper').offsetWidth}))
+           
+        })
+       
+
+
+        
+    }, [])
 
    
-     const sliderStyle={
-        length: sLength
-     }
+   /*  const sliderStyle={
+        length: position.width
+     }*/
     
    // const [wrapper, setWrapper] = useState('')
      const [count, setCount] = useState(0)
 
    const nextSlide = () => {
+    if(count < carousel.length - 1 ) {
         setCount(prev => prev + 1)
-
-        if(count == carousel.length) {
-            
-            setCount(0)
-            
-
-            
-        
-
-        }
-        else {
-            setPosition(prev => ({...prev, left: `-${count * sLength}px`}))
-            console.log('working fine')
-        }
+        setPosition(prev => ({...prev, left: `-${(count + 1) * position.width}px`}))
+    }
+       
    
    }
+   
 
    const prevSlide = () => {
-        console.log('prev slide')
-        console.log(count)
-        setCount(prev => prev - 1)
-        if(count < 0) {
-            setCount(carousel.length - 1)
-            
-            
-            
-        
-
-        }
-        else {
-            setPosition(prev => ({...prev, left: `-${count * sLength}px`}))
-            console.log('working fine')
-            
-        }
-
+    if(count >=1) {
+         setCount(prev => prev - 1)
+        setPosition(prev => ({...prev, left: `-${(count - 1) * position.width}px`}))
+       
+    }
+       
     }
 
-   useEffect(() => {
-        console.log(position.left)
-        console.log(count)
-   }, [position.left])
 
     
     const slide = carousel.map((val, index) => (
-        <div style={{width: position.width}} className="slide" key={val.id}>
-            
+        <div style={{width: window.matchMedia('(max-width: 959px)').matches ? position.width: '446px'}} className="slide" key={val.id}>
+            <Like className='slide-heart'/>
+
             
             <div style={{backgroundImage: `url(${val.img})`}} className='slide-img' >
                 
@@ -160,17 +150,18 @@ export default function MarketplaceDetail() {
             </div>
         </div>
         <div className='slider-wrapper'>
-            <div className="slide-controls">
-                    <Left fill='white' className='slide-control' handleClick={prevSlide}/>
-                    <Right fill='white' className='slide-control' handleClick={nextSlide} />
+            <div className="slide-controls hide-desktop">
+                     <Left fill={count === 0? '#616161': 'white'} style={{borderColor: count === 0? '#616161': 'white'}} className='slide-control' handleClick={prevSlide}/> 
+                    <Right fill={count === carousel.length - 1? '#616161': 'white'} style={{borderColor: count === carousel.length - 1? '#616161': 'white'}} className='slide-control' handleClick={nextSlide} />
 
-                </div>
+            </div>
             <div style={{left: position.left}} className="slider">
                 {slide}
 
             </div>
 
         </div>
+        <button className="explore">Explore all</button>
         
     </div>
   )
