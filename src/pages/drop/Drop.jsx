@@ -74,11 +74,11 @@ export default function Drop() {
 
   return (
     <div id='drop'>
-      <nav className='hide-mobile'>
+      <nav className='hide-mobie'>
         <Link>Home/ </Link>
-        <Link> Auctions/ </Link>
-        <Link> Live bid/ </Link>
-        <span> Drop</span>
+        <Link>Auctions/ </Link>
+        <Link>Live bid/ </Link>
+        <span>Drop</span>
 
       </nav>
 
@@ -93,6 +93,11 @@ export default function Drop() {
       <div className="drops">
         {drops}
       </div>
+
+      <div style={{marginTop: 0}} className='hide-mobile see-more'>
+          See more
+      </div>
+
       <Footer />
     </div>
   )

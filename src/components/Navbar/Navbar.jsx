@@ -28,7 +28,7 @@ export default function Navbar() {
                 <img src={search} alt="search icon" />
                 <div>
                     <div className='ellipse'></div>
-                    <img src={cart} alt=" cart icon" />
+                    <Link to='/cart'><img src={cart} alt=" cart icon" /></Link>
                 </div>
                 <img src={notif} className="notif" alt="notification icon" />
                 
