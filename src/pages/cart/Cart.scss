@@ -1,8 +1,11 @@
+
 .centerize {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+
 
 .cart-nav {
     margin-bottom: 2rem;
@@ -203,7 +206,7 @@
     @extend .centerize;
     font-size: 18px;
     margin-bottom: 1.5rem;
-    :first-child {
+    :first-child, .confirm-payment {
         background: #3341C1;
         border-radius: 4px;
         width: 278px;
@@ -233,6 +236,7 @@
 
     .cart-animation {
         display: flex;
+        flex-direction: row;
         padding: 2rem 6rem;
         justify-content: space-between;
         animation: fadeIn 0.4s linear;
@@ -324,7 +328,7 @@
     .last-buttons {
         margin-bottom: 1.5rem;
         
-        :first-child {
+        :first-child, .confirm-payment {
             max-width: 534px;
            width: 100%;
             height: 107px;
@@ -342,3 +346,5 @@
     }
     
 }
+
+

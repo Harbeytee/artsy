@@ -54,7 +54,7 @@ export default function ShoppingCart({on, turnOff}) {
   return (
     
     <div className='cart-animation' >
-        <ShippingDetails id='shipping-details' className='hide-mobile' style={{ width: on? '100%' :'0%',  transition: 'all 0.3s linear', marginRight: on? '2rem': '0', overflow: 'hidden'}} />
+        <ShippingDetails id='shipping-details' className='hide-mobile' style={{ width: on? '100%' :'0%',  transition: 'all 0.4s linear', marginRight: on? '2rem': '0', overflow: 'hidden', whiteSpace:'nowrap'}} />
     
         <div style={{width: '100%', marginLeft: on? '2rem' : 0}} id="shopping-cart">
             
@@ -99,7 +99,7 @@ export default function ShoppingCart({on, turnOff}) {
                 </div>
                 
 
-                {!on && <div  className="last-buttons">
+                {!on && <div className="last-buttons">
                     <Link to='shipping'>Proceed to checkout</Link>
                     <Link to='/marketplace'>Continue shopping</Link>
 

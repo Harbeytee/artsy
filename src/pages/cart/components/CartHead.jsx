@@ -43,7 +43,7 @@ export default function CartHead({turnOn, turnOff}) {
         
        
             <Link to='/cart' className={changeStyle(1)} onClick={() => {setIndex(1), turnOff()}}>Shopping cart</Link>
-            <Link to='/cart' className={changeStyle(2)} onClick={() => {setIndex(2), turnOn()}}>Shipping details</Link>
+            <Link to='/cart' className={changeStyle(2)} onClick={() => { turnOn(), setIndex(2)}}>Shipping details</Link>
             <Link to='/cart/payment' className={changeStyle(3)} onClick={() => setIndex(3)}>Payment details</Link>
 
         

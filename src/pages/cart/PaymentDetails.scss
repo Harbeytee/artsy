@@ -1,3 +1,117 @@
 #payment-details {
+    margin-bottom: 3.5rem;
     animation: fadeIn 0.4s linear;
+   
+    // * {
+    //     color: #747474;
+    // }
+    p {
+        line-height: 157.6%;
+        font-size: 16px;
+        margin-left: 0.8rem;
+        margin-bottom: 1.7rem;
+        color: #747474;
+    }
+    label {
+        font-size: 18px;
+    }
+
+    form {
+        max-width: 600px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 0 0.7rem;
+        color: #747474;
+        
+
+        input[type='text'] {
+            height: 50px;
+            background: #ebe9e9;
+            border: 0.5px solid #c7c7c7;
+            border-radius: 10px;
+            text-indent: 1rem;
+            margin-bottom: 1.7rem;
+            margin-top: 1rem;
+            font-size: 18px;
+
+            &::placeholder {
+                color: #888888;
+                font-size: 16px;
+            }
+          
+            &:focus {
+                box-shadow: 0 0 0 0.2rem #e4dede;
+                outline: none;
+                //border: 1px solid #918f8f;
+            }
+            
+        }
+
+        
+    }
+    .select-wallet {
+        color: #292929;
+        display: flex;
+        margin-left: 1.4rem;
+        text-indent: 0.9rem;
+        margin-top: 0.5rem;
+        font-weight: 600;
+        font-size: 20px;
+        align-items: center;
+        margin-bottom: 2rem;
+        input {
+            accent-color: #28A814;
+            width: 20px;
+            height: 20px;
+        }
+       
+    }
+    .wallet-details {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 3rem;
+        input[type='checkbox'] {
+            margin-right: 0.5rem;
+            &:focus {
+                box-shadow: 0 0 0 0.2rem #e4dede;
+                outline: none;
+                
+            }
+    
+        }
+       
+        //margin-left: 1rem;
+        font-size: 16px;
+    }
+
+    .confirm-payment {
+        width: 279px;
+        height: 58px;
+        background: #3341C1;
+        border-radius: 4px;
+        color: white;
+        border: none;
+        margin: auto;
+        font-size: 17.5px;
+    }
+    
 }
+.secure-server {
+    display: flex;
+    align-items: center;
+    margin-left: 0.7rem;
+    text-indent: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    font-size: 16px;
+}
+.wallet-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+
+
