@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function metamask() {
+export default function metamask({rx='20'}) {
   return (
     <svg  viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g filter="url(#filter0_d_424_256)">
-        <rect x="8" y="8" width='42' height='42' fill="url(#pattern0)" shape-rendering="crispEdges"/>
+        <rect x="8" y="8" width='42' height='42' rx={rx} fill="url(#pattern0)" shape-rendering="crispEdges"/>
         </g>
         <defs>
         <filter id="filter0_d_424_256" x="0" y="0" width="58" height="58" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
