@@ -14,10 +14,10 @@ export default function ShoppingCart({on, turnOff}) {
 
     }
 
-    React.useEffect(() => {
-        turnOff()
+    // React.useEffect(() => {
+    //     turnOff()
     
-    }, [])
+    // }, [])
 
     const total = cartData.map(val => val.price).reduce((prev, current) => (prev + current))
     

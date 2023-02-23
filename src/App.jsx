@@ -9,7 +9,7 @@ import Drop from './pages/drop/Drop'
 import MarketplaceDetail from './pages/marketplace/marketplacedetail/MarketplaceDetail'
 import Cart from './pages/cart/Cart'
 import ShoppingCart from './pages/cart/components/ShoppingCart'
-import PaymentDetails from './pages/cart/PaymentDetails'
+import PaymentDetails from './pages/cart/paymentDetails/PaymentDetails'
 import ShippingDetails from './pages/cart/components/ShippingDetails'
 
 function App() {
