@@ -1,8 +1,8 @@
 import React from 'react'
-import metamask from '../../../assets/paymentDetails/metamask.svg'
-import coinbase from '../../../assets/paymentDetails/coinbase.svg'
-import walletConnect from '../../../assets/paymentDetails/walletconnect.svg'
-import phantom from '../../../assets/paymentDetails/phantom.svg'
+import metamask from '../../../assets/paymentDetails/metamask.jsx'
+import coinbase from '../../../assets/paymentDetails/coinbase.jsx'
+import walletConnect from '../../../assets/paymentDetails/walletconnect.jsx'
+import phantom from '../../../assets/paymentDetails/phantom.jsx'
 import cross from '../../../assets/paymentDetails/cross.svg'
 
 
@@ -17,11 +17,11 @@ export default function Form() {
             <p className='hide-desktop' style={{color: '#747474'}}>Connect with one of our available wallet providers or add and connect a new wallet. </p>
 
             <div className="wallet-icons">
-            <img src={metamask} alt="" />
-            <img src={coinbase} alt="" />
-            <img src={walletConnect} alt="" />
-            <img src={phantom} alt="" />
-            <img src={cross} alt="" />
+                <metamask />
+                <coinbase />
+                <walletConnect  />
+                <phantom />
+                <img src={cross} alt="" />
             </div>
 
         </div>

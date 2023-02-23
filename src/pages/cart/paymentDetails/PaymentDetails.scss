@@ -116,6 +116,11 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 3rem;
+    * {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+    }
 }
 
 @media only screen and (min-width:760px) {
@@ -211,6 +216,11 @@
         align-items: flex-start;
         justify-content: space-around;
         //justify-content: space-between;
+    }
+    .form-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
    
     
