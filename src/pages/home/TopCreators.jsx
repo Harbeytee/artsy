@@ -2,40 +2,41 @@ import React, { useState, useEffect} from 'react'
 import image1 from '../../assets/home/topcreatorsAnimation/image1.svg'
 import image2 from '../../assets/home/topcreatorsAnimation/image2.svg'
 import image3 from '../../assets/home/topcreatorsAnimation/image3.svg'
-
+import fadeinAnimation from '../../hooks/fadeinAnimation'
 
 export default function TopCreators() {
-  const [index, setIndex] = useState(0)
   
-  const array = [image1, image2, image3]
-  
-  useEffect(() => {
-    if(index == array.length) {
-      setIndex(0)
-    }
-    else {
-      const animate = setInterval(() => {
-          setIndex(index + 1)
-      }, 4000)
-    
-      return () => {
-        clearInterval(animate)
-      }
-
-    }
-    console.log(index)
-   
-  }, [index])
-
-  function changeVisibility(val) {
-      return val === index? 1 : 0
-  }
-  
-  
+  const { changeVisibility } = fadeinAnimation(3)
 
   return (
     <section id='top-creators'>
-          <h3>TOP CREATORS OF THE WEEK</h3>
+     
+        <h3>TOP CREATORS OF THE WEEK</h3>
+        
+      
+      <div className='top-right'>
+        <div className="top-info hide-desktop">
+          <span>Editorials</span>
+          <span className='top-circle'></span>
+          <span>Fashion</span>
+          <span className='top-circle'></span>
+          <span>Life</span>
+        </div>
+
+          <div className='top-bar hide-mobile'>
+            <div className="track"></div>
+          </div>
+
+          <div className='top-column hide-mobile'>
+            <span>Editorials</span>
+            <span>Fashion</span>
+            <span>Lifestyle</span>
+            <span>Blueprint</span>
+
+        </div>
+
+      </div>
+          
           <p>“Everything always looked better in black and white. 
             Everything always  as if it were the first time; there's 
             always more people in a black and white photograph.
@@ -44,9 +45,9 @@ export default function TopCreators() {
               Everything looks more exciting.”– Jack Lowden
           </p>
           <div  className="top-creators-animation">
-              <img style={{opacity: changeVisibility(0)}} src={array[0]} alt="" />
-              <img style={{opacity: changeVisibility(1)}} src={array[1]} alt="" />
-              <img style={{opacity: changeVisibility(2)}} src={array[2]} alt="" />            
+              <img style={{opacity: changeVisibility(0)}} src={image1} alt="" />
+              <img style={{opacity: changeVisibility(1)}} src={image2} alt="" />
+              <img style={{opacity: changeVisibility(2)}} src={image3} alt="" />            
             
           </div>
           <p className='circa'>CIRCA</p>

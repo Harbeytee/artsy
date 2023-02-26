@@ -1,11 +1,16 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import heromobile from '../../assets/home/heromobile.svg'
+import heromobile1 from '../../assets/home/heroMobile/img1.svg'
+import heromobile2 from '../../assets/home/heroMobile/img2.svg'
+import heromobile3 from '../../assets/home/heroMobile/img3.svg'
 import sliderData from './sliderData'
+import fadeinAnimation from '../../hooks/fadeinAnimation'
+
 export default function HeroSection() {
  
   const [num, setNum] = useState(0)
   
+  const { changeVisibility } = fadeinAnimation(3)
 
     if(num > sliderData.length - 1) {
       setNum(0)
@@ -22,7 +27,6 @@ export default function HeroSection() {
     }
     
  
-   
     
 
    
@@ -61,8 +65,12 @@ export default function HeroSection() {
         <div className="slide">
           {images}
          
-
-        <img src={heromobile} alt="hands holding a bunch of flowers" className="hero-mobile" />
+        <div className='hero-mobile'>
+          <img style={{opacity: changeVisibility(0)}} src={heromobile1} alt="hands holding a bunch of flowers"  />
+          <img style={{opacity: changeVisibility(1)}} src={heromobile2} alt="hands holding a bunch of flowers"  />
+          <img style={{opacity: changeVisibility(2)}} src={heromobile3} alt="hands holding a bunch of flowers"  />
+        </div>
+        
           
         </div>
         

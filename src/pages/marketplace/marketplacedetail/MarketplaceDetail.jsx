@@ -18,7 +18,7 @@ export default function MarketplaceDetail() {
 
     }, [])
     const { id } = useParams()
-    const detail = artwork.find(val => val.id == id)
+    const detail = artwork.find(val => val.name == id)
     
     const style = {
        color: '#BCB7B7'

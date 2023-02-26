@@ -43,12 +43,31 @@ main {
 }
 .hero-mobile {
     margin: 1.5rem auto;
-    width: 100%;
+    //width: 100%;
     padding: 0 0.7rem;
-   
+    position: relative;
+    //background-color: red;
+    overflow: hidden;
+    height: 300px;
+   img {
+    position: absolute;
+    width: 100%;
+    right: 0%;
+    transition: all 1.5s linear;
+    //animation: rotate 4.5s infinite;
+   }
     
 
 }
+
+// @keyframes rotate {
+//     from {
+//         transform: rotate(0);
+//     }
+//     to {
+//         transform: rotate(360deg);
+//     }
+// }
 
 @media only screen and (min-width: 760px) {
     main {
@@ -75,9 +94,10 @@ main {
         }
         .slide {
             display: flex;
+            // display: grid;
+            // grid-template-columns: 1fr 1fr 1fr 1fr 10px;
             overflow: hidden;
             //height: 400px;
-            
             width: 100%;
             margin-top: 0rem;
             border: none;
@@ -649,6 +669,7 @@ table {
 #top-creators {
     position: relative;
     background: #E2E2E2;
+    overflow: hidden;
     padding:1rem 0 0.2rem 0.5rem;
     width: 100%;
     height: 100%;
@@ -672,6 +693,29 @@ table {
     }
     
 }
+.top-right {
+    
+    position: absolute;
+    right: -9px;
+    top: 5px;
+}
+.top-info {
+    
+    display: flex;
+    align-items: center; 
+    font-size: 11px;
+    * {
+        margin: 0 0.3rem;
+    }
+}
+.top-circle {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background-color: black;
+    border-radius: 50%;
+}
+
 .year {
     font-size: 64px;
     font-weight: 700;
@@ -687,11 +731,13 @@ table {
    
 }
 
+
 @media only screen and (min-width: 760px) {
     #top-creators {
         padding: 5rem;
         h3 {
-            width: 535px;
+            width: 65%;
+            max-width: 535px;
             font-size: 55px;
             line-height: 4.5rem;
         }
@@ -699,15 +745,61 @@ table {
             font-size: 32px;
             line-height: 3rem;
             max-width: 1148px;
-            margin-top: 5rem;
+            margin-top: 7rem;
         }
         img {
             width: 600px;
             bottom: -50px;
-            right: 15%;
+            right: 18%;
             z-index: 10;
         }
         
+    }
+    .top-info {
+        display: none;
+    }
+    .top-right {
+        display: flex;
+        align-items: center;
+        margin-right: 10%;
+        margin-top: 70px;
+        // position: absolute;
+        // right: 10%;
+        // top: 70px;
+    }
+    .top-bar {
+        display: inline-block;
+        background-color: #AEAEAE;
+        width: 10px;
+        height: 230px;
+        border-radius: 50px;
+       // margin-right: 10%;
+        // background-image: linear-gradient(115deg, black, black);
+        // background-size: 50%;
+        // background-position: 50%;
+        // background-repeat: no-repeat;
+        position: relative;
+        
+    }
+    .track {
+        background-color: black;
+        width: 100%;
+        height: 48px;
+        display: block;
+        bottom: 0;
+        position: absolute;
+        border-radius: 50px;
+    
+        
+    }
+    .top-column {
+        display: flex;
+        flex-direction: column;
+        //margin-left: 2rem;
+        font-size: 40px;
+        * {
+            margin: 0.5rem 2rem;
+        }
     }
     .year {
         font-size: 170px;

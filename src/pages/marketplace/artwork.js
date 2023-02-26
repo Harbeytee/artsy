@@ -8,6 +8,8 @@ import veil from '../../assets/marketplace/veil.svg'
 import alternating from '../../assets/marketplace/alternating.svg'
 import rosemary from '../../assets/marketplace/rosemary.svg'
 import beverly from '../../assets/marketplace/beverly.svg'
+import areWe from '../../assets/home/are-we.svg'
+import oloibiri from '../../assets/home/oloibiri.svg'
 
 
 export default [
@@ -62,5 +64,17 @@ export default [
         name: 'Beverly',
         price: '12.00',
     },
+    {
+        id: 11,
+        img: areWe,
+        name: 'Are we there yet',
+        price: '13.60'
+    },
+    {
+        id: 12,
+        img: oloibiri,
+        name: 'Oloibiri 1997',
+        price: '14.00'
+    }
     
 ]

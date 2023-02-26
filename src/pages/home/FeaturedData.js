@@ -5,15 +5,15 @@ import oloibiri from '../../assets/home/oloibiri.svg'
 
 export default [
     {
-        title: 'boolean egyptian',
+        title: 'Boolean egyptian',
         img: bool
     },
     {
-        title: 'are we there yet',
+        title: 'Are we there yet',
         img: areWe
     },
     {
-        title: 'oloibiri 1997',
+        title: 'Oloibiri 1997',
         img: oloibiri
     }
 ]

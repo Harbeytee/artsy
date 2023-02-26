@@ -12,7 +12,7 @@ export default function FeaturedProducts() {
       
 
       <div className='product' style={{backgroundImage: `url(${product.img})`}}>
-        <Link to={`marketplace/${index + 1}`} className='shadow'>
+        <Link to={`marketplace/${product.title}`} className='shadow'>
           <h3>{product.title}</h3>
           <h3>View  product</h3>
           <Arrow className='arrow' fill='white'/>
@@ -30,7 +30,7 @@ export default function FeaturedProducts() {
         <div className='people-flex'>
           <img src={people} alt="" className="people" />
           <p>64 major creators</p>
-          <Link to={`marketplace/${index + 1}`}><Arrow className='arrow' fill='#616161'/></Link>
+          <Link to={`marketplace/${product.title}`}><Arrow className='arrow' fill='#616161'/></Link>
           
         </div>
         
