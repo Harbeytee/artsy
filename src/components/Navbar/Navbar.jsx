@@ -25,7 +25,7 @@ export default function Navbar() {
                 <div></div>
                 <div></div>
             </nav>
-            <p style={{marginRight: display && window.matchMedia('(max-width:759px)').matches ?'0%': '0'}}>ARTSY.</p>
+            <Link to='/' style={{marginRight: display && window.matchMedia('(max-width:759px)').matches ?'0%': '0'}}>ARTSY.</Link>
             <div style={{display : display && window.matchMedia('(max-width:759px)').matches ? 'none' : 'flex'}} className='icons'>
                 <img src={search} alt="search icon" />
                 <div>

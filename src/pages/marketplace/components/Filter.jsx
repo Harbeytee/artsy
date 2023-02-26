@@ -1,5 +1,6 @@
 import React from 'react'
 import filter from '../../../assets/icons/filter.svg'
+import { ReactComponent as Checkmark } from '../../../assets/marketplace/checkmark.svg'
 export default function Filter() {
   return (
     <aside id="filter" className='hide-mobile'>
@@ -12,26 +13,31 @@ export default function Filter() {
               <label>
                 <input type="checkbox" />
                 Editorials
+                
               </label>
 
               <label>
                 <input type="checkbox" />
                 Fashion
+                
               </label>
 
               <label>
                 <input type="checkbox" />
                 Optics
+                
               </label>
 
               <label>
                 <input type="checkbox" />
                 Art & Museum
+                
               </label>
 
               <label>
                 <input type="checkbox" />
-                Nature
+                <span>Nature</span>
+                
               </label>
             </div>
 

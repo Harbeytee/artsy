@@ -142,22 +142,51 @@
         height: 280px;
         
     }
-
+    
     .accordion-text {
         display: flex;
         flex-direction: column;
+        label {
+            display: flex;
+            align-items: center;
+            text-indent: 0.5rem;
+            margin-top: 0.5rem;
+            
+        }
 
        input[type='checkbox'] {
+        
             height: 26px;
             width: 26px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -o-appearance: none;
+            border-radius: 4px;
+            background-color: #D9D9D9;
             margin-right: 0.7rem;
             accent-color: #D9D9D9;
+            &:checked {
+                
+                background-image: url('../../assets/marketplace/checkmark.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                // content: '\2713';
+                // //position: absolute;
+                // display: block;
+                // color: black;
+                // text-align: center;
+                // left: 0.7rem;
+                // top: 0.2rem;
+            }
             
            
         }
+        
 
 
         label {
+            position: relative;
             margin-bottom: 0.7rem;
             display: flex;
             align-items: center;
