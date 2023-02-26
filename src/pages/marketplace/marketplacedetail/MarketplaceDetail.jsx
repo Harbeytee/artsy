@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import artwork from '../artwork'
 import { Link } from 'react-router-dom'
@@ -8,9 +8,15 @@ import eth from '../../../assets/icons/eth.svg'
 import Left from '../../../assets/marketplace/left'
 import Right from '../../../assets/marketplace/right'
 import carousel from './carousel'
-
+import { Context } from '../../../Context/Context'
 
 export default function MarketplaceDetail() {
+    const { changeIndex } = useContext(Context)
+
+    useEffect(() => {
+        changeIndex(2)
+
+    }, [])
     const { id } = useParams()
     const detail = artwork.find(val => val.id == id)
     

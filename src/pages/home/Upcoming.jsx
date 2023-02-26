@@ -1,7 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Arrow from '../../assets/home/Arrow'
+import left from '../../assets/home/chevronLeft.svg'
+import right from '../../assets/home/chevronRight.svg'
+
+
 export default function Upcoming() {
+  
+
   return (
     <section id ='upcoming'>
       <article>
@@ -32,8 +38,8 @@ export default function Upcoming() {
             
 
           <div className='links'>
-            <Link style={{color: 'white'}}>See more</Link>
-            <button>Set a reminder</button>
+            <Link to='auctions' style={{color: 'white'}}>See more</Link>
+            <Link to='drop'>Set a reminder</Link>
           </div>
         </div>
         
@@ -42,8 +48,8 @@ export default function Upcoming() {
             <div className='progress-bar'></div>
           </div>
           <div className='change-slide'>
-            <span style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>&lt;</span>
-            <span style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>&gt;</span>
+            <span style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}><img src={left} /></span>
+            <span style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}><img src={right} /></span>
           </div>
 
         </div>
@@ -51,7 +57,7 @@ export default function Upcoming() {
       </article>
         <table className='navigate'>
           <tr>
-            <Link>
+            <Link to='marketplace'>
               <p>Explore marketplace</p>
               <Arrow className='arrow'/>
 
@@ -59,7 +65,7 @@ export default function Upcoming() {
 
           </tr>
           <tr>
-            <Link>
+            <Link to='auctions'>
               <p>See auctions</p>
               <Arrow className='arrow' />
 

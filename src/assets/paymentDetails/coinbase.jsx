@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function Coinbase({rx='20'}) {
+export default function Coinbase({rx}) {
   return (
-    <svg id='2' width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+    <svg viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
       <g filter="url(#filter0_d_424_258)">
       <rect x="8" y="8" width="42" height="42" rx={rx} fill="url(#pattern1)" shapeRendering="crispEdges"/>
       </g>

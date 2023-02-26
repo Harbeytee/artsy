@@ -2,6 +2,7 @@ import React from 'react'
 import feat from './FeaturedData'
 import Arrow from '../../assets/home/Arrow'
 import people from '../../assets/home/people.svg'
+import { Link } from 'react-router-dom'
 export default function FeaturedProducts() {
  
   const products = feat.map((product, index) => (
@@ -11,11 +12,11 @@ export default function FeaturedProducts() {
       
 
       <div className='product' style={{backgroundImage: `url(${product.img})`}}>
-        <div className='shadow'>
+        <Link to={`marketplace/${index + 1}`} className='shadow'>
           <h3>{product.title}</h3>
           <h3>View  product</h3>
           <Arrow className='arrow' fill='white'/>
-        </div>
+        </Link>
         
         
       </div>
@@ -29,7 +30,7 @@ export default function FeaturedProducts() {
         <div className='people-flex'>
           <img src={people} alt="" className="people" />
           <p>64 major creators</p>
-          <Arrow className='arrow' fill='#616161'/>
+          <Link to={`marketplace/${index + 1}`}><Arrow className='arrow' fill='#616161'/></Link>
           
         </div>
         

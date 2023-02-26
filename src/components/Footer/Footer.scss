@@ -80,7 +80,7 @@ footer {
     font-weight: 500;
 }
 
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: 900px) {
     footer {
         width: 100%;
         padding-left: 5rem;
@@ -96,11 +96,14 @@ footer {
        
         h4 {
             font-size: 30.5px;
+            padding-top: 1rem;
         }
         p {
             font-size: 32px;
             text-transform: initial;
             margin-top: 1.3rem;
+            line-height: 3rem;
+            margin-left: 2rem;
         }
         form {
             flex-direction: row;
@@ -133,12 +136,16 @@ footer {
         }
         display: flex;
         justify-content: space-between;
-        margin: 4rem 2.5rem 1rem 7rem;
+        
+        margin: 4rem 2.5rem 1rem 5rem;
         font-size: 24px;
         align-items: flex-start;
         div > * {
             margin-bottom: 1.7rem;
         }
+        * {
+            margin: 0 0.25rem
+        };
     }
     .contact {
 

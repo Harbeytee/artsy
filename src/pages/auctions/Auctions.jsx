@@ -1,15 +1,23 @@
-import React from 'react'
+import React, { useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import product from './product'
 import './Auctions.scss'
 import Like from '../../assets/marketplace/Like'
+import { Context } from '../../Context/Context' 
 
 export default function Auctions() {
+  const { changeIndex } = useContext(Context)
+
+  useEffect(() => {
+    changeIndex(3)
+
+  }, [])
+
   const auction1 = product.auction1.map((item, index) => (
-    <div key={index} className='auction1-img' style={{backgroundImage: `url(${item.img})`}}>
+    <Link to={`${item.id}`} key={index} className='auction1-img' style={{backgroundImage: `url(${item.img})`}}>
       <div className="timer">6hr : 40mins: 15s</div>
 
-    </div>
+    </Link>
   ))
   const auction2 = product.auction2.map((item, index) => (
     <div key={index}>

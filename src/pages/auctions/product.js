@@ -7,14 +7,17 @@ import img5 from '../../assets/auctions/img5.svg'
 export default {
    auction1: [
     {
+        id: 1,
         img: img1
     },
 
     {
+        id: 2,
         img: img2
     },
 
     {
+        id: 3,
         img: img3
     }
     ],

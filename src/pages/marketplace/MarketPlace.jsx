@@ -1,15 +1,20 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import './MarketPlace.scss'
 import Filter from './components/Filter'
 import MarketPlaceHeader from './components/MarketPlaceHeader'
 import Artwork from './components/Artwork'
 import Arrow from '../../assets/home/Arrow'
 import Footer from '../../components/Footer/Footer'
-
+import { Context } from '../../Context/Context'
 
 export default function MarketPlace() {
+  const { changeIndex } = useContext(Context)
 
-  //useEffect()
+  useEffect(() => {
+    changeIndex(2)
+
+  }, [])
+
   return (
     <div id='marketplace'>
       

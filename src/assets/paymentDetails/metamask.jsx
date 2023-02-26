@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function metamask({rx='20'}) {
+export default function metamask({rx}) {
   return (
-    <svg id='1' width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+    <svg viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
     <g filter="url(#filter0_d_424_256)">
     <rect x="8" y="8" width="42" height="42" rx={rx} fill="url(#pattern0)" shapeRendering="crispEdges"/>
     </g>

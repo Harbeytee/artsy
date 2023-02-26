@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import search from '../../assets/icons/search-icon.svg'
 import cart from '../../assets/icons/cart-icon.svg'
 import message from '../../assets/icons/message-icon.svg'
 import notif from '../../assets/icons/notif-icon.svg'
+import { Context } from '../../Context/Context'
 import './Navbar.scss'
 import { Link, Outlet } from 'react-router-dom'
 export default function Navbar() {
-    const [index, setIndex] = useState(1)
+    const { changeIndex, index } = useContext(Context)
+    //const [index, setIndex] = useState(1)
     const [display, setDisplay] = useState(false)
     const style ={
         flexDirection : display && window.matchMedia('(max-width:759px)').matches ? 'row-reverse' : 'row'
@@ -36,10 +38,10 @@ export default function Navbar() {
 
         </div>
         <nav className={display? 'open' : 'close'}>
-            <Link to='/' onClick={() => setIndex(1)} className={changeStyle(1)}>Home</Link>
-            <Link to='marketplace' onClick={() => setIndex(3)} className={changeStyle(3)}>Marketplace</Link>
-            <Link to='auctions' onClick={() => setIndex(2)} className={changeStyle(2)}>Auctions</Link>
-            <Link to='drop' onClick={() => setIndex(4)} className={changeStyle(4)}>Drop</Link>
+            <Link to='/' onClick={() => changeIndex(1)} className={changeStyle(1)}>Home</Link>
+            <Link to='marketplace' onClick={() => changeIndex(2)} className={changeStyle(2)}>Marketplace</Link>
+            <Link to='auctions' onClick={() => changeIndex(3)} className={changeStyle(3)}>Auctions</Link>
+            <Link to='drop' onClick={() => changeIndex(4)} className={changeStyle(4)}>Drop</Link>
             
             <img className='message' src={message} alt="message icon" />
         </nav>

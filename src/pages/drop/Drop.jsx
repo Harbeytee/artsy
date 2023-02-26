@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useEffect, useContext } from 'react'
 import dropData from './dropData'
 import './Drop.scss'
 import Footer from '../../components/Footer/Footer'
 import { Link } from 'react-router-dom'
-
+import { Context } from '../../Context/Context' 
 export default function Drop() {
+
+  const { changeIndex } = useContext(Context)
+
+  useEffect(() => {
+    changeIndex(4)
+
+  }, [])
+
   const changeColour = (val) => {
     if(val === 'ended') {
       return '#999EA5'

@@ -1,0 +1,51 @@
+#confirmed {
+    //display: grid;
+    //place-items: center;
+    text-align: center;
+    img {
+        width: 275px;
+        height: 246px;
+    }
+    h3 {
+        //font-weight: 500;
+        font-size: 18px;
+        margin-top: 2rem;
+    }
+    p {
+        font-weight: 400;
+        font-size: 16px;
+        margin-top: 2rem;
+    }
+    span {
+        color: #006CA2;
+        margin-left: 0.2rem
+        ;
+    }
+}
+
+@media only screen and (min-width:'760px') {
+    #confirmed {
+       
+        img {
+            width: 400px;
+            height: 350px;
+        }
+        h3 {
+            font-size: 40.552px;
+            margin-top: 1rem;
+        }
+        p {
+            font-size: 30.414px;
+        }
+        
+    }
+    .circle-rings {
+        position: absolute;
+        left: -65px;
+        top: -10px;
+        z-index: 1000;
+        width: 623.49px;
+        height: 623.49px;
+        
+    }
+}

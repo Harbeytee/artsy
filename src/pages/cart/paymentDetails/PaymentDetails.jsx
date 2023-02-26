@@ -19,7 +19,7 @@ export default function PaymentDetails() {
             
 
         </nav>
-        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+        <div style={{display: 'flex', justifyContent: 'space-between', marginTop: '3.5rem'}}>
           <h3 className='hide-mobile payment-method'>Payment method</h3>
           <div className="secure-server">
             <img src={padlock} alt="padlock icon" className="padlock" />
