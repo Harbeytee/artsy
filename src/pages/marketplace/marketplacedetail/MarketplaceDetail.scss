@@ -1,6 +1,17 @@
 #marketplace-detail {
-    animation: fadeIn 0.4s linear;
+    animation: show 0.4s linear;
 }
+@keyframes show {
+    from {
+      opacity: 0; visibility: hidden;
+      transition: opacity 1s linear;
+    }
+    to {
+      opacity: 1; visibility: visible;
+      transition: opacity 1s linear;
+    }
+    
+  }
 .detail-header {
     font-size: 18px;
     border-bottom: 0.5px solid #333333;
@@ -231,6 +242,12 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+//     background: linear-gradient(94.97deg, #78A3AD 24.64%, rgba(192, 86, 9, 0.49) 118.54%);
+// -webkit-background-clip: text;
+// -webkit-text-fill-color: transparent;
+// background-clip: text;
+// text-fill-color: transparent;
+
 }
 .explore::before {
     content: '';

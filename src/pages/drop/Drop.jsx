@@ -83,8 +83,8 @@ export default function Drop() {
   return (
     <div id='drop'>
       <nav className='hide-mobie'>
-        <Link>Home/ </Link>
-        <Link>Auctions/ </Link>
+        <Link to='/'>Home/ </Link>
+        <Link to='/auctions'>Auctions/ </Link>
         <Link>Live bid/ </Link>
         <span>Drop</span>
 

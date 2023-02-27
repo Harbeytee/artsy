@@ -8,11 +8,11 @@ import './Navbar.scss'
 import { Link, Outlet } from 'react-router-dom'
 export default function Navbar() {
     const { changeIndex, index } = useContext(Context)
-    //const [index, setIndex] = useState(1)
+    
     const [display, setDisplay] = useState(false)
-    const style ={
-        flexDirection : display && window.matchMedia('(max-width:759px)').matches ? 'row-reverse' : 'row'
-    }
+    // const style ={
+    //     flexDirection : display && window.matchMedia('(max-width:759px)').matches ? 'row-reverse' : 'row'
+    // }
     function changeStyle(val) {
        return val === index ? 'clicked' : 'unclicked'
     }
@@ -32,7 +32,7 @@ export default function Navbar() {
                     <div className='ellipse'></div>
                     <Link to='/cart'><img src={cart} alt=" cart icon" /></Link>
                 </div>
-                <img src={notif} className="notif" alt="notification icon" />
+                <Link to='/drop'><img src={notif} className="notif" alt="notification icon" /></Link>
                 
             </div>
 

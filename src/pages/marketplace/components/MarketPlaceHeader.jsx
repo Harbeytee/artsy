@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { ReactComponent as Drop } from '../../../assets/marketplace/drop.svg'
 
 export default function MarketPlaceHeader() {
   return (
@@ -18,8 +19,15 @@ export default function MarketPlaceHeader() {
 
           <div className='sort'>
             <p className='hide-mobile'>See 1-6 of 15 results</p>
-            <div className='hide-desktop'>Filters</div>
-            <div>Sort by</div>
+            <div className='hide-desktop'>
+              Filters
+              <Drop />
+            </div>
+            <div className='marketplace-sort'>
+              Sort by
+              <Drop />
+
+            </div>
             
           </div>
 

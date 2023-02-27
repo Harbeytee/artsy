@@ -1,10 +1,25 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import '../Cart.scss'
 import './ShippingDetails.scss'
+import {ReactComponent as Drop} from '../../../assets/marketplace/drop.svg'
+
+//import { useNavigate } from 'react-router-dom'
 
 export default function ShippingDetails({style={}, className=''}) {
-  
+  const nav = useNavigate()
+  const selectStyle={
+    display: 'flex',
+   flexDirection: 'column',
+   position: 'relative'
+  }
+
+  // useEffect(() => {
+  //   window.matchMedia('(min-width:760px)').matches && nav('/cart')
+  //   window.addEventListener('resize', () => {
+  //     window.matchMedia('(min-width:760px)').matches && nav('/cart')
+  //   })
+  // }, [])
 
   return (
     <div style={style} id='shipping-details' className={className}>
@@ -22,29 +37,44 @@ export default function ShippingDetails({style={}, className=''}) {
 
         <label className='updates'><input type="checkbox" />Get updates about new drops & exclusive offers</label>
 
-        <label htmlFor="wallet">Choose a wallet</label>
-        <select name="wallet" id="wallet">
-          <option value=""></option>
-          <option value="algorand">Algorand</option>
-          <option value="metamask">Metamask</option>
-          <option value="coinbase">Coinbase</option>
-        </select>
+        <div style={selectStyle}>
+          <Drop />
+          <label htmlFor="wallet">Choose a wallet</label>
+          <select name="wallet" id="wallet">
+            
+            <option value=""></option>
+            <option value="algorand">Algorand</option>
+            <option value="metamask">Metamask</option>
+            <option value="coinbase">Coinbase</option>
+            
+          </select>
 
-        <label htmlFor="city">City</label>
-        <select name="city" id="city">
-          <option value=""></option>
-          <option value="texas">Texas</option>
-          <option value="los angeles">Los angeles</option>
-          <option value="miami">Miami</option>
-        </select>
+        </div>
+        
+        <div style={selectStyle}>
+          <Drop />
+          <label htmlFor="city">City</label>
+          <select name="city" id="city">
+            <option value=""></option>
+            <option value="texas">Texas</option>
+            <option value="los angeles">Los angeles</option>
+            <option value="miami">Miami</option>
+          </select>
 
-        <label htmlFor="country">Country</label>
-        <select name="country" id="country">
-          <option value=""></option>
-          <option value="USA">USA</option>
-          <option value="Australia">Australia</option>
-          <option value="Canada">Canada</option>
-        </select>
+        </div>
+        
+        <div style={selectStyle}>
+          <Drop />
+          <label htmlFor="country">Country</label>
+          <select name="country" id="country">
+            <option value=""></option>
+            <option value="USA">USA</option>
+            <option value="Australia">Australia</option>
+            <option value="Canada">Canada</option>
+          </select>
+
+        </div>
+        
 
         <label htmlFor="postalcode">Postal code</label>
         <input type="text" name="postalcode" />
@@ -55,7 +85,7 @@ export default function ShippingDetails({style={}, className=''}) {
        </form>
 
        <div className="last-buttons">
-          <Link to='/cart/payment'>Proceed to payment</Link>
+          <Link className='blue' to='/cart/payment'>Proceed to payment</Link>
           <Link to='/cart'>Go back to cart</Link>
 
       </div>

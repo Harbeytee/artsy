@@ -100,8 +100,9 @@ export default function ShoppingCart({on, turnOff}) {
                 
 
                 {!on && <div className="last-buttons">
-                    <Link to='shipping'>Proceed to checkout</Link>
-                    <Link to='/marketplace'>Continue shopping</Link>
+                    <Link className='hide-mobile blue' to='/cart'>Proceed to checkout</Link>
+                    <Link  className='hide-desktop blue'to='shipping'>Proceed to checkout</Link>
+                    <Link to='/cart'>Continue shopping</Link>
 
                 </div> }
                 

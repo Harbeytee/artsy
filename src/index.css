@@ -7,6 +7,17 @@
   transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   
 }
+@keyframes show {
+  from {
+    opacity: 0; visibility: hidden;
+    transition: opacity 1s linear;
+  }
+  to {
+    opacity: 1; visibility: visible;
+    transition: opacity 1s linear;
+  }
+  
+}
 
 body {
   background-color: #f9f9f9;

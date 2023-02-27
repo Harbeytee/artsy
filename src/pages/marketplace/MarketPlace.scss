@@ -1,7 +1,18 @@
 //start marketplace header
 #marketplace {
-    animation: fadeIn 0.4s linear;
+    animation: show 0.4s linear;
 }
+@keyframes show {
+    from {
+      opacity: 0; visibility: hidden;
+      transition: opacity 1s linear;
+    }
+    to {
+      opacity: 1; visibility: visible;
+      transition: opacity 1s linear;
+    }
+    
+  }
 .marketplace-nav {
     font-size: 18px;
     color: #BCB7B7;
@@ -29,6 +40,21 @@
     padding: 1.2rem;
     font-size: 18px;
     //margin-right: 7rem;
+    .hide-desktop {
+        svg {
+            width: 14px;
+            margin-left: 0.85rem;
+            transform: rotateX(180deg);
+
+        }
+    }
+}
+.marketplace-sort {
+    svg {
+        transform: rotateX(180deg);
+        margin-left: 0.85rem;
+        width: 14px;
+    }
 }
 
 @media only screen and (min-width:760px) {
@@ -42,6 +68,7 @@
             width: 100%;
             align-items: center;
             justify-content: space-between;
+            
            
 
             input {
@@ -52,7 +79,14 @@
                 background: #F4F2F2;
                 font-size: 24px;
                 padding-left: 1.5rem;
-                &::placeholder {color: #999999;}
+                &::placeholder {
+                    color: #999999;
+                }
+                &:focus {
+                    box-shadow: 0 0 0 0.2rem #e4dede;
+                    outline: none;
+                    
+                }
             }
         }
     }
@@ -61,8 +95,19 @@
         height: 91px;
         font-size: 24px;
         margin-left: 4rem;
+        padding-left: 2rem;
        
        
+    }
+    .marketplace-sort {
+        
+        border: 1px solid #bfbfbf;
+        width: 191px;
+        height: 58px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
     }
     .flex {
         display: flex;
@@ -113,8 +158,55 @@
     }
 
     .accordion-head {
+        height: 50px;
+        //background-color: red;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
         font-size: 28px;
-        margin-bottom: 2rem;
+        margin-bottom: 0.7rem;
+       
+    }
+    .by-price {
+        
+        position: relative;
+        * {
+            margin-top: 1rem;
+        }
+        input {
+            width: 90%;
+            margin-left: 1.7em;
+            margin-top: 3.5rem;
+            height: 5px;
+            appearance: none;
+            background-color: #B8BCB5;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -o-appearance: none;
+            background-repeat: no-repeat;
+            background-image: linear-gradient(115deg, black, black);
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                background-color: black;
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+            }
+        }
+        .slider-thumb {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: white;
+            border: 1px solid black;
+            bottom: -2.8px;
+            left: 0px;
+            
+
+        }
     }
     .art-card {
         background-color: white;
@@ -128,6 +220,11 @@
        
         
     }
+    
+    .drop {
+        transition: all 0.4s linear;
+        transform: rotateX(180deg);
+    }
     .artworks {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(269px, 1fr));
@@ -140,22 +237,43 @@
     .art-img {
         width: 241px;
         height: 280px;
+        border-radius: 8px;
         
+        
+    }
+    @keyframes slide {
+        from {
+            height: 0%;
+        }
+        to {
+            height: 100%;
+        }
     }
     
     .accordion-text {
         display: flex;
         flex-direction: column;
+        transition: all 0.35s linear;
+        overflow: hidden;
+        font-size: 24px;
+        
+        label:first-child {
+            
+            margin-top: 0.5rem;
+        }
+        
         label {
+            
             display: flex;
-            align-items: center;
+            align-items: flex-start;
+            
             text-indent: 0.5rem;
             margin-top: 0.5rem;
             
         }
 
        input[type='checkbox'] {
-        
+            cursor: pointer;
             height: 26px;
             width: 26px;
             appearance: none;
@@ -193,6 +311,17 @@
             font-size: 24px;
         }
         
+    }
+    .artist {
+        * {
+            margin-top: 1.2rem;
+            
+           
+        }
+    }
+    .under-line {
+        border-bottom: 2px solid black;
+        width: 35px;
     }
     .deets {
         flex-direction: column;

@@ -1,11 +1,13 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import product from './product'
 import './Auctions.scss'
 import Like from '../../assets/marketplace/Like'
 import { Context } from '../../Context/Context' 
 
+
 export default function Auctions() {
+  const [time, setTime] = useState(24015)
   const { changeIndex } = useContext(Context)
 
   useEffect(() => {
@@ -13,9 +15,41 @@ export default function Auctions() {
 
   }, [])
 
+    function showTime(val) {
+      let hours = Math.floor(val / 3600)
+      let minutes = Math.floor((val % 3600) / 60)
+      let seconds = val % 60
+
+      return `${hours}hr : ${minutes}mins : ${seconds}s`
+
+      //return minutes
+      //24015const seconds = val 
+
+    }
+    
+    
+  useEffect(() => {
+    if(time <= 0) {
+      setTime(24015)
+    }
+    else {
+          const timeout = setInterval(() => {
+            setTime(prev => prev - 1)
+        }, 1000)
+        //console.log(time)
+        return () => {
+          clearInterval(timeout)
+        }
+
+    }
+    
+    
+  }, [time])
+  
+
   const auction1 = product.auction1.map((item, index) => (
     <Link to={`${item.id}`} key={index} className='auction1-img' style={{backgroundImage: `url(${item.img})`}}>
-      <div className="timer">6hr : 40mins: 15s</div>
+      <div className="timer">{showTime(time)}</div>
 
     </Link>
   ))

@@ -22,18 +22,6 @@ export default function CartHead({turnOn, turnOff}) {
     }
 
 
-    const clicked= {
-        color: '#292929;',
-        transform: 'scale(1.02)',
-        transition: 'all 0.5s linear',
-
-    }
-    const unclicked = {
-        color: '#888888',
-        transition: 'all 0.5s linear',
-
-    }
-
     React.useEffect(() => {
         console.log(index)
     }, [index])

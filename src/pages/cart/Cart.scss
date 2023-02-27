@@ -167,7 +167,7 @@
 }
 .checkout {
    
-    position: fixed;
+    //position: fixed;
     //z-index: 1000;
     bottom: 0;
     width: 100%;
@@ -206,7 +206,14 @@
     @extend .centerize;
     font-size: 18px;
     margin-bottom: 1.5rem;
-    :first-child, .confirm-payment {
+    .hide-mobile {
+        display: none;
+    }
+    .hide-desktop {
+        display: flex;
+    }
+    .blue, .confirm-payment {
+        
         background: #3341C1;
         border-radius: 4px;
         width: 278px;
@@ -327,8 +334,13 @@
     }
     .last-buttons {
         margin-bottom: 1.5rem;
-        
-        :first-child, .confirm-payment {
+        .hide-desktop {
+            display: none;
+        }
+        .hide-mobile {
+            display: flex;
+        }
+        .blue, .confirm-payment {
             max-width: 534px;
            width: 100%;
             height: 107px;
