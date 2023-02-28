@@ -3,7 +3,7 @@ import CartHead from './components/CartHead'
 import { Link, Outlet } from 'react-router-dom'
 import { Context } from '../../Context/Context'
 export default function Cart({turnOn, turnOff}) {
-  const { cart, art} = useContext(Context)
+  const { art} = useContext(Context)
 
   useEffect(() => {
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'});

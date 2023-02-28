@@ -7,7 +7,7 @@ import ShippingDetails from './ShippingDetails'
 import { Context } from '../../../Context/Context'
 
 export default function ShoppingCart({on, turnOff}) {
-    const { art } = useContext(Context)
+    const { art, dispatch } = useContext(Context)
     const cart = art.filter(item => item.inCart == true)
     const [index, setIndex] = useState(1)
     //const [on, setOn] = useState(false)
@@ -16,12 +16,11 @@ export default function ShoppingCart({on, turnOff}) {
     return val === index? 'clicked': 'unclicked'
 
     }
-
-    // React.useEffect(() => {
-    //     turnOff()
-    
-    // }, [])
-
+    const style={
+        backgroundColor: 'transparent',
+        border: 'none',
+        cursor: 'pointer'
+    }
     useEffect(() => {
       window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
     
@@ -46,9 +45,9 @@ export default function ShoppingCart({on, turnOff}) {
                     <p className='cart-artist'>{val.artist}</p>
                     <p>Size: <span className="cart-size">{val.size} ft</span></p>
                     <div className="change-quantity">
-                        <span>-</span>
+                        <button onClick={() => dispatch({type:'DECREASE QUANTITY', id: val.id})} style={style}>-</button>
                         <span>{val.quantity}</span>
-                        <span>+</span>
+                        <button onClick={() => dispatch({type:'INCREASE QUANTITY', id: val.id})} style={style}>+</button>
                     </div>
 
                 </div>
@@ -56,7 +55,7 @@ export default function ShoppingCart({on, turnOff}) {
             </div>
 
             <div className="cart-y">
-                <img src={xmark} alt="" className="remove-item" />
+                <img onClick={() => dispatch({type:'REMOVE FROM CART', id: val.id})} src={xmark} alt="" className="remove-item" />
                 <p className="cart-price">${val.price.toFixed(2)}</p>
             </div>
 
@@ -89,7 +88,7 @@ export default function ShoppingCart({on, turnOff}) {
                 <div className="checkout-first">
                     <div>
                         <span>Products in cart :</span>
-                        <span>{cart.length} items</span>
+                        <span>{cart.length} item{cart.length > 1 && 's'}</span>
 
                     </div>
                     <div>
