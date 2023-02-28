@@ -73,10 +73,17 @@
     align-items: center;
     
     * {
-        margin: auto 0.5rem;
-        font-size: 30px;
+        margin: auto 0.2rem;
+        font-size: 36px;
         color: #333333;
         font-weight: 500;
+        
+    }
+    button {
+        background-color: transparent;
+        cursor: pointer;
+        border: none;
+        width: 35px;
     }
     
 }

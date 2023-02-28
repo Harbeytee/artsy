@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom'
-import artwork from '../artwork'
+//import artwork from '../artwork'
 import { Link } from 'react-router-dom'
 import './MarketplaceDetail.scss'
 import Like from '../../../assets/marketplace/Like'
@@ -11,18 +11,24 @@ import carousel from './carousel'
 import { Context } from '../../../Context/Context'
 
 export default function MarketplaceDetail() {
-    const { changeIndex } = useContext(Context)
+    const { changeIndex, art, increaseQuantity, decreaseQuantity, add, remove, cart, changeMessage } = useContext(Context)
+    //console.log(art)
 
     useEffect(() => {
         changeIndex(2)
 
     }, [])
+    useEffect(() => {
+        console.log(cart)
+    }, [cart])
     const { id } = useParams()
-    const detail = artwork.find(val => val.name == id)
+    const detail = art.find(val => val.name == id)
     
     const style = {
        color: '#BCB7B7'
     }
+
+    
    //const [position.width, setLength] = useState();
     const [position, setPosition] = useState({
         left: 0,
@@ -49,11 +55,6 @@ export default function MarketplaceDetail() {
     }, [])
 
    
-   /*  const sliderStyle={
-        length: position.width
-     }*/
-    
-   // const [wrapper, setWrapper] = useState('')
      const [count, setCount] = useState(0)
 
    const nextSlide = () => {
@@ -112,7 +113,7 @@ export default function MarketplaceDetail() {
                 <div style={{backgroundImage: `url(${detail.img})`}} className="detail-img"></div>
                 <div className='detail-info hide-desktop'>
                     <p>{detail.name}</p>
-                    <p>$ {detail.price}</p>
+                    <p>$ {detail.price.toFixed(2)}</p>
                 </div>
 
             </div>
@@ -128,12 +129,20 @@ export default function MarketplaceDetail() {
                     <p>Made in Italy</p>
                     <p>Total views: 1.7K views</p>
                     <div className='cart-controls'>
-                        <span>-</span>
-                        <span>1</span>
-                        <span>+</span>
+                        <button onClick={() => decreaseQuantity(detail.id)}>-</button>
+                        <span>{detail.quantity}</span>
+                        <button onClick={() => {increaseQuantity(detail.id)} }>+</button>
                     </div>
                     <div className="detail-btn">
-                        <button className='add-to-cart'>Add to cart</button>
+                        {
+                            cart.length !== 0 && cart.some(item => item.id == detail.id)
+                            ?
+                            <button onClick={() => {remove(detail.id), changeMessage({message: 'removed from cart', color: 'red'})}} className='add-to-cart'>Remove From Cart</button>
+                            :
+                            <button onClick={() => {add(detail),changeMessage({message: 'added to cart', color: 'rgb(8, 133, 8)'})}} className='add-to-cart'>Add to cart</button>
+                        
+                        }
+                        
                         <button className='like'><Like /></button>
                     </div>
                 </div>

@@ -36,7 +36,7 @@ export default function Filter() {
               By category
               <img  style={{transform: open && openAccordion(1) ? 'rotateX(0)' : 'rotateX(180deg)'}} src={drop} alt="" className="drop" />
             </h5>
-            <div className="accordion-text" style={{height: open && openAccordion(1) ? '60%' : '0'}}>
+            <div className="accordion-text" style={{height: open && openAccordion(1) ? '55%' : '0'}}>
               <label >
                 <input type="checkbox" />
                 Editorials
@@ -61,7 +61,7 @@ export default function Filter() {
                 
               </label>
 
-              <label style={{marginBottom: '3rem'}}>
+              <label >
                 <input type="checkbox" />
                 <span>Nature</span>
                 
@@ -73,7 +73,7 @@ export default function Filter() {
               By price
               <img  style={{transform: open && openAccordion(2) ? 'rotateX(0)' : 'rotateX(180deg)'}} src={drop} alt="" className="drop" />
             </h5>
-            <div style={{height: open && openAccordion(2) ? '60%' : '0'}} className="accordion-text by-price">
+            <div style={{height: open && openAccordion(2) ? '55%' : '0'}} className="accordion-text by-price">
               
               <p>$100.00 - ${Number(rangeValue) + 100}.00</p>
               <div style={{position: 'relative'}}>
@@ -88,7 +88,7 @@ export default function Filter() {
               By artist
               <img  style={{transform: open && openAccordion(3) ? 'rotateX(0)' : 'rotateX(180deg)'}} src={drop} alt="" className="drop" />
               </h5>
-            <div style={{height: open && openAccordion(3) ? '60%' : '0'}} className="accordion-text artist">
+            <div style={{height: open && openAccordion(3) ? '55%' : '0'}} className="accordion-text artist">
               
                 <p className='under-line'>All</p>
                 <p>Below $100.00</p>

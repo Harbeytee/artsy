@@ -15,11 +15,11 @@ export default [
     {
         img: warped,
         name: 'Warped',
-        artist: 'Clearamane',
+        artist: 'Clearamane',//
         price: 39.50,
         quantity: 1,
-        size: '200',
-        type: 'Editorials',
+        size: '200',//
+        type: 'Editorials',//
     },
     {
         img: ellipsia,

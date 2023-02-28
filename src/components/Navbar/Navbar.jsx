@@ -1,14 +1,16 @@
 import React, { useState, useContext } from 'react'
 import search from '../../assets/icons/search-icon.svg'
-import cart from '../../assets/icons/cart-icon.svg'
+import cartIcon from '../../assets/icons/cart-icon.svg'
 import message from '../../assets/icons/message-icon.svg'
 import notif from '../../assets/icons/notif-icon.svg'
 import { Context } from '../../Context/Context'
 import './Navbar.scss'
 import { Link, Outlet } from 'react-router-dom'
 export default function Navbar() {
-    const { changeIndex, index } = useContext(Context)
-    
+    const { changeIndex, index, msg, changeMessage, displayMessage, cart } = useContext(Context)
+    const style= {
+        color: msg.color,
+    }
     const [display, setDisplay] = useState(false)
     // const style ={
     //     flexDirection : display && window.matchMedia('(max-width:759px)').matches ? 'row-reverse' : 'row'
@@ -18,6 +20,7 @@ export default function Navbar() {
     }
   return (
    <>
+   {displayMessage && <div style={style} className="msg">{msg.message}</div>}
     <header id="navbar">
         <div className='head'>
             <nav style={{transform : display && window.matchMedia('(max-width:759px)').matches ? 'translateX(90%)' : '0'}} onClick={() => setDisplay(!display)} className='hamburger'>
@@ -28,9 +31,12 @@ export default function Navbar() {
             <Link to='/' style={{marginRight: display && window.matchMedia('(max-width:759px)').matches ?'0%': '0'}}>ARTSY.</Link>
             <div style={{display : display && window.matchMedia('(max-width:759px)').matches ? 'none' : 'flex'}} className='icons'>
                 <img src={search} alt="search icon" />
-                <div>
-                    <div className='ellipse'></div>
-                    <Link to='/cart'><img src={cart} alt=" cart icon" /></Link>
+                <div style={{position: 'relative'}}>
+                    {cart.length > 0 && <div className='ellipse'></div>}
+                    <Link to='/cart'>
+                        <img src={cartIcon} alt=" cart icon" />
+                        
+                    </Link>
                 </div>
                 <Link to='/drop'><img src={notif} className="notif" alt="notification icon" /></Link>
                 
