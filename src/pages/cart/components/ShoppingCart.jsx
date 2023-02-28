@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import '../Cart.scss'
 import { Link } from 'react-router-dom'
-import cartData from '../cartData'
+//import cart from '../cart'
 import xmark from '../../../assets/icons/x-mark.svg'
 import ShippingDetails from './ShippingDetails'
+import { Context } from '../../../Context/Context'
 
 export default function ShoppingCart({on, turnOff}) {
+    const { art } = useContext(Context)
+    const cart = art.filter(item => item.inCart == true)
     const [index, setIndex] = useState(1)
     //const [on, setOn] = useState(false)
     const changeColour = (val) => {
@@ -19,10 +22,19 @@ export default function ShoppingCart({on, turnOff}) {
     
     // }, [])
 
-    const total = cartData.map(val => val.price).reduce((prev, current) => (prev + current))
+    useEffect(() => {
+      window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    
+      
+    }, [])
+
+    
     
 
-    const cartItems = cartData.map((val, index) => (
+    const total = cart.map(val => val.price).reduce((prev, current) => (prev + current))
+    
+
+    const cartItems = cart.map((val, index) => (
         <div style={{marginTop: '0'}} key={index} className="cart-card">
 
             <div className="cart-x">
@@ -77,7 +89,7 @@ export default function ShoppingCart({on, turnOff}) {
                 <div className="checkout-first">
                     <div>
                         <span>Products in cart :</span>
-                        <span>{cartData.length} items</span>
+                        <span>{cart.length} items</span>
 
                     </div>
                     <div>

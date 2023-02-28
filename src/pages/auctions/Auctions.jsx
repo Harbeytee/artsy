@@ -12,8 +12,10 @@ export default function Auctions() {
 
   useEffect(() => {
     changeIndex(3)
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
 
   }, [])
+  
 
     function showTime(val) {
       let hours = Math.floor(val / 3600)

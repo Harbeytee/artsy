@@ -7,7 +7,7 @@ import { Context } from '../../Context/Context'
 import './Navbar.scss'
 import { Link, Outlet } from 'react-router-dom'
 export default function Navbar() {
-    const { changeIndex, index, msg, changeMessage, displayMessage, cart } = useContext(Context)
+    const { changeIndex, index, msg, changeMessage, displayMessage, art } = useContext(Context)
     const style= {
         color: msg.color,
     }
@@ -32,7 +32,7 @@ export default function Navbar() {
             <div style={{display : display && window.matchMedia('(max-width:759px)').matches ? 'none' : 'flex'}} className='icons'>
                 <img src={search} alt="search icon" />
                 <div style={{position: 'relative'}}>
-                    {cart.length > 0 && <div className='ellipse'></div>}
+                    {art.some(item => item.inCart == true) && <div className='ellipse'></div>}
                     <Link to='/cart'>
                         <img src={cartIcon} alt=" cart icon" />
                         

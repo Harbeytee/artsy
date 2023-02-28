@@ -11,19 +11,19 @@ import carousel from './carousel'
 import { Context } from '../../../Context/Context'
 
 export default function MarketplaceDetail() {
-    const { changeIndex, art, increaseQuantity, decreaseQuantity, add, remove, cart, changeMessage } = useContext(Context)
+    const { changeIndex, art, increaseQuantity, decreaseQuantity, add, remove, cart, changeMessage, dispatch } = useContext(Context)
     //console.log(art)
 
     useEffect(() => {
         changeIndex(2)
 
     }, [])
-    useEffect(() => {
-        console.log(cart)
-    }, [cart])
+   
     const { id } = useParams()
     const detail = art.find(val => val.name == id)
-    
+    useEffect(() => {
+        console.log(detail)
+    }, [art])
     const style = {
        color: '#BCB7B7'
     }
@@ -129,17 +129,17 @@ export default function MarketplaceDetail() {
                     <p>Made in Italy</p>
                     <p>Total views: 1.7K views</p>
                     <div className='cart-controls'>
-                        <button onClick={() => decreaseQuantity(detail.id)}>-</button>
+                        <button onClick={() => dispatch({type:'DECREASE QUANTITY', id: detail.id}) /*decreaseQuantity(detail.id)*/}>-</button>
                         <span>{detail.quantity}</span>
-                        <button onClick={() => {increaseQuantity(detail.id)} }>+</button>
+                        <button onClick={() => dispatch({type:'INCREASE QUANTITY', id: detail.id}) /*increaseQuantity(detail.id)*/ }>+</button>
                     </div>
                     <div className="detail-btn">
                         {
-                            cart.length !== 0 && cart.some(item => item.id == detail.id)
+                            detail.inCart == true
                             ?
-                            <button onClick={() => {remove(detail.id), changeMessage({message: 'removed from cart', color: 'red'})}} className='add-to-cart'>Remove From Cart</button>
+                            <button onClick={() => {dispatch({type:'REMOVE FROM CART', id: detail.id})/*remove(detail.id)*/, changeMessage({message: 'removed from cart', color: 'red'})}} className='add-to-cart'>Remove From Cart</button>
                             :
-                            <button onClick={() => {add(detail),changeMessage({message: 'added to cart', color: 'rgb(8, 133, 8)'})}} className='add-to-cart'>Add to cart</button>
+                            <button onClick={() => {dispatch({type:'ADD TO CART', id: detail.id})/*add(detail)*/,changeMessage({message: 'added to cart', color: 'rgb(8, 133, 8)'})}} className='add-to-cart'>Add to cart</button>
                         
                         }
                         

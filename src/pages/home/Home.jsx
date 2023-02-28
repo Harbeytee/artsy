@@ -12,8 +12,10 @@ export default function Home() {
 
   useEffect(() => {
     changeIndex(1)
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
 
   }, [])
+  
   return (
     <main>
         <HeroSection />
