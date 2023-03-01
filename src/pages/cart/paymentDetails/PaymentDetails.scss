@@ -208,7 +208,12 @@
         top: 40%
     }
 }
-
+.desktop {
+    display: none;
+}
+.mobile {
+    display: block;
+}
 @media only screen and (min-width:760px) {
     #form {
         background: #fcfcfc;
@@ -232,7 +237,12 @@
     }
     #payment-details {
         padding: 0 8rem;
-       
+        .desktop {
+            display: block;
+        }
+        .mobile {
+            display: none;
+        }
         form {
             margin-top: 2.7rem;
             input[type='text'], input[type='password'] {
@@ -263,16 +273,18 @@
         }
         .select-wallet {
             font-weight: 500;
-            font-size: 28px;
+            font-size: 26px;
             margin-left: 0.5rem;
             text-indent: 1rem;
         }
     }
     .form-flex {
         margin-top: 1.5rem;
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-around;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 2rem;
+        // align-items: flex-start;
+        // justify-content: space-around;
         //justify-content: space-between;
     }
     .form-head {

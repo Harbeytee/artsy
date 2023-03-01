@@ -28,15 +28,33 @@ const reducer = (state, action) => {
                     return item;
                 }
             });
-            case 'DECREASE QUANTITY':
-                return state.map(item => {
-                    if(item.id === action.id) {
-                        return {...item, quantity: item.quantity <= 1? 1 : item.quantity - 1}
-                    }
-                    else {
-                        return item;
-                    }
-                });
+        case 'DECREASE QUANTITY':
+            return state.map(item => {
+                if(item.id === action.id) {
+                    return {...item, quantity: item.quantity <= 1? 1 : item.quantity - 1}
+                }
+                else {
+                    return item;
+                }
+            });
+        case 'LIKE ITEM':
+            return state.map(item => {
+                if(item.id === action.id) {
+                    return {...item, isFavorite: !item.isFavorite}
+                }
+                else {
+                    return item;
+                }
+            });
+        case 'UNLIKE ITEM':
+            return state.map(item => {
+                if(item.id === action.id) {
+                    return {...item, isFavorite: !item.isFavorite}
+                }
+                else {
+                    return item;
+                }
+            });
         default:
             return state;
     }   

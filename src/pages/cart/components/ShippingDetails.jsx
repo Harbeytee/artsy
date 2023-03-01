@@ -6,7 +6,7 @@ import {ReactComponent as Drop} from '../../../assets/marketplace/drop.svg'
 
 //import { useNavigate } from 'react-router-dom'
 
-export default function ShippingDetails({style={}, className=''}) {
+export default function ShippingDetails({style={}, className='', turnOff={}}) {
   const nav = useNavigate()
   const selectStyle={
     display: 'flex',
@@ -24,9 +24,9 @@ export default function ShippingDetails({style={}, className=''}) {
   return (
     <div style={style} id='shipping-details' className={className}>
         <nav className=' hide-desktop cart-nav'>
-            <Link>Home/ </Link>
-            <Link>Marketplace/ </Link>
-            <Link>Cart/ </Link>
+            <Link to='/'>Home/ </Link>
+            <Link to='/marketplace'>Marketplace/ </Link>
+            <Link to='/cart'>Cart/ </Link>
             <Link>Shipping </Link>
             
 
@@ -86,7 +86,7 @@ export default function ShippingDetails({style={}, className=''}) {
 
        <div className="last-buttons">
           <Link className='blue' to='/cart/payment'>Proceed to payment</Link>
-          <Link to='/cart'>Go back to cart</Link>
+          <Link onClick={() => turnOff()} to='/cart'>Go back to cart</Link>
 
       </div>
     </div>

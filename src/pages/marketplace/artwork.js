@@ -22,6 +22,7 @@ export default [
         size: '200',
         type: 'Editorials',
         inCart: false,
+        isFavorite: false,
     },
     {   id: 2,
         img: road,
@@ -32,6 +33,7 @@ export default [
         size: '200',
         type: 'Editorials',
         inCart: false,
+        isFavorite: false,
     },
     {  
          id: 3,
@@ -43,6 +45,7 @@ export default [
         size: '200',
         type: 'Photography',
         inCart: false,
+        isFavorite: false,
     },
     {   id: 4,
         img: blanc,
@@ -53,6 +56,7 @@ export default [
         size: '200',
         type: 'Nature',
         inCart: false,
+        isFavorite: false,
     },
     {   id: 5,
         img: ellipsia,
@@ -63,6 +67,7 @@ export default [
         size: '200',
         type: 'Photography',
         inCart: false,
+        isFavorite: false,
     },
     {   id: 6,
         img: lawmakers,
@@ -73,6 +78,7 @@ export default [
         size: '200',
         type: 'The 90s',
         inCart: false,
+        isFavorite: false,
     },
     {   id: 7,
         img: veil,
@@ -83,6 +89,7 @@ export default [
         size: '200',
         type: 'Photography',
         inCart: false,
+        isFavorite: false,
     },
     {   id: 8,
         img: alternating,
@@ -93,6 +100,7 @@ export default [
         size: '200',
         type: 'Editorials',
         inCart: false,
+        isFavorite: false,
     },
     {   id: 9,
         img: rosemary,
@@ -112,6 +120,7 @@ export default [
         size: 200,
         type: 'Nature',
         inCart: false,
+        isFavorite: false,
     },
     {
         id: 11,
@@ -123,6 +132,7 @@ export default [
         size: '200',
         type: 'Editorials',
         inCart: false,
+        isFavorite: false,
     },
     {
         id: 12,
@@ -134,6 +144,7 @@ export default [
         size: '200',
         type: 'Editorials',
         inCart: false,
+        isFavorite: false,
     }
     
 ]

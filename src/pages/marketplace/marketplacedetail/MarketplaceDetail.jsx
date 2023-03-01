@@ -7,15 +7,22 @@ import Like from '../../../assets/marketplace/Like'
 import eth from '../../../assets/icons/eth.svg'
 import Left from '../../../assets/marketplace/left'
 import Right from '../../../assets/marketplace/right'
-import carousel from './carousel'
+import carousels from './carousel'
 import { Context } from '../../../Context/Context'
 
 export default function MarketplaceDetail() {
+    const [carousel, setCarousel] = useState(carousels)
     const { changeIndex, art, changeMessage, dispatch } = useContext(Context)
-    //console.log(art)
+    
+    function like(id) {
+
+        setCarousel(carousel.map(item => (item.id == id ? {...item, isFavorite: !item.isFavorite} : item)))
+        
+    }
 
     useEffect(() => {
         changeIndex(2)
+        window.scrollTo({top: 0, left: 0});
 
     }, [])
    
@@ -80,7 +87,8 @@ export default function MarketplaceDetail() {
     
     const slide = carousel.map((val, index) => (
         <div style={{width: window.matchMedia('(max-width: 959px)').matches ? position.width: '446px'}} className="slide" key={val.id}>
-            <Like className='slide-heart'/>
+
+            <Like onClick={() => like(index + 1)} className='slide-heart' fill={val.isFavorite ?'red' : 'none'} stroke={val.isFavorite ? 'red' : '#333333'}/>
 
             
             <div style={{backgroundImage: `url(${val.img})`}} className='slide-img' >
@@ -143,7 +151,9 @@ export default function MarketplaceDetail() {
                         
                         }
                         
-                        <button className='like'><Like /></button>
+                        <button /*onClick={() => dispatch({type:detail.isFavorite ? 'UNLIKE ITEM' :'LIKE ITEM', id: detail.id})}*/ className='like'>
+                            <Like onClick={() => dispatch({type:detail.isFavorite ? 'UNLIKE ITEM' :'LIKE ITEM', id: detail.id})}  fill={detail.isFavorite ?'red' : 'none'} stroke={detail.isFavorite ? 'red' : '#333333'}/>
+                        </button>
                     </div>
                 </div>
                 <div className='detail-dropdown'>Description</div>

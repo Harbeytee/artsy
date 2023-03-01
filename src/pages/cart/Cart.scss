@@ -202,7 +202,7 @@
 }
 
 .last-buttons {
-   
+    
     flex-direction: column;
     @extend .centerize;
     font-size: 18px;
@@ -213,6 +213,7 @@
     .hide-desktop {
         display: flex;
     }
+    
     .blue, .confirm-payment {
         
         background: #3341C1;
@@ -232,8 +233,16 @@
 
     }
 }
+.cart-animation {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: 840px) {
+    .cart-nav {
+        display: none;
+    }
     #shopping-cart {
        // padding: 0 6rem;
         
@@ -246,6 +255,7 @@
         display: flex;
         flex-direction: row;
         padding: 2rem 6rem;
+        max-width: 100%;
         justify-content: space-between;
         animation: fadeIn 0.4s linear;
     }

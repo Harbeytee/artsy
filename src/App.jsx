@@ -18,19 +18,26 @@ import Confirmed from './pages/confirmed/Confirmed'
 function App() {
   
   const [on, setOn] = useState(false)
+  const [index, setIndex] = useState(1)
 
-  useEffect(() => {
-    window.addEventListener("resize", function() {
+    const changeIndex = (val) => {
+            setIndex(val)
+    }
+
+  useEffect(()=> {
+    console.log(index)
+  },[index])
+
+  // useEffect(() => {
+  //   window.addEventListener("resize", function() {
        
-        this.window.matchMedia('(max-width: 759px)').matches && setOn(false)
+  //       this.window.matchMedia('(max-width: 759px)').matches && setOn(false)
        
-    })
+  //   })
 
-  }, [])
+  // }, [])
 
-  useEffect(() => {
-    console.log(on)
-  }, [on])
+  
   
 
   return (
@@ -38,15 +45,15 @@ function App() {
       <Router>
         <div className="App">
           <Routes>
-          <Route path ='/' element={<Navbar />}>
+          <Route path ='/' element={<Navbar turnOff={() => setOn(false)} changeI={changeIndex}/>}>
               <Route index element ={<Home /> } />
               <Route path='/marketplace' element={<MarketPlace />} />
               <Route path='/marketplace/:id' element={<MarketplaceDetail />} />
               <Route path='/auctions' element={<Auctions />} />
               
               <Route path='/drop' element={<Drop />} />
-              <Route path='/cart' element={<Cart turnOn={() => setOn(true) } turnOff={() => setOn(false)}/>}>
-                <Route index element={<ShoppingCart on={on} turnOff={() => setOn(false)}/>} />
+              <Route path='/cart' element={<Cart index={index} changeIndex={changeIndex} on={on} turnOn={() => setOn(true) } turnOff={() => setOn(false)}/>}>
+                <Route index element={<ShoppingCart on={on} turnOn={() => setOn(true) } turnOff={() => setOn(false)}/>} />
                 <Route path='shipping' element={<ShippingDetails />} />
                 <Route path='payment' element={<PaymentDetails />} />
               </Route>

@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import '../Cart.scss'
 import './CartHead.scss'
 import { Link } from 'react-router-dom'
-export default function CartHead({turnOn, turnOff}) {
-    const [index, setIndex] = useState(1)
+export default function CartHead({turnOn, turnOff, index, changeIndex}) {
+    //const [index, setIndex] = useState(1)
     const changeStyle = (val) => {
         return val === index? 'active': 'inactive';
     }
@@ -22,17 +22,17 @@ export default function CartHead({turnOn, turnOff}) {
     }
 
 
-    React.useEffect(() => {
-        console.log(index)
-    }, [index])
+    // React.useEffect(() => {
+    //     console.log(index)
+    // }, [index])
   return (
    <>
     <div id='cart-head' className="hide-mobile">
         
        
-            <Link to='/cart' className={changeStyle(1)} onClick={() => {setIndex(1), turnOff()}}>Shopping cart</Link>
-            <Link to='/cart' className={changeStyle(2)} onClick={() => {  setIndex(2), turnOn()}}>Shipping details</Link>
-            <Link to='/cart/payment' className={changeStyle(3)} onClick={() => setIndex(3)}>Payment details</Link>
+            <Link to='/cart' className={changeStyle(1)} onClick={() => {changeIndex(1), turnOff()}}>Shopping cart</Link>
+            <Link to='/cart' className={changeStyle(2)} onClick={() => {  changeIndex(2), turnOn()}}>Shipping details</Link>
+            <Link to='/cart/payment' className={changeStyle(3)} onClick={() => changeIndex(3)}>Payment details</Link>
 
         
 

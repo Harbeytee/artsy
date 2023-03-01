@@ -245,10 +245,25 @@
     width: 313px;
     height: 91px;
     font-size: 36px;
+    border-radius: 16px;
     background:linear-gradient(94.97deg, #78A3AD 24.64%, rgba(192, 86, 9, 0.49) 118.54%) ;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+     -webkit-text-fill-color: transparent;
+     background-clip: text;
+    border: none;
+   // border: 4px solid;
+   
+
+    // border-image-slice: 1;
+    // //border-width: 5px;
+    // border-image-source:linear-gradient(94.97deg, #78A3AD 24.64%, rgba(192, 86, 9, 0.49) 118.54%) ;
+    //  background:linear-gradient(94.97deg, #78A3AD 24.64%, rgba(192, 86, 9, 0.49) 118.54%) ;
+    // -webkit-background-clip: text;
+    //  -webkit-text-fill-color: transparent;
+    //  background-clip: text;
+
+
+
 //     background: linear-gradient(94.97deg, #78A3AD 24.64%, rgba(192, 86, 9, 0.49) 118.54%);
 // -webkit-background-clip: text;
 // -webkit-text-fill-color: transparent;
@@ -256,21 +271,36 @@
 // text-fill-color: transparent;
 
 }
+
 .explore::before {
     content: '';
     position: absolute;
     inset: 0;
     border-radius: 16px;
+    padding: 4px;
     background:linear-gradient(94.97deg, #78A3AD 24.64%, rgba(192, 86, 9, 0.49) 118.54%);
-    --webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) ;
-   // webkit-mask-composite: xor;
-   //maxk-composite:exclude;
-   // border: 1px solid;
-    //border-image-slice: 1;
-    //border-image-source: linear-gradient(94.97deg, #78A3AD 24.64%, rgba(192, 86, 9, 0.49) 118.54%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) ;;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) ;
+   -webkit-mask-composite: xor;
+   mask-composite:exclude;
    
 
 }
+// .explore::before {
+//     content: '';
+//     position: absolute;
+//     inset: 0;
+//     border-radius: 16px;
+//     background:linear-gradient(94.97deg, #78A3AD 24.64%, rgba(192, 86, 9, 0.49) 118.54%);
+//     --webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) ;
+//    // webkit-mask-composite: xor;
+//    //maxk-composite:exclude;
+//    // border: 1px solid;
+//     //border-image-slice: 1;
+//     //border-image-source: linear-gradient(94.97deg, #78A3AD 24.64%, rgba(192, 86, 9, 0.49) 118.54%);
+   
+
+// }
 @media only screen and (min-width: 960px) {
     #marketplace-detail {
         padding-left: 4.5rem;

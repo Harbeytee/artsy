@@ -6,7 +6,9 @@ import xmark from '../../../assets/icons/x-mark.svg'
 import ShippingDetails from './ShippingDetails'
 import { Context } from '../../../Context/Context'
 
-export default function ShoppingCart({on, turnOff}) {
+export default function ShoppingCart({on, turnOn, turnOff}) {
+    //1145px
+    const[display, setDisplay] = useState('')
     const { art, dispatch } = useContext(Context)
     const cart = art.filter(item => item.inCart == true)
     const [index, setIndex] = useState(1)
@@ -16,18 +18,47 @@ export default function ShoppingCart({on, turnOff}) {
     return val === index? 'clicked': 'unclicked'
 
     }
+    
     const style={
         backgroundColor: 'transparent',
         border: 'none',
         cursor: 'pointer'
     }
     useEffect(() => {
-      window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+      window.scrollTo({top: 0, left: 0,});
     
-      
+      //turnOff()
     }, [])
 
-    
+    useEffect(() => {
+        // if (window.matchMedia('(max-width:1145px)').matches && on == true) {
+        //     setDisplay('none')
+        // }
+        // else if(window.matchMedia('(max-width:1145px)').matches && on == false){
+        //     setDisplay('block')
+        // }
+        // window.addEventListener('resize', () => {
+        //     if (window.matchMedia('(max-width:1145px)').matches && on == true) {
+        //         setDisplay('none')
+        //     }
+        //     else if(window.matchMedia('(max-width:1145px)').matches && on == false){
+        //         setDisplay('block')
+        //     }
+        // })
+        // if (!window.matchMedia('(max-width:1145px)').matches) {
+        //     setDisplay('block')
+        // }
+        // window.addEventListener('resize', () => {
+        //     if (!window.matchMedia('(max-width:1145px)').matches) {
+        //         setDisplay('block')
+        //     }
+        // })
+        window.matchMedia('(max-width:1145px)').matches ? on ? setDisplay('none'): setDisplay('block'): setDisplay('block')
+        window.addEventListener('resize', () => {
+            window.matchMedia('(max-width:1145px)').matches ? on ? setDisplay('none'): setDisplay('block'): setDisplay('block')
+        })
+        
+    }, [on])
     
 
     const total = cart.map(val => val.price).reduce((prev, current) => (prev + current))
@@ -65,14 +96,14 @@ export default function ShoppingCart({on, turnOff}) {
   return (
     
     <div className='cart-animation' >
-        <ShippingDetails id='shipping-details' className='hide-mobile' style={{ width: on? '100%' :'0%',  transition: 'all 0.4s linear', marginRight: on? '2rem': '0', overflow: 'hidden', whiteSpace:'nowrap'}} />
+        <ShippingDetails id='shipping-details' turnOff={turnOff} /*className='hide-mobile'*/ style={{width: on? '100%' :'0%', height: on? '100%' :'00px',  transition: 'all 0.4s linear' ,overflow: 'hidden',  overflowY: 'hidden', whiteSpace:'nowrap'}} />
     
-        <div style={{width: '100%', marginLeft: on? '2rem' : 0}} id="shopping-cart">
+        <div style={{width: '100%', marginLeft: on? '2rem' : 0, display: display}} id="shopping-cart">
             
 
             <nav className=' hide-desktop cart-nav'>
-                <Link>Home/ </Link>
-                <Link>Marketplace/ </Link>
+                <Link to='/'>Home/ </Link>
+                <Link to='/marketplace'>Marketplace/ </Link>
                 <Link>Cart </Link>
                 
 
@@ -111,9 +142,10 @@ export default function ShoppingCart({on, turnOff}) {
                 
 
                 {!on && <div className="last-buttons">
-                    <Link className='hide-mobile blue' to='/cart'>Proceed to checkout</Link>
-                    <Link  className='hide-desktop blue'to='shipping'>Proceed to checkout</Link>
-                    <Link to='/cart'>Continue shopping</Link>
+                    <Link onClick={() => turnOn()} className='blue' >Proceed to checkout</Link>
+                    {/* <Link className='hide-desktop blue' to='/cart/shipping'>Proceed to checkout</Link> */}
+                    {/* <Link  className='hide-desktop blue'to='shipping'>Proceed to checkout</Link> */}
+                    <Link to='/marketplace'>Continue shopping</Link>
 
                 </div> }
                 

@@ -13,6 +13,7 @@ export default [
         name: 'Sassy',
         price: '3.20',
         img: image1,
+        isFavorite: false,
 
     },
     {
@@ -20,6 +21,7 @@ export default [
         name: 'Escape',
         price: '0.03',
         img: image2,
+        isFavorite: false,
 
     },
     {
@@ -27,6 +29,7 @@ export default [
         name: 'Serene',
         price: '1.07',
         img: image3,
+        isFavorite: false,
 
     },
     {
@@ -34,6 +37,7 @@ export default [
         name: 'Bougie',
         price: '7.20',
         img: image4,
+        isFavorite: false,
 
     },
     {
@@ -41,6 +45,7 @@ export default [
         name: 'Lost',
         price: '9.20',
         img: image5,
+        isFavorite: false,
 
     },
     {
@@ -48,6 +53,7 @@ export default [
         name: "Circa '95",
         price: '3.20',
         img: image6,
+        isFavorite: false,
 
     },
 ]

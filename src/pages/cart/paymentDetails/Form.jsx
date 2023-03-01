@@ -35,7 +35,7 @@ export default function Form() {
         <div className="form-head">
             <label className='select-wallet'><input type='radio' defaultChecked={true} name='wallet'/>Select your wallet</label>
 
-            <p className='hide-desktop' style={{color: '#747474'}}>Connect with one of our available wallet providers or add and connect a new wallet. </p>
+            <p className='mobile' style={{color: '#747474'}}>Connect with one of our available wallet providers or add and connect a new wallet. </p>
 
             <div className="wallet-icons">
                 <Metamask rx={rx}/>
@@ -50,7 +50,7 @@ export default function Form() {
 
         </div>
 
-        <p className='hide-mobile' style={{color: '#747474', fontSize: '24px', width: '461px', textAlign:'jusify', marginBottom: '1rem'}}>
+        <p className='desktop' style={{color: '#747474', fontSize: '24px', width: '461px', textAlign:'jusify', marginBottom: '1rem'}}>
           Connect with one of our available wallet providers or add and connect a new wallet. 
         </p>
 
