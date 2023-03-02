@@ -4,8 +4,10 @@ import './Drop.scss'
 import Footer from '../../components/Footer/Footer'
 import { Link } from 'react-router-dom'
 import { Context } from '../../Context/Context' 
-export default function Drop() {
+import countDown from '../../hooks/countDown'
 
+export default function Drop() {
+  const {time, showTime} = countDown()
   const { changeIndex } = useContext(Context)
 
   useEffect(() => {
@@ -48,7 +50,7 @@ export default function Drop() {
             <div className='time-flex'>
               <div>
                 <p>Time remaining</p>
-                <p className='drop-time'>{item.timeRemaining}</p>
+                <p className='drop-time'>{React.useMemo(() => showTime(time), [time])}</p>
               </div>
               <div style={{backgroundColor: '#4693ED'}} className="join">Join</div>
 

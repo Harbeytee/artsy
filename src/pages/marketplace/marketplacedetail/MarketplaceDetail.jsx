@@ -151,9 +151,9 @@ export default function MarketplaceDetail() {
                         
                         }
                         
-                        <button /*onClick={() => dispatch({type:detail.isFavorite ? 'UNLIKE ITEM' :'LIKE ITEM', id: detail.id})}*/ className='like'>
-                            <Like onClick={() => dispatch({type:detail.isFavorite ? 'UNLIKE ITEM' :'LIKE ITEM', id: detail.id})}  fill={detail.isFavorite ?'red' : 'none'} stroke={detail.isFavorite ? 'red' : '#333333'}/>
-                        </button>
+                        <div /*onClick={() => dispatch({type:detail.isFavorite ? 'UNLIKE ITEM' :'LIKE ITEM', id: detail.id})}*/ className='like'>
+                             <Like onClick={() => dispatch({type:detail.isFavorite ? 'UNLIKE ITEM' :'LIKE ITEM', id: detail.id})}  fill={detail.isFavorite ?'red' : 'none'} stroke={detail.isFavorite ? 'red' : '#333333'}/> 
+                        </div>
                     </div>
                 </div>
                 <div className='detail-dropdown'>Description</div>

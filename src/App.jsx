@@ -55,7 +55,7 @@ function App() {
               <Route path='/cart' element={<Cart index={index} changeIndex={changeIndex} on={on} turnOn={() => setOn(true) } turnOff={() => setOn(false)}/>}>
                 <Route index element={<ShoppingCart on={on} turnOn={() => setOn(true) } turnOff={() => setOn(false)}/>} />
                 <Route path='shipping' element={<ShippingDetails />} />
-                <Route path='payment' element={<PaymentDetails />} />
+                <Route path='payment' element={<PaymentDetails changeIndex={changeIndex}/>} />
               </Route>
               <Route path='/confirmed' element={<Confirmed />} />
             </Route>

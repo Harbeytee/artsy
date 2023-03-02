@@ -6,7 +6,10 @@ import padlock from '../../../assets/paymentDetails/padlock.svg'
 import Form from './Form'
 import PaymentSummary from './PaymentSummary'
 
-export default function PaymentDetails() {
+export default function PaymentDetails({changeIndex}) {
+  React.useEffect(() => {
+    changeIndex(3)
+  }, [])
   return (
     <div id='payment-details'>
       

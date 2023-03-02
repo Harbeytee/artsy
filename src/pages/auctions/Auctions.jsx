@@ -4,10 +4,10 @@ import product from './product'
 import './Auctions.scss'
 import Like from '../../assets/marketplace/Like'
 import { Context } from '../../Context/Context' 
-
+import countDown from '../../hooks/countDown'
 
 export default function Auctions() {
-  const [time, setTime] = useState(24015)
+  const {time, showTime} =countDown()
   const { changeIndex } = useContext(Context)
 
   useEffect(() => {
@@ -16,51 +16,33 @@ export default function Auctions() {
 
   }, [])
   
-
-    function showTime(val) {
-      let hours = Math.floor(val / 3600)
-      let minutes = Math.floor((val % 3600) / 60)
-      let seconds = val % 60
-
-      return `${hours}hr : ${minutes}mins : ${seconds}s`
-
-      //return minutes
-      //24015const seconds = val 
-
-    }
-    
-    
   useEffect(() => {
-    if(time <= 0) {
-      setTime(24015)
-    }
-    else {
-          const timeout = setInterval(() => {
-            setTime(prev => prev - 1)
-        }, 1000)
-        //console.log(time)
-        return () => {
-          clearInterval(timeout)
-        }
-
+      console.log('rerendered')
+  }, [])
+   
+    function hello(params) {
+      
     }
     
-    
-  }, [time])
+  
   
 
   const auction1 = product.auction1.map((item, index) => (
-    <Link to={`${item.id}`} key={index} className='auction1-img' style={{backgroundImage: `url(${item.img})`}}>
-      <div className="timer">{showTime(time)}</div>
+    <Link className='auction-img-container' to={`${item.id}`} key={index}>
+        <div /*style={{width: '100px', height: '100%', backgroundColor: 'red', position: 'absolute', zIndex: '2'}}*/ className="auction-shadow"></div>
+        <div className='auction1-img' style={{backgroundImage: `url(${item.img})`}}>
+          <div className="timer">{React.useMemo(() => showTime(time), [time])}</div>
 
+        </div>
     </Link>
+    
   ))
   const auction2 = product.auction2.map((item, index) => (
     <div key={index}>
       
 
       <div className="auction2-card">
-      <Like className='heart'/>
+      <Like className='heart' onClick={() => hello()}/>
         <div  className='auction2-img' style={{backgroundImage: `url(${item.img})`}}>
             
         </div>

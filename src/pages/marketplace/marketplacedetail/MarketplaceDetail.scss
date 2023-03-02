@@ -121,13 +121,16 @@
     display: flex;
     justify-content: center;
     align-items: center; 
-    cursor: pointer;
+    
     svg {
+        cursor: pointer;
         width: 25px;
+        &:hover {
+            transform: scale(1.1);
+            transition: all 0.35s linear;
+        }
     }
-    &:hover {
-        background: #f9f9f9;
-    }
+    
 }
 
 .detail-dropdown {
