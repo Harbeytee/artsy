@@ -7,6 +7,7 @@ import Footer from '../../components/Footer/Footer'
 import './Home.scss'
 import { Context } from '../../Context/Context'
 
+import "animate.css/animate.min.css";
 export default function Home() {
   const { changeIndex } = useContext(Context)
 

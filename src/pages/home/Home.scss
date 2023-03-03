@@ -25,14 +25,32 @@ main {
         width: 95%;
         max-width: 450px;
         line-height: 2.6rem;
+        //animation: fadeInUp 1s linear;
+       //opacity: 0;
     }
     p {
         width: 90%;
         max-width: 400px;
         margin-top: 1.1rem;
         line-height: 1.5rem;
+        //animation: fadeInUp 1s linear;
 
     }
+    
+}
+@keyframes fadeUp{
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0,100%,0);
+        transform: translate3d(0,100%,0);
+    }
+    
+    100% {
+        opacity: 1;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+    
     
 }
 .slide {
@@ -517,14 +535,14 @@ main {
     }
     
 }
-table {
+.navigate {
    // border: collapse;
     margin-top: 6rem;
     margin-bottom: 7rem;
     display: grid;
     border-bottom: 1px solid;
     width: 100%;
-    tr {
+    .navigate-2 {
         border-top: 1px solid black;
     }
      a {
@@ -637,12 +655,12 @@ table {
             margin-top: 0;
         }
     }
-    table {
+    .navigate {
         
         a {
             font-size: 48px;
         }
-        tr {
+        .navigate-2 {
             padding: 2rem 6rem 2rem 2rem;
         }
         .arrow {

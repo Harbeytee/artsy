@@ -35,14 +35,24 @@ export default function Navbar({turnOff, changeI}) {
   return (
    <>
    {displayMessage && <div style={style} className="msg">{msg.message}</div>}
-    <header id="navbar">
+    <header id="navbar" >
         <div className='head'>
-            <nav /*style={{position : display && window.matchMedia('(max-width:759px)').matches ? 'absolute' : 'relative', right: '15px'}}*/ onClick={() => setDisplay(!display)} className='hamburger'>
+            <nav /*style={{transform : display? 'translateX(-100vw)' : 'translateX(0)'}}*/ onClick={() => setDisplay(!display)} className='hamburger'>
                 <div style={{transform: display? "translateY(4.5px) rotate(45deg)" : "rotate(0)"}}></div>
                 <div style={{opacity: display? "0" : "1"}}></div>
                 <div style={{transform: display? "translateY(-4.5px) rotate(-45deg)" : "rotate(0)"}}></div>
             </nav>
-            <Link to='/' style={{marginLeft: display?'calc(100% - 110px)': '0'}}>ARTSY.</Link>
+
+            <Link to='/' style={{marginLeft: display? 'calc(100% - 110px)': '0'}}>ARTSY.</Link>
+
+
+            {/* <nav style={{display : display? 'block' : 'none'}} onClick={() => setDisplay(!display)} className='hamburger'>
+                <div style={{transform: display? "translateY(4.5px) rotate(45deg)" : "rotate(0)"}}></div>
+                <div style={{opacity: display? "0" : "1"}}></div>
+                <div style={{transform: display? "translateY(-4.5px) rotate(-45deg)" : "rotate(0)"}}></div>
+            </nav> */}
+
+
             <div style={{opacity : display?'0' : '1'}} className='icons'>
                 <img src={search} alt="search icon" />
                 <div style={{position: 'relative'}}>

@@ -5,6 +5,7 @@ import heromobile2 from '../../assets/home/heroMobile/img2.svg'
 import heromobile3 from '../../assets/home/heroMobile/img3.svg'
 import sliderData from './sliderData'
 import fadeinAnimation from '../../hooks/fadeinAnimation'
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 export default function HeroSection() {
  
@@ -44,9 +45,9 @@ export default function HeroSection() {
     
     return (
     <div key={val.id} className="slide-container">
-      <div style={{marginLeft: index + num > sliderData.length - 1 // if index is greater than the sider length -1 image won't show the code sets it back to first image
+      <div  style={{marginLeft: index + num > sliderData.length - 1 // if index is greater than the sider length -1 image won't show the code sets it back to first image
         ? 
-        `-${(num - index) * 320}px` :`-${(index + num) * 320}px`}} className="slide-images">
+        `-${(num - index) * 320}px` :`-${(index + num) * 320}px`}} className={`slide-images animate__animated animate__${(index + 1) % 2 == 0 ? 'fadeInLeft' : 'fadeInRight'}`}>
         {sliderData.map(item => <img src={item.img}/>)}
         
         
@@ -58,14 +59,17 @@ export default function HeroSection() {
 
   return (
     <section className='hero' >
-        <h1>Photography is poetry & beautiful untold stories</h1>
-        <p>Flip through more than 10,000 vintage shots, old photograghs, 
+        <h1 className='animate__animated animate__fadeInUp'>Photography is poetry & beautiful untold stories</h1>
+        
+          <p className='animate__animated animate__fadeInUp'>Flip through more than 10,000 vintage shots, old photograghs, 
           historic images and captures seamlessly in one place. Register to get top access.
-        </p>
+          </p>
+        
         <div className="slide">
           {images}
-         
-        <div className='hero-mobile'>
+
+        
+        <div className='hero-mobile animate__animated animate__fadeInUp'>
           <img style={{opacity: changeVisibility(0)}} src={heromobile1} alt="hands holding a bunch of flowers"  />
           <img style={{opacity: changeVisibility(1)}} src={heromobile2} alt="hands holding a bunch of flowers"  />
           <img style={{opacity: changeVisibility(2)}} src={heromobile3} alt="hands holding a bunch of flowers"  />

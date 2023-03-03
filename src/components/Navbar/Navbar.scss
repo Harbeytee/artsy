@@ -75,7 +75,7 @@
     transition: all 0.4s linear;
     
     > a {
-        transition: margin-left 0.4s ease-in-out;
+        transition: margin-left 0.6s ease-in-out;
         //background-color: red;
     }
 }
@@ -108,15 +108,25 @@
     position: fixed; //new
     width: 100%; //new
    z-index: 100;
+   transition: all 0.4s linear;
+   //transition: all 10s linear;
     a {
         margin-top: 1.5rem;
         font-size: 1.4rem;
         cursor: pointer;
-        transition: all 100s linear;
-        
+        transition: margin-left 0.4s linear;
+    }    
        
-    }
+    
 
+}
+@keyframes margin {
+    from {
+        margin-right: 0;
+    }
+    to {
+        margin-right: calc(100% - 110px);
+    }
 }
 .message {
     position:absolute;
@@ -145,7 +155,9 @@
     .message, .hamburger {
         display: none;
     }
-    #navbar > nav {
+    #navbar {
+        animation: slideDown 0.7s ease-in-out;
+      > nav {
         flex-direction: row;
         height: 48px;
         padding: 0;
@@ -161,6 +173,7 @@
         width: 350px;
         //transition: all 0.4s linear;
         //transform: translateY(0%);
+        
         z-index: 1000;
         background-color: #f9f9f9;
         a {
@@ -168,6 +181,15 @@
             
             
             
+        }
+    }
+    }
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0%);
         }
     }
     .header {
