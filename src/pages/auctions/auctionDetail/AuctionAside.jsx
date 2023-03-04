@@ -5,6 +5,7 @@ export default function AuctionAside() {
 
     const comment = comments.map((val, index) => (
         <div key={index}>
+            <img src={val.img} alt="" />
             <div className="commenter">{val.name}</div>
             <div className="commenter-comment">{val.comment}</div>
         </div>
