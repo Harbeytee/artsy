@@ -20,7 +20,7 @@ export default function Upcoming() {
             
           </div>
         </AnimationOnScroll>
-        <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInUp" >
+        <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInRight" >
           <div className="upcoming">
             <div className='card'>
               <div className='upcoming-title'>
