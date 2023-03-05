@@ -1,11 +1,23 @@
-import React from 'react'
-import feat from './FeaturedData'
+import React, { useState, useEffect } from 'react'
+import featuredData from './FeaturedData'
 import Arrow from '../../assets/home/Arrow'
 import people from '../../assets/home/people.svg'
 import { Link } from 'react-router-dom'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 export default function FeaturedProducts() {
- 
+  const [ feat, setFeat ] = useState(featuredData)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+        setInterval(prev => [...prev, prev[0]])
+    }, 1000);
+  
+    return () => {
+      clearInterval(interval)
+    }
+  }, [])
+  
+
   const products = feat.map((product, index) => (
     <div key={index}>
       

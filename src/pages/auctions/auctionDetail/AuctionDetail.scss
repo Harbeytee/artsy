@@ -208,6 +208,7 @@
             grid-template-columns: 1fr 1fr;
         }
         .auction-aside {
+            //overflow-y: scroll;
             background-color: #f9f9f9;
             display: flex;
             flex-direction: column;
@@ -246,6 +247,13 @@
             }
         }
     }
+    .comments-container {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding-right: 3rem;
+        
+    }
     .comment-img {
         width: 60px;
         margin-right: 1rem;
@@ -268,5 +276,9 @@
         position: absolute;
         bottom: 18px;
         right: 28px;
+    }
+    .comments {
+        height: 480px;
+        overflow-y: scroll;
     }
 }

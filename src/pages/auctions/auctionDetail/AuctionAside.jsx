@@ -24,6 +24,8 @@ export default function AuctionAside() {
                 </div>
               </div>
 
+              <div className="hearts">hearts</div>
+
             </div>
             
             <p>Creator : Stormi Rylie</p>
