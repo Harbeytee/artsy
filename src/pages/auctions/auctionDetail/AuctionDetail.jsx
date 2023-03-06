@@ -34,7 +34,7 @@ export default function AuctionDetail() {
         <div className="auction-flex">
           <div className='auction-bg' style={{backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(${productDetail.img})`}}>
             <header>
-              <p>Tag: Lost or Wither</p>
+              <p >Tag: Lost or Wither</p>
 
               <div className='header-2'>
 
@@ -56,7 +56,7 @@ export default function AuctionDetail() {
               <div className="auction-comments"></div>
               <div className="auction-hearts"></div>
               <input type="text" placeholder='Join conversation...'/>
-              <p>Tag: Lost or Wither</p>
+              <p className='music-name'>Tag: Lost or Wither</p>
 
             </div>
             

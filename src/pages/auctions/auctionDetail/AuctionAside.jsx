@@ -1,11 +1,41 @@
-import React from 'react'
-import comments from './comments'
+import React, {useState, useEffect} from 'react'
+import commenters from './comments'
 import airplane from '../../../assets/auctions/airplane.svg'
 
 export default function AuctionAside() {
 
+  const [ comments, setComments ] = useState(commenters)
+  const [number, setNumber] = useState(0)
+
+  if(comments.length > 12) {
+    setNumber(0)
+    setComments(prev => prev.slice(6, 12))
+  }
+  else {
+    useEffect(() => {
+      // setNumber(prev => prev + 1)
+           
+          
+             
+           
+       
+       console.log(comments)
+       const interval = setInterval(() => {
+        setNumber(prev => prev + 1)
+           setComments(prev =>  [...prev, prev[number] ])
+           
+       }, 3000);
+     
+       return () => {
+         clearInterval(interval)
+       }
+     }, [number])
+  }
+ 
+  //animate__animated animate__fadeInUp
+
     const comment = comments.map((val, index) => (
-        <div className='commenter' key={index}>
+        <div className='commenter animate__animated animate__fadeInUp' key={index}>
             <img className='comment-img' src={val.img} alt="" />
             <div className='comment-info'>
                 <div className="commenter-name">{val.name}</div>

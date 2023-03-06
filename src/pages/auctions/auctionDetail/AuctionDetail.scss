@@ -1,3 +1,21 @@
+.music-name {
+    width: 20px;
+    background-color: red;
+    height: 50px;
+    overflow: hidden;
+   // text-overflow: ellipsis;
+    white-space: nowrap;
+    animation: scroll 10s linear infinite;
+}
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
 .centerize {
     display: flex;
     justify-content: center;
@@ -278,7 +296,10 @@
         right: 28px;
     }
     .comments {
+        display: flex;
+        flex-direction: column;
+        flex-direction: column-reverse;
         height: 480px;
-        overflow-y: scroll;
+        overflow-y: visible;
     }
 }

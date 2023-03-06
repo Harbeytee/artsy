@@ -24,9 +24,9 @@ function App() {
             setIndex(val)
     }
 
-  useEffect(()=> {
-    console.log(index)
-  },[index])
+  // useEffect(()=> {
+  //   console.log(index)
+  // },[index])
 
   // useEffect(() => {
   //   window.addEventListener("resize", function() {
