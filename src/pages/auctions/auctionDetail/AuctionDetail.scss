@@ -1,18 +1,20 @@
-.music-name {
-    width: 20px;
-    background-color: red;
-    height: 50px;
-    overflow: hidden;
-   // text-overflow: ellipsis;
+.marquee {
     white-space: nowrap;
-    animation: scroll 10s linear infinite;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    animation: marquee 10s linear infinite;
+    span {
+        display: inline-block;
+        padding-right: 30px;
+    }
 }
-@keyframes scroll {
+@keyframes marquee {
     0% {
-        transform: translateX(0);
+        left: 0;
     }
     100% {
-        transform: translateX(-100%);
+        left: -100%;
     }
 }
 

@@ -56,10 +56,16 @@ export default function AuctionDetail() {
               <div className="auction-comments"></div>
               <div className="auction-hearts"></div>
               <input type="text" placeholder='Join conversation...'/>
-              <p className='music-name'>Tag: Lost or Wither</p>
+              <p>Tag: Lost or Wither</p>
 
             </div>
-            
+            <div className="marquee">
+              <span>hello</span>
+              <span>hello</span>
+              <span>hello</span>
+              <span>hello</span>
+              <span>hello</span>
+            </div>
           </div>
           <AuctionAside />
 

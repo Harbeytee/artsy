@@ -9,7 +9,7 @@ export default function AuctionAside() {
 
   if(comments.length > 12) {
     setNumber(0)
-    setComments(prev => prev.slice(6, 12))
+    setComments((prev) => prev.filter((val, index) => index > 6))
   }
   else {
     useEffect(() => {
