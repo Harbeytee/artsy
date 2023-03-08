@@ -59,13 +59,13 @@ export default function AuctionDetail() {
               <p>Tag: Lost or Wither</p>
 
             </div>
-            <div className="marquee">
+            {/* <div className="marquee">
               <span>hello</span>
               <span>hello</span>
               <span>hello</span>
               <span>hello</span>
               <span>hello</span>
-            </div>
+            </div> */}
           </div>
           <AuctionAside />
 
