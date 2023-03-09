@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import './AuctionDetail.scss'
 import { useParams } from 'react-router-dom'
 import product from '../product'
@@ -20,6 +20,29 @@ export default function AuctionDetail() {
 
     
     //console.log(productDetail)
+    // const [offset, setOffset] = useState(0)
+    // useEffect(() => {
+    //   let animationFrameId;
+    //   const marquee = document.querySelector('.marquee')
+    //   const marqueeWidth = marquee.clientWidth
+    //   const textWidth = marquee.scrollWidth
+
+    //   function loop() {
+    //     setOffset(prev => prev < -textWidth ? marqueeWidth : prev - 1)
+    //     animationFrameId = requestAnimationFrame(loop)
+    //   }
+
+    //   loop()
+    //   // const interval = setInterval(() => {
+    //   //   //setPosition(prev => prev<=)
+    //   // }, 10);
+    
+    //   return () => {
+    //     cancelAnimationFrame(animationFrameId)
+    //   }
+    // }, [])
+    
+
 
   return (
     <div id='auction-detail'>
@@ -57,15 +80,19 @@ export default function AuctionDetail() {
               <div className="auction-hearts"></div>
               <input type="text" placeholder='Join conversation...'/>
               <p>Tag: Lost or Wither</p>
+              <div className='marquee-container'>
+                <div className="marqukee">
+                 
+                  <span>hello</span>
+                  <span>hello</span>
+                  <span>hello</span>
+                  <span>hello</span>
+                  <span>hello</span>
+                </div>
 
+              </div>
             </div>
-            {/* <div className="marquee">
-              <span>hello</span>
-              <span>hello</span>
-              <span>hello</span>
-              <span>hello</span>
-              <span>hello</span>
-            </div> */}
+            
           </div>
           <AuctionAside />
 
