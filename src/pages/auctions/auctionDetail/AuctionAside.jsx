@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import commenters from './comments'
 import airplane from '../../../assets/auctions/airplane.svg'
 
@@ -32,6 +32,30 @@ export default function AuctionAside() {
      }, [number])
   }
  
+  const heart = useRef(null)
+  const heartAnimation = () => {
+    let b =  Math.floor((Math.random() * 100 )+ 1)
+    let d = ['flowOne', 'flowTwo', 'flowThree'] //a random animation of the heart
+    let randomColour = ['col1','col2', 'col3', 'col4', 'col5', 'col6',]
+    let c = (Math.random() * (1.6 - 1.2) + 1.2).toFixed(1)
+    const array = []
+        for(let i = 1; i <=100; i++ ) {
+          setInterval(() => {
+            array.push[i]
+          }, 1000);
+
+
+          
+
+            // return (
+            // <div style={{width: `${Math.floor(Math.random() * (50 - 22) + 22)}px`, animation: `${d[Math.floor(Math.random() * 3)]} ${c}s linear`, display: 'inline-block' }} 
+            // className={`part-${b}`} fill={randomColour[Math.floor(Math.random() * 6)]}>
+
+            // </div>
+            // )
+        }
+  }
+
   //animate__animated animate__fadeInUp
   // const [speed, setSpeed] = useState(4);
   // const [lastScrollPos, setLastScrollPos] = useState(0);
@@ -81,14 +105,14 @@ export default function AuctionAside() {
   //   };
   // }, [speed, lastScrollPos]);
 
-  
+  console.log(heart)
 
     const comment = comments.map((val, index) => (
         <div className='commenter animate__animated animate__fadeInUp' key={index}>
             <img className='comment-img' src={val.img} alt="" />
             <div className='comment-info'>
-                <div className="commenter-name">{val.name}</div>
-                <div className="commenter-comment">{val.comment}</div>
+              <div className="commenter-name">{val.name}</div>
+              <div className="commenter-comment">{val.comment}</div>
 
             </div>
             

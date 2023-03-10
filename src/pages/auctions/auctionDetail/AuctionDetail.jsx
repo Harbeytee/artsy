@@ -5,6 +5,7 @@ import product from '../product'
 import { Context } from '../../../Context/Context'
 import { Link } from 'react-router-dom'
 import AuctionAside from './AuctionAside'
+import Marquee from '../Marquee/Marquee' 
 
 export default function AuctionDetail() {
 
@@ -42,7 +43,11 @@ export default function AuctionDetail() {
     //   }
     // }, [])
     
-
+  const list = [
+    'hello',
+    'hello',
+    'hello'
+  ]
 
   return (
     <div id='auction-detail'>
@@ -80,17 +85,9 @@ export default function AuctionDetail() {
               <div className="auction-hearts"></div>
               <input type="text" placeholder='Join conversation...'/>
               <p>Tag: Lost or Wither</p>
-              <div className='marquee-container'>
-                <div className="marqukee">
-                 
-                  <span>hello</span>
-                  <span>hello</span>
-                  <span>hello</span>
-                  <span>hello</span>
-                  <span>hello</span>
-                </div>
+              
 
-              </div>
+              
             </div>
             
           </div>
