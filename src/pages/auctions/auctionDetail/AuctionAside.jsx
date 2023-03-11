@@ -1,11 +1,15 @@
 import React, {useState, useEffect, useRef} from 'react'
 import commenters from './comments'
 import airplane from '../../../assets/auctions/airplane.svg'
+import { unstable_renderSubtreeIntoContainer } from 'react-dom'
+
 
 export default function AuctionAside() {
 
    const [ comments, setComments ] = useState(commenters)
+   const [heart, setHeart] = useState(['heart'])
   const [number, setNumber] = useState(0)
+  
 
   if(comments.length > 12) {
     setNumber(0)
@@ -19,7 +23,7 @@ export default function AuctionAside() {
              
            
        
-       console.log(comments)
+      // console.log(comments)
        const interval = setInterval(() => {
         setNumber(prev => prev + 1)
         setComments(prev =>  [...prev, prev[number] ])
@@ -32,29 +36,70 @@ export default function AuctionAside() {
      }, [number])
   }
  
-  const heart = useRef(null)
-  const heartAnimation = () => {
-    let b =  Math.floor((Math.random() * 100 )+ 1)
-    let d = ['flowOne', 'flowTwo', 'flowThree'] //a random animation of the heart
-    let randomColour = ['col1','col2', 'col3', 'col4', 'col5', 'col6',]
-    let c = (Math.random() * (1.6 - 1.2) + 1.2).toFixed(1)
-    const array = []
-        for(let i = 1; i <=100; i++ ) {
-          setInterval(() => {
-            array.push[i]
-          }, 1000);
 
+    function letters() {
+      let b =  Math.floor((Math.random() * 100 )+ 1)
+      let d = ['flowOne', 'flowTwo', 'flowThree'] //a random animation of the heart
+      let randomColour = ['col1','col2', 'col3', 'col4', 'col5', 'col6',]
+      let c = (Math.random() * (1.6 - 1.2) + 1.2).toFixed(1)
 
-          
+     
 
-            // return (
-            // <div style={{width: `${Math.floor(Math.random() * (50 - 22) + 22)}px`, animation: `${d[Math.floor(Math.random() * 3)]} ${c}s linear`, display: 'inline-block' }} 
-            // className={`part-${b}`} fill={randomColour[Math.floor(Math.random() * 6)]}>
+      return {b, d ,c , randomColour}
+    }
+    
+    
+   
+    useEffect(() => {
+      
+        const heartInterval = setInterval(() => {
+        const {b, d ,c , randomColour} = letters()
+        setHeart(prev => [...prev, `heart${b}`])
+        setTimeout(() => {
+          setHeart(prev => prev.filter((val, index) => val != `heart${b}`))
+        }, c * 900)
+        console.log(heart)
+        console.log(b)
+      }, 1000)
 
-            // </div>
-            // )
-        }
-  }
+    
+    return () => {
+      
+        clearInterval(heartInterval)
+    }
+    
+  }, [heart])
+   
+      
+          // for(let i = 1; i <= 100; i++) {
+          //     setInterval(() => {
+          //       array.push(i)
+          //     }, 1000);
+              
+          // }
+          // console.log(array)
+          //console.log(array)
+          // setInterval(() => {
+          //   return (
+          //   <div style={{width: `${Math.floor(Math.random() * (50 - 22) + 22)}px`, animation: `${d[Math.floor(Math.random() * 3)]} ${c}s linear`, display: 'inline-block' }} 
+          //   className={`part-${b}`} fill={randomColour[Math.floor(Math.random() * 6)]}>
+
+          //   </div>
+          //   )
+
+          // }, 1000); 
+
+            
+        
+  
+  
+        
+
+  
+
+ 
+  
+  
 
   //animate__animated animate__fadeInUp
   // const [speed, setSpeed] = useState(4);
@@ -105,7 +150,7 @@ export default function AuctionAside() {
   //   };
   // }, [speed, lastScrollPos]);
 
-  console.log(heart)
+  //console.log(heart)
 
     const comment = comments.map((val, index) => (
         <div className='commenter animate__animated animate__fadeInUp' key={index}>
@@ -128,10 +173,7 @@ export default function AuctionAside() {
               </div>
 
               <div className="hearts">
-                <div className="marquees">
-                  <div className="inners"><p>hello</p></div>
-                </div>
-                hearts
+              
               </div>
 
             </div>
