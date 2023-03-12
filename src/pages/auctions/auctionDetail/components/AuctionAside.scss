@@ -1,0 +1,144 @@
+.auction-aside {
+    background-color: transparent;
+    input {
+        border: 1px solid white;
+    }
+}
+
+.comment-img {
+    width: 40px;
+    margin-right: 1rem;
+}
+.auction-aside2 {
+    display: block;
+}
+.auction-aside {
+    height: 100px;
+}
+.commenter {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.45rem;
+}
+.comments {
+    height: 100px;
+    background-color: inherit;
+    margin-bottom: 1rem;
+   flex-direction: column;
+    overflow: hidden;
+}
+.comments-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    //padding-right: 3rem;
+    
+}
+@media only screen and (min-width: 1100px) {
+
+   
+    .auction-aside {
+        //overflow-y: scroll;
+        //background-color: #f9f9f9;
+        display: flex;
+        flex-direction: column;
+        padding: 0 0 1rem 2.5rem;
+        p {
+            color: #BAB9B9;
+            font-style: italic;
+            font-weight: 500;
+            font-size: 20px;
+        }
+        input {
+            width: 404px;
+            height: 65px;
+            border-radius: 25px;
+            background-color: transparent;
+            border: 1px solid #616161;
+           // text-indent: 2rem;
+            font-size: 22px;
+            color: #616161;
+            margin-top: 0.5rem;
+            padding-right: 4.3rem;
+            padding-left: 2rem;
+            &::placeholder {
+                color: #616161;
+                font-weight: 500;
+                font-size: 22px;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+        .commenter {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.45rem;
+        }
+    }
+    .comments-container {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        //padding-right: 3rem;
+        
+    }
+    .comment-img {
+        width: 60px;
+        margin-right: 1rem;
+    }
+    .commenter-name {
+        margin-bottom: 0.7rem;
+        color: #333333;
+        font-weight: 400;
+    }
+    .commenter-comment {
+        color: #333333;
+        font-weight: 500;
+    }
+    .input2 {
+        position: relative;
+        width: 404px;
+       
+    }
+    .airplane {
+        position: absolute;
+        bottom: 18px;
+        right: 28px;
+    }
+    .comments {
+        display: flex;
+        flex-direction: column;
+        flex-direction: column-reverse;
+        height: 480px;
+        overflow-y: hidden;
+    }
+    .aside-heart {
+        width: 20px;
+        margin-left: 1rem;
+        margin-right: 3rem;
+        width: 58.79px;
+        height: 58.79px;
+        padding: 0.5rem;
+        fill: #E31616;
+        border-radius: 50%;
+        border-width: 0.1px;
+        
+        //height: 32.67px;
+       // background-color: red;
+       border: 1px solid black;
+       path {
+        box-shadow: inset 0px 8.16707px 8.16707px rgba(0, 0, 0, 0.25);
+    }
+    }
+    .aside-bottom {
+    
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+       
+    }
+}
+

@@ -4,9 +4,9 @@ import { useParams } from 'react-router-dom'
 import product from '../product'
 import { Context } from '../../../Context/Context'
 import { Link } from 'react-router-dom'
-import AuctionAside from './AuctionAside'
+import AuctionAside from './components/AuctionAside'
 import Marquee from '../Marquee/Marquee' 
-
+import Like from '../../../assets/marketplace/Like'
 export default function AuctionDetail() {
 
   const { changeIndex } = useContext(Context)
@@ -19,29 +19,6 @@ export default function AuctionDetail() {
 
   }, [])
 
-    
-    //console.log(productDetail)
-    // const [offset, setOffset] = useState(0)
-    // useEffect(() => {
-    //   let animationFrameId;
-    //   const marquee = document.querySelector('.marquee')
-    //   const marqueeWidth = marquee.clientWidth
-    //   const textWidth = marquee.scrollWidth
-
-    //   function loop() {
-    //     setOffset(prev => prev < -textWidth ? marqueeWidth : prev - 1)
-    //     animationFrameId = requestAnimationFrame(loop)
-    //   }
-
-    //   loop()
-    //   // const interval = setInterval(() => {
-    //   //   //setPosition(prev => prev<=)
-    //   // }, 10);
-    
-    //   return () => {
-    //     cancelAnimationFrame(animationFrameId)
-    //   }
-    // }, [])
     
   const list = [
     'hello',
@@ -83,8 +60,9 @@ export default function AuctionDetail() {
             <div className='last-part'>
               <div className="auction-comments"></div>
               <div className="auction-hearts"></div>
-              <input type="text" placeholder='Join conversation...'/>
+              {/* <input type="text" placeholder='Join conversation...'/> */}
               <p>Tag: Lost or Wither</p>
+              <AuctionAside className='auction-aside2'/>
               
 
               

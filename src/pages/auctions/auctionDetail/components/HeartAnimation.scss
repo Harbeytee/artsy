@@ -1,0 +1,142 @@
+.hearts {
+    width: 100px;
+    height: 60%;
+    position: relative;
+    bottom: -25px;
+    right: 0%;
+    background-color: red;
+    
+    //margin-left: -50px;
+   // background-color: red;
+}
+
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+    bottom: 0;
+    
+    //display: none;
+    svg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.col1 {
+    svg {
+        fill: #fce473;
+    }
+    
+}
+.col2 {
+    svg {
+        fill: #f68b39;
+    }
+    
+}
+.col3 {
+    svg {
+        fill: #F44336;
+    }
+    
+}
+.col4 {
+    svg {
+        fill: #9747FF;
+    }
+    
+}
+.col5 {
+    svg {
+        fill: #36F46B;
+    }
+    
+}
+.col6 {
+    svg {
+        fill: #4693ED;
+    }
+    
+}
+@keyframes flowOne {
+    0% {
+        opacity: 0;
+        bottom: 0;
+        left: 14%;
+    }
+    40% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+        left: 0;
+    }
+    60% {
+        opacity: .2;
+    }
+    80% {
+        bottom: 80%;
+    }
+    100% {
+        opacity: 0;
+        bottom: 100%;
+        left: 18%;
+       // display: none;
+    }
+}
+@keyframes flowTwo {
+    0% {
+        opacity: 0;
+        bottom: 0;
+        left: 0;
+    }
+    40% {
+        opacity: .8;
+    }
+    50% {
+        opacity: 1;
+        left: 11%;
+    }
+    60% {
+        opacity: .2;
+    }
+    80% {
+        bottom: 60%;
+    }
+    100% {
+        opacity: 0;
+        bottom: 80%;
+        left: 0;
+       // display: none;
+    }
+}
+@keyframes flowThree {
+    0% {
+        opacity: 0;
+        bottom: 0;
+        left: 0;
+    }
+    40% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+        left: 30%;
+    }
+    60% {
+        opacity: .2;
+    }
+    80% {
+        bottom: 70%;
+    }
+    100% {
+        opacity: 0;
+        bottom: 90%;
+        left: 0;
+       // display: none;
+    }
+}
