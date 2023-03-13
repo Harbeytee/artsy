@@ -3,6 +3,11 @@
     input {
         border: 1px solid white;
     }
+    .hearts {
+       right: -30px;
+       bottom: 0;
+    }
+    
 }
 
 .comment-img {
@@ -13,7 +18,9 @@
     display: block;
 }
 .auction-aside {
-    height: 100px;
+    //height: 100%;
+    //background-color: rgba(0, 0, 0, 0.5);
+    padding: 0;
 }
 .commenter {
     display: flex;
@@ -21,11 +28,11 @@
     margin-bottom: 1.45rem;
 }
 .comments {
-    height: 100px;
-    background-color: inherit;
-    margin-bottom: 1rem;
-   flex-direction: column;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 300px;
+   overflow-y: hidden;
+   //box-shadow: inset 0px 0px 2px 50px rgba(0, 0, 0, 0.25);
 }
 .comments-container {
     display: flex;
@@ -34,15 +41,70 @@
     //padding-right: 3rem;
     
 }
+.aside-bottom {
+    
+        
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  // max-width: 500px;
+  // margin: 0.5rem auto 0;
+   // height: 50px;
+   
+}
+.aside-heart {
+   // width: 45px;
+   // height: 45px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 55.79px;
+    height: 58.79px;
+
+    padding: 0.5rem;
+    fill: #E31616;
+    border-radius: 50%;
+    width: 15vmin;
+    height: 12vmin;
+    max-width: 55.79px;
+    max-height: 58.79px;
+    background-color: rgba(255, 255, 255, 0.35);
+    //height: 32.67px;
+   // background-color: red;
+   
+   path {
+    box-shadow: inset 0px 8.16707px 8.16707px rgba(0, 0, 0, 0.25);}
+}
+
+.input2 {
+    position: relative;
+    width: 100%;
+    
+    svg {
+        position: absolute;
+        bottom: 10px;
+        right: 22px;
+        width: 25px;
+        path {fill: white;}
+    }
+}
+
+
 @media only screen and (min-width: 1100px) {
 
-   
+    .auction-aside2 {
+        display: none;
+    }
+    
     .auction-aside {
         //overflow-y: scroll;
-        //background-color: #f9f9f9;
+        background-color: #f9f9f9;
         display: flex;
         flex-direction: column;
         padding: 0 0 1rem 2.5rem;
+        .hearts {
+            bottom: -25px;
+            right: 0%;
+        }
         p {
             color: #BAB9B9;
             font-style: italic;
@@ -99,19 +161,21 @@
     .input2 {
         position: relative;
         width: 404px;
-       
+        svg {
+            position: absolute;
+            bottom: 18px;
+            right: 28px;
+            path {
+                fill: #292929;
+            }
+        }
     }
-    .airplane {
-        position: absolute;
-        bottom: 18px;
-        right: 28px;
-    }
+    
     .comments {
         display: flex;
-        flex-direction: column;
         flex-direction: column-reverse;
         height: 480px;
-        overflow-y: hidden;
+       // overflow-y: hidden;
     }
     .aside-heart {
         width: 20px;
@@ -123,7 +187,7 @@
         fill: #E31616;
         border-radius: 50%;
         border-width: 0.1px;
-        
+        background-color: transparent;
         //height: 32.67px;
        // background-color: red;
        border: 1px solid black;
@@ -138,7 +202,6 @@
         justify-content: space-between;
         align-items: center;
         
-       
     }
 }
 

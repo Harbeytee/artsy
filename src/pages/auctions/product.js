@@ -23,21 +23,24 @@ export default {
     ],
 
    auction2: [
-    {
+    {   id: 1,
         img: img4,
         name: 'Out of the box',
         creator: 'dan murray',
         date:'12/08/22',
         highestBid: '0.57 ETH',
         currentBid: '0.987ETH',
+        isLiked: false,
     },
     {
+        id: 2,
         img: img5,
         name: 'Falling apart',
         creator: 'jacob banks',
         date:'12/08/22',
         highestBid: '0.34 ETH',
         currentBid: '0.99ETH',
+        isLiked: false,
     }
 
     ]

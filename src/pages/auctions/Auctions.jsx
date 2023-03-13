@@ -9,7 +9,8 @@ import countDown from '../../hooks/countDown'
 export default function Auctions() {
   const {time, showTime} =countDown()
   const { changeIndex } = useContext(Context)
-
+  const [fill, setFill] = useState(false)
+  const [secondAuction, setSecondAuction] = useState(product.auction2)
   useEffect(() => {
     changeIndex(3)
     window.scrollTo({top: 0, left: 0});
@@ -20,8 +21,8 @@ export default function Auctions() {
       console.log('rerendered')
   }, [])
    
-    function hello(params) {
-      
+    function changeFill(id) {
+      setSecondAuction(prev => prev.map(item => (item.id == id? {...item, isLiked: !item.isLiked} : item)))
     }
     
   
@@ -37,12 +38,12 @@ export default function Auctions() {
     </Link>
     
   ))
-  const auction2 = product.auction2.map((item, index) => (
-    <div key={index}>
+  const auction2 = secondAuction.map(item => (
+    <div key={item.id}>
       
 
       <div className="auction2-card">
-      <Like className='heart' onClick={() => hello()}/>
+      <Like className='heart' stroke={item.isLiked? 'none' : '#333333'} fill={item.isLiked? 'red' : 'none'} onClick={() => changeFill(item.id)}/>
         <div  className='auction2-img' style={{backgroundImage: `url(${item.img})`}}>
             
         </div>

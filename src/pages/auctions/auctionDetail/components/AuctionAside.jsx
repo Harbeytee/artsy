@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react'
 import commenters from '../comments'
-import airplane from '../../../../assets/auctions/airplane.svg'
+import {ReactComponent as Airplane} from '../../../../assets/auctions/airplane.svg'
 import Like from '../../../../assets/marketplace/Like'
 import HeartAnimation from './HeartAnimation'
 import './AuctionAside.scss'
@@ -71,8 +71,8 @@ export default function AuctionAside({className=''}) {
             <div className="aside-bottom">
               <div className="input2">
                 <input type="text" placeholder='Place a bid...'/>
-                <img src={airplane} alt="icon with the shape of a paperplane" className="airplane" />
-
+                {/* <img src={airplane} alt="icon with the shape of a paperplane" className="airplane" /> */}
+                <Airplane />
               </div>
               
               {/* <div  */}

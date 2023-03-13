@@ -2,6 +2,8 @@ import React from 'react'
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import "animate.css/animate.min.css";
 import './Footer.scss'
+import { Link } from 'react-router-dom';
+
 export default function Footer() {
   return (
     <footer>
@@ -28,10 +30,10 @@ export default function Footer() {
 
           <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInUp" >
             <div className='hide-mobile'>
-              <p>Home</p>
-              <p>Marketplace</p>
-              <p>Auctions</p>
-              <p>Drops</p>
+              <Link to='/'>Home</Link>
+              <Link to='/marketplace'>Marketplace</Link>
+              <Link to='/auctions'>Auctions</Link>
+              <Link to='/drop'>Drops</Link>
             </div>
           </AnimationOnScroll>
 
