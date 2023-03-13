@@ -45,7 +45,7 @@ export default function HeartAnimation() {
           setHeart(prev => prev.filter(item => Number(item.key) !== heartCounter ))
           },randomSecond * 900)
         
-        }, 100)
+        }, 150)
           
         
       return () => {

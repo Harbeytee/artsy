@@ -1,0 +1,49 @@
+.carosel {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    img {
+        width: 100%;
+    }
+}
+
+.carosel-inner {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 0.3s ease;
+}
+
+.carosel-item {
+    flex: 0 0 100%;
+    margin-right: 20px;
+    &:last-of-type {
+        margin-right: 0;
+    }
+}
+
+.carosel-prev, .carosel-next {
+   // position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: aqua;
+}
+
+.carosel-prev {
+    left: 10px;
+    
+}
+.carosel-next {
+    right: 10px;
+}
+
+@media only screen and (min-width: 860px) {
+    .carosel-item {
+        flex: 0 0 calc(100% / 3);
+    }
+    }

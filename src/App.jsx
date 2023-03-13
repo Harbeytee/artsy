@@ -14,6 +14,8 @@ import ShoppingCart from './pages/cart/components/ShoppingCart'
 import PaymentDetails from './pages/cart/paymentDetails/PaymentDetails'
 import ShippingDetails from './pages/cart/components/ShippingDetails'
 import Confirmed from './pages/confirmed/Confirmed'
+import PractiseCarousel from './pages/practiseCarousel/practiseCarousel'
+
 
 function App() {
   
@@ -60,6 +62,7 @@ function App() {
               <Route path='/confirmed' element={<Confirmed />} />
             </Route>
             <Route path='/auctions/:id' element={<AuctionDetail />} />
+            <Route path='/practise' element={<PractiseCarousel />} />
           
 
           </Routes>
