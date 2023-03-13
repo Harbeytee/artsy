@@ -10,7 +10,7 @@ export default function Right({handleClick, className, style, fill}) {
   )
 }
 
-Right.defaultProp = {
+Right.defaultProps = {
   fill: "#616161",
   
 }

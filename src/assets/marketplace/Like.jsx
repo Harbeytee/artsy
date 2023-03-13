@@ -11,7 +11,7 @@ export default function Like({fill, className, stroke, onClick}) {
   )
 }
 
-Like.defaultProp = {
+Like.defaultProps = {
   fill: 'none',
   stroke: '#333333'
 }

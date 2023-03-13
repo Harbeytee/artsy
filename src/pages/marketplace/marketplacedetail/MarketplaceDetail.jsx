@@ -28,9 +28,7 @@ export default function MarketplaceDetail() {
    
     const { id } = useParams()
     const detail = art.find(val => val.name == id)
-    useEffect(() => {
-        console.log(detail)
-    }, [art])
+   
     const style = {
        color: '#BCB7B7'
     }

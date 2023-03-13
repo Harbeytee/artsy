@@ -11,7 +11,7 @@ export default function Left({handleClick, className, style, fill}) {
   )
 }
 
-Left.defaultProp = {
+Left.defaultProps = {
   fill: "#616161",
   
 }
