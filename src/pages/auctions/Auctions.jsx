@@ -17,9 +17,6 @@ export default function Auctions() {
 
   }, [])
   
-  useEffect(() => {
-      console.log('rerendered')
-  }, [])
    
     function changeFill(id) {
       setSecondAuction(prev => prev.map(item => (item.id == id? {...item, isLiked: !item.isLiked} : item)))

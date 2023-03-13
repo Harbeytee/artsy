@@ -32,7 +32,7 @@ export default function HeartAnimation() {
             const newHeart = (
               <div key={heartCounter} style={{animation: animation, width: width, display: 'block'}} className={`heart ${color} `}>
                     
-                        <Like stroke='none' onClick={() => {}} />
+                        <Like stroke='none' />
                      
                   </div>
             )

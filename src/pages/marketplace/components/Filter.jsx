@@ -23,10 +23,7 @@ export default function Filter() {
     
   }, [index])
 
-  useEffect(() => {
-    console.log(rangeValue)
-  }, [rangeValue])
-  
+
 
   return (
     <aside id="filter" className='hide-mobile'>

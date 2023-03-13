@@ -11,7 +11,6 @@ export default function Cart({turnOn, turnOff, index, changeIndex}) {
     
   }, [])
 
-  console.log(art)
   return (
     
     <div id='cart'>

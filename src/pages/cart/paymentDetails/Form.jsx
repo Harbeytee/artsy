@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 
 export default function Form() {
     const [rx, setRx] = useState('20')
-
+    const [wallet, setWallet] = useState(<Metamask rx='5'/>)
 
   useEffect(() => {
     window.matchMedia('(min-width: 760px)').matches ? setRx('5') : setRx('20')
@@ -19,13 +19,26 @@ export default function Form() {
     })
 
   }, [])
-  useEffect(() => {
-    console.log(rx)
-  }, [rx])
+  
 
   const column = {
     display: 'flex',
     flexDirection: 'column'
+  }
+
+  const changeWallet = (val) => {
+      if (val === 'metamask') {
+        setWallet(<Metamask rx='5'/>)
+      }
+      else if(val === 'coinbase') {
+        setWallet(<Coinbase rx='5'/>)
+      }
+      else if(val === 'walletconnect') {
+        setWallet(<WalletConnect rx='5'/>)
+      }
+      else {
+        setWallet(<Phantom rx='5'/>)
+      }
   }
   
   return (
@@ -38,10 +51,10 @@ export default function Form() {
             <p className='mobile' style={{color: '#747474'}}>Connect with one of our available wallet providers or add and connect a new wallet. </p>
 
             <div className="wallet-icons">
-                <Metamask rx={rx}/>
-                <Coinbase rx={rx}/>
-                <WalletConnect  rx={rx}/>
-                <Phantom rx={rx}/>
+                <Metamask onClick={() => changeWallet('metamask')} rx={rx}/>
+                <Coinbase onClick={() => changeWallet('coinbase')} rx={rx}/>
+                <WalletConnect  onClick={() => changeWallet('walletconnect')} rx={rx}/>
+                <Phantom onClick={() => changeWallet('phantom')} rx={rx}/>
                 
                 
                 <img className='hide-desktop' src={cross} alt="" />
@@ -72,8 +85,8 @@ export default function Form() {
               <div className='wallet-box' style={column}>
                 
                 <label htmlFor="cvv">CVV</label>
-                <input type="password" minLength='3' maxLength='3' name='cvv' placeholder='***' />
-                <Metamask rx='5'/>
+                <input type="password" minLength='3' maxLength='3' name='cvv' placeholder='***' autoComplete='on'/>
+                {wallet}
               </div>
             </div>
             

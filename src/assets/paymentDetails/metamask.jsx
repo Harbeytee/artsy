@@ -1,8 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-export default function metamask({rx}) {
+export default function Metamask({rx, onClick}) {
   return (
-    <svg viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+    <svg onClick={onClick} viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
     <g filter="url(#filter0_d_424_256)">
     <rect x="8" y="8" width="42" height="42" rx={rx} fill="url(#pattern0)" shapeRendering="crispEdges"/>
     </g>
@@ -26,4 +27,10 @@ export default function metamask({rx}) {
     
 
   )
+}
+
+Metamask.propTypes = {
+  rx: PropTypes.string,
+  onClick: PropTypes.func,
+
 }
