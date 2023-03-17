@@ -10,10 +10,13 @@ import Right from '../../../assets/marketplace/right'
 import carousels from './carousel'
 import { Context } from '../../../Context/Context'
 
+import { useSnapCarousel } from 'react-snap-carousel';
+
 export default function MarketplaceDetail() {
     const [carousel, setCarousel] = useState(carousels)
     const { changeIndex, art, changeMessage, dispatch } = useContext(Context)
-    
+    const { scrollRef, pages, activePageIndex, next, prev, goTo } = useSnapCarousel();
+
     function like(id) {
 
         setCarousel(carousel.map(item => (item.id == id ? {...item, isFavorite: !item.isFavorite} : item)))
@@ -49,7 +52,7 @@ export default function MarketplaceDetail() {
         
         //setPosition(prev => ({...prev, width: document.querySelector('.slider-wrapper').offsetWidth}))
         window.addEventListener("resize", function() {
-           
+            //const { scrollRef, pages, activePageIndex, next, prev, goTo } = useSnapCarousel();
             setPosition(prev => ({...prev, width: document.querySelector('.slider-wrapper').offsetWidth}))
            
         })
@@ -81,10 +84,13 @@ export default function MarketplaceDetail() {
        
     }
 
-
+    useEffect(() => {
+        console.log(activePageIndex)
+    }, [activePageIndex])
+{/*style={{width: window.matchMedia('(max-width: 959px)').matches ? position.width: '446px'}}*/}
     
     const slide = carousel.map((val, index) => (
-        <div style={{width: window.matchMedia('(max-width: 959px)').matches ? position.width: '446px'}} className="slide" key={val.id}>
+        <div className="slide" key={val.id}>
 
             <Like onClick={() => like(index + 1)} className='slide-heart' fill={val.isFavorite ?'red' : 'none'} stroke={val.isFavorite ? 'red' : '#333333'}/>
 
@@ -145,7 +151,7 @@ export default function MarketplaceDetail() {
                             ?
                             <button onClick={() => {dispatch({type:'REMOVE FROM CART', id: detail.id}), changeMessage({message: 'removed from cart', color: 'red'})}} className='add-to-cart'>Remove From Cart</button>
                             :
-                            <button onClick={() => {dispatch({type:'ADD TO CART', id: detail.id}),changeMessage({message: 'added to cart', color: 'rgb(8, 133, 8)'})}} className='add-to-cart'>Add to cart</button>
+                            <button onClick={() => {dispatch({type:'ADD TO CART', id: detail.id}), changeMessage({message: 'added to cart', color: 'rgb(8, 133, 8)'})}} className='add-to-cart'>Add to cart</button>
                         
                         }
                         
@@ -165,23 +171,25 @@ export default function MarketplaceDetail() {
             <div>Explore more from this collection</div>
             <div>
                 <span>
-                    <Left className='chevron'/>
+                    <Left handleClick={prev} className='chevron'/>
                 </span>
                 <span>
-                    <Right className='chevron'/>
+                    <Right handleClick={next} className='chevron'/>
                 </span>
             </div>
         </div>
         <div className='slider-wrapper'>
             <div className="slide-controls hide-desktop">
-                     <Left fill={count === 0? '#616161': 'white'} style={{borderColor: count === 0? '#616161': 'white'}} className='slide-control' handleClick={prevSlide}/> 
-                    <Right fill={count === carousel.length - 1? '#616161': 'white'} style={{borderColor: count === carousel.length - 1? '#616161': 'white'}} className='slide-control' handleClick={nextSlide} />
+                     <Left fill={activePageIndex === 0? '#616161': 'white'} style={{borderColor: activePageIndex === 0? '#616161': 'white'}} className='slide-control' handleClick={prev}/> 
+                    <Right fill={activePageIndex === carousel.length - 1? '#616161': 'white'} style={{borderColor: activePageIndex === carousel.length - 1? '#616161': 'white'}} className='slide-control' handleClick={next} />
 
             </div>
-            <div style={{left: position.left}} className="slider">
+            {/*style={{left: position.left}}*/}
+            <div ref={scrollRef} className='slider' style={{display: 'flex', scrollSnapType: 'x mandatory' }}>
                 {slide}
 
             </div>
+            
 
         </div>
         <button className="explore">Explore all</button>

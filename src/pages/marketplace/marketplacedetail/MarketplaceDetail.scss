@@ -163,17 +163,34 @@
     margin: auto;
     max-width: 400px;
    // margin: auto 0.3rem;
-    overflow: hidden;
+    overflow-x: hidden;
+    //overflow-y: visible;
     display: flex;
     border: 1px solid #cccccc;  
     position: relative;
-    height: 509px;
+    height: 590px;
+    //background-color: red;
+    ::-webkit-scrollbar{
+        appearance: none
+        
+        
+      }
+      .slide{
+        flex: 0 0 auto;  
+        width: 100%;
+       max-width: 446px;
+       //float: left;
+       position: relative;
+       padding: 0.7rem 0.5rem;
+     
+    }
     
 }
 .slider {
    //width: 5000px;
     display: flex;
    // left: -400px;
+   overflow-x: hidden;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -187,12 +204,16 @@
     background-position: center;
     height: 420px;
     width: 100%;
+    max-width: 350px;
     position: relative;
     padding: 0.4rem;
+    background-color: gray;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    margin-left: auto;
+    margin-right: auto;
+    flex: 0 0 auto;
    
     
 }
@@ -201,14 +222,7 @@
     float: right;
     margin: 1rem 1rem 1.5rem;
 }
-.slide{
-    flex: 0 0 auto;  
-    width: 100%;
-   float: left;
-   position: relative;
-   padding: 0.7rem;
- 
-}
+
 .slide-info, .slide-price {
     display: flex;
     align-items: center;
@@ -228,6 +242,7 @@
     height: 59px;
     border-radius: 50%;
     padding: 0.8rem;
+    cursor: pointer;
    
 }
 .slide-controls {
@@ -436,19 +451,21 @@
         height: 55px;
         padding: 0.9rem;
         margin-left: 2rem;
+        cursor: pointer;
     }
     .slider {
-        overflow-x: visible;
+        overflow-x: scroll;
         max-width: 100%;
         border: none;
-        // height: 579px;
+        //height: 100%;
+        
     }
    
     .slide-img {
         background-size: cover;
         background-position: center;
-        width: 95%;
-        height: 421px;
+        width: 85%; //95
+        height: 350px; //421
         margin: auto;
         
 
@@ -464,15 +481,17 @@
        // padding: auto 2rem;
         margin: auto 0.7rem;
         border: 1px solid #cccccc;
-        width: 100%;
+        //width: 100%;
+        
         
         
     }
     .slider-wrapper {
         max-width: 100%;
-        overflow-x: scroll;
+       // overflow-x: scroll;
         border: none;
-        height: 599px;
+        height: 550px;
+        
         
     }
     .slide-controls {

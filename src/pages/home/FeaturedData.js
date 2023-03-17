@@ -1,6 +1,6 @@
-import bool from '../../assets/home/boolean-egyptian.svg'
-import areWe from '../../assets/home/are-we.svg'
-import oloibiri from '../../assets/home/oloibiri.svg'
+import bool from '../../assets/home/boolean-egyptian.webp'
+import areWe from '../../assets/home/are-we.webp'
+import oloibiri from '../../assets/home/oloibiri.webp'
 
 
 export default [

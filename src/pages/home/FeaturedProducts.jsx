@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import feat from './FeaturedData'
 import Arrow from '../../assets/home/Arrow'
-import people from '../../assets/home/people.svg'
+import people from '../../assets/home/people.webp'
 import { Link } from 'react-router-dom'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 export default function FeaturedProducts() {

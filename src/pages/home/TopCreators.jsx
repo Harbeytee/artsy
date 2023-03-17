@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from 'react'
-import image1 from '../../assets/home/topcreatorsAnimation/image1.svg'
-import image2 from '../../assets/home/topcreatorsAnimation/image2.svg'
-import image3 from '../../assets/home/topcreatorsAnimation/image3.svg'
+import image1 from '../../assets/home/topcreatorsAnimation/image1.webp'
+import image2 from '../../assets/home/topcreatorsAnimation/image2.webp'
+import image3 from '../../assets/home/topcreatorsAnimation/image3.webp'
 import fadeinAnimation from '../../hooks/fadeinAnimation'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 import "animate.css/animate.min.css";

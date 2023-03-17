@@ -22,7 +22,7 @@ function App() {
   const [on, setOn] = useState(false)
   const [index, setIndex] = useState(1)
 
-    const changeIndex = (val) => {
+    const changeIndex2 = (val) => {
             setIndex(val)
     }
 
@@ -47,17 +47,17 @@ function App() {
       <Router>
         <div className="App">
           <Routes>
-          <Route path ='/' element={<Navbar turnOff={() => setOn(false)} changeI={changeIndex}/>}>
+          <Route path ='/' element={<Navbar turnOff={() => setOn(false)} changeI={changeIndex2}/>}>
               <Route index element ={<Home /> } />
               <Route path='/marketplace' element={<MarketPlace />} />
               <Route path='/marketplace/:id' element={<MarketplaceDetail />} />
               <Route path='/auctions' element={<Auctions />} />
               
               <Route path='/drop' element={<Drop />} />
-              <Route path='/cart' element={<Cart index={index} changeIndex={changeIndex} on={on} turnOn={() => setOn(true) } turnOff={() => setOn(false)}/>}>
+              <Route path='/cart' element={<Cart index={index} changeIndex2={changeIndex2} on={on} turnOn={() => setOn(true) } turnOff={() => setOn(false)}/>}>
                 <Route index element={<ShoppingCart on={on} turnOn={() => setOn(true) } turnOff={() => setOn(false)}/>} />
                 <Route path='shipping' element={<ShippingDetails />} />
-                <Route path='payment' element={<PaymentDetails changeIndex={changeIndex}/>} />
+                <Route path='payment' element={<PaymentDetails changeIndex2={changeIndex2}/>} />
               </Route>
               <Route path='/confirmed' element={<Confirmed />} />
             </Route>

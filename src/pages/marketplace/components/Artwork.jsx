@@ -6,7 +6,9 @@ export default function Artwork() {
   const { art } = useContext(Context)
   const arts = art.filter(val => val.id <= 10).map(val => (
     <div className='art-card' key={val.id}>
-      <Link to={`/marketplace/${val.name}`}><img className='art-img' src={val.img} alt="artwork image" /></Link>
+      <Link to={`/marketplace/${val.name}`}>
+        <div className='art-img' style={{backgroundImage: `url(${val.img})`, backgroundColor: 'gray', backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
+      </Link>
       <div className='deets'>
         <p>{val.name}</p>
         <p>$ {val.price.toFixed(2)}</p>

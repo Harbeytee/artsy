@@ -5,12 +5,17 @@ import './Auctions.scss'
 import Like from '../../assets/marketplace/Like'
 import { Context } from '../../Context/Context' 
 import countDown from '../../hooks/countDown'
+import Left from '../../assets/marketplace/left'
+import Right from '../../assets/marketplace/right'
+import { useSnapCarousel } from 'react-snap-carousel';
 
 export default function Auctions() {
   const {time, showTime} =countDown()
   const { changeIndex } = useContext(Context)
   const [fill, setFill] = useState(false)
   const [secondAuction, setSecondAuction] = useState(product.auction2)
+  const { scrollRef, activePageIndex, next, prev, goTo, pages } = useSnapCarousel();
+
   useEffect(() => {
     changeIndex(3)
     window.scrollTo({top: 0, left: 0});
@@ -79,15 +84,22 @@ export default function Auctions() {
 
       <h2>Here's an overview of products actively on auction, explore!</h2>
 
-      <div>
-        <div className="auction1">
+      <div className='auction-slider' style={{position: 'relative'}}>
+        <div className="slider-controls">
+            <Left handleClick={prev} fill='white'/>
+            <Right handleClick={next} fill='white'/>
+
+        </div>
+        <div ref={scrollRef} style={{ display: 'flex', overflow: 'auto', scrollSnapType: 'x mandatory' }} className="auction1">
           {auction1}
         </div>
         <div className="circles">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
+          {
+            pages.map((item, i) => (
+              <span key={i} onClick={() => goTo(i)} style={{background: i == activePageIndex? '#4693ED' : '#B8BCB5'}}></span>
+            ))
+          }
+          
         </div>
         
 

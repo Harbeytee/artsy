@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import heromobile1 from '../../assets/home/heroMobile/img1.svg'
-import heromobile2 from '../../assets/home/heroMobile/img2.svg'
-import heromobile3 from '../../assets/home/heroMobile/img3.svg'
+import heromobile1 from '../../assets/home/heroMobile/img1.webp'
+import heromobile2 from '../../assets/home/heroMobile/img2.webp'
+import heromobile3 from '../../assets/home/heroMobile/img3.webp'
 import sliderData from './sliderData'
 import fadeinAnimation from '../../hooks/fadeinAnimation'
 import { AnimationOnScroll } from 'react-animation-on-scroll';

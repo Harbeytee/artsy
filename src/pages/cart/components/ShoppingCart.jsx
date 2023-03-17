@@ -9,7 +9,7 @@ import { Context } from '../../../Context/Context'
 export default function ShoppingCart({on, turnOn, turnOff}) {
     //1145px
     const[display, setDisplay] = useState('')
-    const { art, dispatch } = useContext(Context)
+    const { art, dispatch, changeMessage} = useContext(Context)
     const cart = art.filter(item => item.inCart == true)
     const [index, setIndex] = useState(1)
     //const [on, setOn] = useState(false)
@@ -86,7 +86,7 @@ export default function ShoppingCart({on, turnOn, turnOff}) {
             </div>
 
             <div className="cart-y">
-                <img onClick={() => dispatch({type:'REMOVE FROM CART', id: val.id})} src={xmark} alt="" className="remove-item" />
+                <img onClick={() => {dispatch({type:'REMOVE FROM CART', id: val.id}), changeMessage({message: 'removed from cart', color: 'red'})}} src={xmark} alt="" className="remove-item" />
                 <p className="cart-price">${val.price.toFixed(2)}</p>
             </div>
 

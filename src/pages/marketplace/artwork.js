@@ -1,4 +1,4 @@
-import boolean from '../../assets/marketplace/boolean-egyptian.svg'
+import boolean from '../../assets/home/boolean-egyptian.webp'
 import road from '../../assets/marketplace/road-to-egypt.svg'
 import philomena from '../../assets/marketplace/philomena.svg'
 import blanc from '../../assets/marketplace/blanc.svg'
@@ -8,8 +8,8 @@ import veil from '../../assets/marketplace/veil.svg'
 import alternating from '../../assets/marketplace/alternating.svg'
 import rosemary from '../../assets/marketplace/rosemary.svg'
 import beverly from '../../assets/marketplace/beverly.svg'
-import areWe from '../../assets/home/are-we.svg'
-import oloibiri from '../../assets/home/oloibiri.svg'
+import areWe from '../../assets/home/are-we.webp'
+import oloibiri from '../../assets/home/oloibiri.webp'
 
 
 export default [

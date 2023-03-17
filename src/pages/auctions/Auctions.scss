@@ -13,6 +13,7 @@
         
 
     }
+    
 }
 
 
@@ -21,23 +22,31 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
+.auction1-img {
+    @extend .background;
+    height: 186px;
+    width: 228px;
+    flex: 0 0 auto;
+    
+    position: relative;
+    border-radius: 15px;
+    background-color: gray;
+    
+    
+}
+.auction-img-container {
+    margin-right: 1rem;
+    &:last-of-type {
+        margin-right: 0;
+    }
+}
 .auction1 {
 
     display: flex;
     flex-direction: row;
     width: 100%;
     overflow-x: scroll;
-    
-}
-.auction1-img {
-    @extend .background;
-    height: 186px;
-    width: 228px;
-    flex: 0 0 auto;
-    margin-right: 1rem;
-    position: relative;
-    border-radius: 35px;
-    background-color: gray;
     
 }
 .timer {
@@ -57,6 +66,27 @@
     left: 10%;
     font-size: 20px;
     
+}
+.slider-controls {
+    width: 100%;
+    //background-color: red;
+    position: absolute;
+   
+    z-index: 10;
+    top: 30%;
+    padding-left: 3px;
+    padding-right: 3px;
+    display: flex;
+    justify-content: space-between;
+    svg {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 4.68154px 4.68154px 7.02232px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(4.68154px);
+    }
 }
 .circles {
     display: flex;
@@ -169,6 +199,13 @@
     flex-direction: column;
     //justify-content: space-between;
 }
+.auction-slider {
+    ::-webkit-scrollbar{
+        appearance: none;
+        
+        
+      }
+}
 
 @media only screen and (min-width:860px) {
     #auctions {
@@ -239,6 +276,9 @@
         border-radius: 15px;
         opacity: 0;
 
+    }
+    .slider-controls {
+        display: none;
     }
     .circles span {
         width: 9.33px;
