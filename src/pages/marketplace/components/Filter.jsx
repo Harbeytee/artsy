@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import filter from '../../../assets/icons/filter.svg'
-import drop from '../../../assets/marketplace/drop.svg'
+import drop from '../../../assets/marketplace/drop.webp'
 
 export default function Filter() {
   const [open, setOpen] = useState(false)

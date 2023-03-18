@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import '../Cart.scss'
 import './ShippingDetails.scss'
-import {ReactComponent as Drop} from '../../../assets/marketplace/drop.svg'
+import drop from '../../../assets/marketplace/drop.webp'
 
 //import { useNavigate } from 'react-router-dom'
 
@@ -38,7 +38,7 @@ export default function ShippingDetails({style={}, className='', turnOff={}}) {
         <label className='updates'><input type="checkbox" />Get updates about new drops & exclusive offers</label>
 
         <div style={selectStyle}>
-          <Drop />
+          <img className='svg' src={drop} />
           <label htmlFor="wallet">Choose a wallet</label>
           <select name="wallet" id="wallet">
             
@@ -52,7 +52,7 @@ export default function ShippingDetails({style={}, className='', turnOff={}}) {
         </div>
         
         <div style={selectStyle}>
-          <Drop />
+        <img className='svg' src={drop} />
           <label htmlFor="city">City</label>
           <select name="city" id="city">
             <option value=""></option>
@@ -64,7 +64,7 @@ export default function ShippingDetails({style={}, className='', turnOff={}}) {
         </div>
         
         <div style={selectStyle}>
-          <Drop />
+        <img className='svg' src={drop} />
           <label htmlFor="country">Country</label>
           <select name="country" id="country">
             <option value=""></option>

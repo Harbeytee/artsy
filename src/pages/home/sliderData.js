@@ -1,8 +1,8 @@
-import first from '../../assets/home/sliderImages/first.svg'
-import second from '../../assets/home/sliderImages/second.svg'
-import third from '../../assets/home/sliderImages/third.svg'
-import fourth from '../../assets/home/sliderImages/fourth.svg'
-import fifth from '../../assets/home/sliderImages/fifth.svg'
+import first from '../../assets/home/sliderImages/first.webp'
+import second from '../../assets/home/sliderImages/second.webp'
+import third from '../../assets/home/sliderImages/third.webp'
+import fourth from '../../assets/home/sliderImages/fourth.webp'
+import fifth from '../../assets/home/sliderImages/fifth.webp'
 
 
 export default [

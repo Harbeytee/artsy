@@ -48,8 +48,8 @@ export default function HeroSection() {
       <div  style={{marginLeft: index + num > sliderData.length - 1 // if index is greater than the sider length -1 image won't show the code sets it back to first image
         ? 
         `-${(num - index) * 320}px` :`-${(index + num) * 320}px`}} className={`slide-images animate__animated animate__${(index + 1) % 2 == 0 ? 'fadeInLeft' : 'fadeInRight'}`}>
-        {sliderData.map((item, index) => <img key={index} src={item.img}/>)}
-        
+        {/* {sliderData.map((item, index) => <img key={index} src={item.img}/>)} */}
+        {sliderData.map((item, index) => <div key={index} style={{backgroundImage: `url(${item.img})`}}>  </div>)}
         
 
       </div>

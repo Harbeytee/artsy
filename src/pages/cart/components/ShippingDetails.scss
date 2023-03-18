@@ -2,7 +2,7 @@
    // margin-bottom: 4rem;
    //display: none;
    
-    svg {
+    .svg {
         position: absolute;
         
         transform: rotateX(180deg);
@@ -79,7 +79,7 @@
         accent-color: #D9D9D9;
         &:checked {
             
-            background-image: url('../../../assets/marketplace/checkmark.svg');
+            background-image: url('../../../assets/marketplace/checkmark.webp');
             background-repeat: no-repeat;
             background-position: center;
             // content: '\2713';
@@ -102,7 +102,7 @@
 @media only screen and (min-width:760px) {
 
     #shipping-details {
-        svg {
+        .svg {
             right: 40px;
             bottom: 33%;
         }

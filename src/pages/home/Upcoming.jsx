@@ -1,13 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Arrow from '../../assets/home/Arrow'
-import left from '../../assets/home/chevronLeft.svg'
-import right from '../../assets/home/chevronRight.svg'
+import Left from '../../assets/marketplace/left.jsx'
+import Right from '../../assets/marketplace/right.jsx'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 import "animate.css/animate.min.css";
 
 export default function Upcoming() {
-  
+  const arrowStyle = {
+    display: 'flex', 
+    justifyContent: 'center',
+    alignItems: 'center', 
+    padding: '1.3rem',
+  }
 
   return (
     <section id ='upcoming'>
@@ -53,8 +58,8 @@ export default function Upcoming() {
               <div className='progress-bar'></div>
             </div>
             <div className='change-slide'>
-              <span style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}><img src={left} /></span>
-              <span style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}><img src={right} /></span>
+              <span style={arrowStyle}><Left fill='white'/></span>
+              <span style={arrowStyle}><Right fill='white'/></span>
             </div>
 
           </div>

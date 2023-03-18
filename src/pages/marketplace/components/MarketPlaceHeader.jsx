@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ReactComponent as Drop } from '../../../assets/marketplace/drop.svg'
+import drop from '../../../assets/marketplace/drop.webp'
 
 export default function MarketPlaceHeader() {
   return (
@@ -21,11 +21,11 @@ export default function MarketPlaceHeader() {
             <p className='hide-mobile'>See 1-6 of 15 results</p>
             <div className='hide-desktop'>
               Filters
-              <Drop />
+              <img src={drop} />
             </div>
             <div className='marketplace-sort'>
               Sort by
-              <Drop />
+              <img src={drop} />
 
             </div>
             

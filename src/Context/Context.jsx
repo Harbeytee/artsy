@@ -28,7 +28,9 @@ export default function Provider(props) {
       localStorage.setItem('artwork', JSON.stringify(art))
 
   }, [art])
-
+  // useEffect(() => {
+  //   localStorage.clear()
+  // },[])
   
 
   function changeIndex(val) {

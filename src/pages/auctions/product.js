@@ -1,8 +1,8 @@
-import img1 from '../../assets/auctions/img1.svg'
-import img2 from '../../assets/auctions/img2.svg'
-import img3 from '../../assets/auctions/img3.svg'
-import img4 from '../../assets/auctions/img4.svg'
-import img5 from '../../assets/auctions/img5.svg'
+import img1 from '../../assets/auctions/img1.webp'
+import img2 from '../../assets/auctions/img2.webp'
+import img3 from '../../assets/auctions/img3.webp'
+import img4 from '../../assets/auctions/img4.webp'
+import img5 from '../../assets/auctions/img5.webp'
 
 export default {
    auction1: [

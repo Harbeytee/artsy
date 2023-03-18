@@ -141,10 +141,23 @@ main {
 .slide-images {
     display: flex;
     width: 100%;
+    
     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     img {
         margin: 0 0.425rem;
         //width: 320px;
+        //margin-right: 0.85rem;
+
+    }
+    div {
+        //padding: 0 0.425rem;
+        width: 320px;
+        height: 450px;
+        flex: 0 0 auto;
+        background-position: center;
+        background-size: 98%;
+        background-repeat: no-repeat;
+        //background-color: red;
         //margin-right: 0.85rem;
 
     }
