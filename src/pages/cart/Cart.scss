@@ -5,6 +5,33 @@
     align-items: center;
 }
 
+#empty-cart {
+    flex-direction: column;
+    @extend .centerize;
+    img {
+        width: 275px;
+        height: 246px;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+    p {
+        font-size: 1.1rem;
+        margin-top: 0.3rem;
+        margin-bottom: 2rem;
+    }
+    a {
+        border: 1px solid #333333;
+        height: 50px;
+        width: 200px;
+        margin-bottom: 2rem;
+        border-radius: 8px;
+        @extend .centerize;
+        font-size: 1.3rem;
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
 
 
 .cart-nav {
