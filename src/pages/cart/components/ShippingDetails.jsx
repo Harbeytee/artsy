@@ -63,24 +63,32 @@ export default function ShippingDetails({style={}, className='', turnOff={}}) {
 
         </div>
         
-        <div style={selectStyle}>
-        <img className='svg' src={drop} />
-          <label htmlFor="country">Country</label>
-          <select name="country" id="country">
-            <option value=""></option>
-            <option value="USA">USA</option>
-            <option value="Australia">Australia</option>
-            <option value="Canada">Canada</option>
-          </select>
+        <div className="separate">
+          <div style={selectStyle}>
+            <img className='svg' src={drop} />
+            <label htmlFor="country">Country</label>
+            <select name="country" id="country">
+              <option value=""></option>
+              <option value="USA">USA</option>
+              <option value="Australia">Australia</option>
+              <option value="Canada">Canada</option>
+            </select>
+
+          </div>
+
+          <div style={selectStyle}>
+            <label htmlFor="postalcode">Postal code</label>
+            <input type="text" name="postalcode" placeholder='001001'/>
+          </div>
 
         </div>
         
+        
 
-        <label htmlFor="postalcode">Postal code</label>
-        <input type="text" name="postalcode" />
+        
 
         <label htmlFor="number">Phone number</label>
-        <input type="number" name="number" />
+        <input type="number" name="number" placeholder='0812 3456 785'/>
 
        </form>
 

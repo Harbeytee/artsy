@@ -35,6 +35,11 @@ export default function MarketplaceDetail() {
     const style = {
        color: '#BCB7B7'
     }
+    const center ={
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+    }
 
     
    //const [position.width, setLength] = useState();
@@ -151,7 +156,7 @@ export default function MarketplaceDetail() {
                             ?
                             <button onClick={() => {dispatch({type:'REMOVE FROM CART', id: detail.id}), changeMessage({message: 'removed from cart', color: 'red'})}} className='add-to-cart'>Remove From Cart</button>
                             :
-                            <button onClick={() => {dispatch({type:'ADD TO CART', id: detail.id}), changeMessage({message: 'added to cart', color: 'rgb(8, 133, 8)'})}} className='add-to-cart'>Add to cart</button>
+                            <Link style={center} to='/cart' onClick={() => {dispatch({type:'ADD TO CART', id: detail.id}), changeMessage({message: 'added to cart', color: 'rgb(8, 133, 8)'})}} className='add-to-cart'>Add to cart</Link>
                         
                         }
                         
@@ -192,7 +197,7 @@ export default function MarketplaceDetail() {
             
 
         </div>
-        <button className="explore">Explore all</button>
+        <Link to='/marketplace' className="explore">Explore all</Link>
         
     </div>
   )
