@@ -5,7 +5,7 @@ import heromobile2 from '../../assets/home/heroMobile/img2.webp'
 import heromobile3 from '../../assets/home/heroMobile/img3.webp'
 import sliderData from './sliderData'
 import fadeinAnimation from '../../hooks/fadeinAnimation'
-import { AnimationOnScroll } from 'react-animation-on-scroll';
+
 
 export default function HeroSection() {
  

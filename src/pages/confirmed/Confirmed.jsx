@@ -3,6 +3,7 @@ import illustration from '../../assets/confirmed/illustration.svg'
 import circleRings from '../../assets/confirmed/circleRings.svg'
 import './Confirmed.scss'
 import { Context } from '../../Context/Context'
+import { Link } from 'react-router-dom'
 import cone from '../../assets/confirmed/confetti/cone.svg'
 import foldedConfetti from '../../assets/confirmed/confetti/folded-confetti.svg'
 import blueBand from '../../assets/confirmed/confetti/blue-band.svg'
@@ -29,7 +30,7 @@ export default function Confirmed() {
         she's resting on" className="confirmed-illustration" />
         <h3>Hey Celestina, thank you for your purchase. </h3>
         <p>You are amazing. Cheers to being 
-          <span>ARTSY!</span>
+          <Link to='/'>ARTSY!</Link>
           <span className='confetti-animation'>
             <img src={cone} alt="" className="first-stage" />
             <img src={foldedConfetti} alt="" className="second-stage" />

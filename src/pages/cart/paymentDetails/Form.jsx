@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Metamask from '../../../assets/paymentDetails/metamask.jsx'
 import Coinbase from '../../../assets/paymentDetails/coinbase'
 import WalletConnect from '../../../assets/paymentDetails/walletconnect.jsx'
@@ -11,11 +11,12 @@ import { Link } from 'react-router-dom'
 export default function Form() {
     const [rx, setRx] = useState('20')
     const [wallet, setWallet] = useState(<Metamask rx='5'/>)
-
+    const inputRef = useRef('')
+    const [value, setValue] = useState('')
   useEffect(() => {
     window.matchMedia('(min-width: 760px)').matches ? setRx('5') : setRx('20')
     window.addEventListener('resize', () => {
-      window.matchMedia('(min-width: 760px)').matches ? setRx('5') : setRx('20')
+      window.matchMedia('(min-width: (760px)').matches ? setRx('5') : setRx('20')
     })
 
   }, [])
@@ -40,7 +41,34 @@ export default function Form() {
         setWallet(<Phantom rx='5'/>)
       }
   }
+
+  function formatString2(e) {
+    var inputChar = String.fromCharCode(e.keyCode);
+    var code = e.keyCode;
+    var allowedKeys = [8];
+    if (allowedKeys.indexOf(code) !== -1) {
+      return;
+    }
   
+    e.target.value = e.target.value.replace(
+      /^([1-9]\/|[2-9])$/g, '0$1/' // 3 > 03/
+    ).replace(
+      /^(0[1-9]|1[0-2])$/g, '$1/' // 11 > 11/
+    ).replace(
+      /^([0-1])([3-9])$/g, '0$1/$2' // 13 > 01/3
+    ).replace(
+      /^(0?[1-9]|1[0-2])([0-9]{2})$/g, '$1/$2' // 141 > 01/41
+    ).replace(
+      /^([0]+)\/|[0]+$/g, '0' // 0/ > 0 and 00 > 0
+    ).replace(
+      /[^\d\/]|^[\/]*$/g, '' // To allow only digits and `/`
+    ).replace(
+      /\/\//g, '/' // Prevent entering more than 1 `/`
+    );
+  }
+
+
+
   return (
     <div>
     <div id='form'>
@@ -68,7 +96,7 @@ export default function Form() {
         </p>
 
         
-          
+      
         
           <form>
             <label htmlFor="walletType">Wallet type</label>
@@ -79,7 +107,7 @@ export default function Form() {
             <div className='payment-flex'>
               <div style={column}>
                 <label htmlFor="expiry">Expiry date</label>
-                <input type="text" name='expiry' placeholder='MM/YY'/>
+                <input maxLength={5} ref={inputRef} onKeyUp={(e) => formatString2(e)} type="text" name='expiry' placeholder='MM/YY'/>
               </div>
 
               <div className='wallet-box' style={column}>

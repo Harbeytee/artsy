@@ -58,7 +58,7 @@ export default function FeaturedProducts() {
   return (
     <section className='featured'>
         <AnimationOnScroll animateIn="animate__fadeInUp"><h2>Featured products</h2></AnimationOnScroll>
-        <div>{products}</div>
+        <div id='products'>{products}</div>
 
       
         

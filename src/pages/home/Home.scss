@@ -151,7 +151,7 @@ main {
     }
     div {
         //padding: 0 0.425rem;
-        background-color: gray;
+        //background-color: gray;
         width: 320px;
         height: 450px;
         flex: 0 0 auto;
@@ -315,16 +315,21 @@ main {
             align-items: center;
            
         }
-        :nth-of-type(2) { // changing the grid order
-            //grid-auto-flow: dense;
-             //direction: rtl;
-             //background-color: red;
-             div:nth-child(1) {
-                 grid-column: 2;
-                 grid-row: 1;
-                // background-color: red;
-            }
-         }
+        #products {
+            div:nth-child(2) { // changing the grid order
+                //grid-auto-flow: dense;
+                 //direction: rtl;
+                 //background-color: red;
+                  div:nth-child(1) {
+                    //background-color: red;
+                     grid-column: 2;
+                     grid-row: 1;
+                    // background-color: red;
+                }
+             }
+
+        }
+        
     }
     .line2 {
         display: none;
@@ -437,7 +442,8 @@ main {
 }
 .upcoming {
     padding: 0.25rem;
-    background-image: url('../../assets/home/upcoming.svg');
+    //background-image: url('../../assets/home/upcoming.svg');
+    
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -540,6 +546,8 @@ main {
     background-color: white;
     height: 6px;
     width: 15%;
+    width: calc(100% / 6);
+    //color: rgb(107, 20, 107);
     border-radius: 50px;
     //margin-top: 4rem;
 }
