@@ -10,20 +10,14 @@ import "animate.css/animate.min.css";
 export default function Upcoming() {
   const {prevSlide, nextSlide, src, arrowStyle, count} = useSlider()
   
+  const bg = {
+    backgroundImage: `linear-gradient(115deg, ${src[count].color}, 
+      ${src[count].color}), url(${src[count].img})`,
+    animation: 'fadeIn 0.3s ease-in-out'/*backgroundColor: src[count].color*/}
 
-  return (
-    <section id ='upcoming'>
-      
-      <article>
-        <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInUp" >
-          <div className="upcoming-header">
-            <h3>See Upcoming Auctions and Exhibitions</h3>
-            <div className="underline"></div>
-            
-          </div>
-        </AnimationOnScroll>
-        <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInRight" >
-          <div style={{backgroundImage: `linear-gradient(115deg, ${src[count].color}, ${src[count].color}), url(${src[count].img})`, /*backgroundColor: src[count].color*/}} className="upcoming">
+  const upcoming = src.map((item, index) => (
+    <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInRight" >
+          <div style={{...bg, display: index == count ? 'block' : 'none'}} className="upcoming">
             <div className='card'>
               <div className='upcoming-title'>
               <span className='circle'></span>
@@ -49,6 +43,21 @@ export default function Upcoming() {
             </div>
           </div>
         </AnimationOnScroll>
+  ))
+  return (
+    <section id ='upcoming'>
+      
+      <article>
+        <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInUp" >
+          <div className="upcoming-header">
+            <h3>See Upcoming Auctions and Exhibitions</h3>
+            <div className="underline"></div>
+            
+          </div>
+        </AnimationOnScroll>
+
+        {upcoming}
+
         <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInUp" >
           <div className='slideshow'>
             <div className='progress'>

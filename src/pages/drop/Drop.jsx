@@ -5,6 +5,7 @@ import Footer from '../../components/Footer/Footer'
 import { Link } from 'react-router-dom'
 import { Context } from '../../Context/Context' 
 import countDown from '../../hooks/countDown'
+import { AnimationOnScroll } from 'react-animation-on-scroll'
 
 export default function Drop() {
   const {time, showTime} = countDown()
@@ -32,8 +33,10 @@ export default function Drop() {
 
   const drops = dropData.map((item, index) => (
     <div key={index} className="drop-flex">
-        <div className="drop-img" style={{backgroundImage: `url(${item.img})`}}>
+        <AnimationOnScroll animateOnce={true}  animateIn='animate__fadeInLeft' className="drop-img" style={{backgroundImage: `url(${item.img})`}}>
+
           <div style={{backgroundColor: changeColour(item.status)}} className="drop-status ">{item.status}</div>
+
           <div className="drop-timer">
             {item.status === 'ended'?
             <div className='time-flex'>
@@ -60,9 +63,9 @@ export default function Drop() {
 
           </div>
 
-        </div>
+        </AnimationOnScroll>
 
-        <div className='drop-second'>
+        <AnimationOnScroll animateOnce={true} animateIn='animate__fadeInRight' className='drop-second'>
           <div style={{backgroundColor: changeColour(item.status)}} className="hide-mobile">{item.status}</div>
           <h4>November 21 at 11 am WAT</h4>
           <h3>{item.name}</h3>
@@ -81,27 +84,30 @@ export default function Drop() {
            }
            </p>
 
-        </div>
+        </AnimationOnScroll>
     </div>
   ))
 
   return (
     <div id='drop'>
-      <nav className='hide-mobie'>
-        <Link to='/'>Home/ </Link>
-        <Link to='/auctions'>Auctions/ </Link>
-        <Link>Live bid/ </Link>
-        <span>Drop</span>
+      
+        <nav className='hide-mobie animate__animated animate__fadeInUp'>
+          <Link to='/'>Home/ </Link>
+          <Link to='/auctions'>Auctions/ </Link>
+          <Link>Live bid/ </Link>
+          <span>Drop</span>
 
-      </nav>
+        </nav>
+      
+      
+      
+      <h1 className='animate__animated animate__fadeInUp'>Upcoming drops</h1>
 
-      <h1>Upcoming drops</h1>
+      <p className='animate__animated animate__fadeInUp'>You may turn on notifications so that no drop will miss you.</p>
 
-      <p>You may turn on notifications so that no drop will miss you.</p>
+      <button className='notify animate__animated animate__fadeInUp'>Notify me</button>
 
-      <button className='notify'>Notify me</button>
-
-      <p className='drop-down '>Sort by</p>
+      <p className='drop-down animate__animated animate__fadeInUp'>Sort by</p>
 
       <div className="drops">
         {drops}
