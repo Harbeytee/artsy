@@ -15,7 +15,7 @@ export default function FeaturedProducts() {
     <article>
       
 
-      <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInRight"><div className='product' style={{backgroundImage: `url(${product.img})`}}>
+      <AnimationOnScroll animateOnce={true} animateIn={index == 1 ? "animate__fadeInRight" : "animate__fadeInLeft"}><div className='product' style={{backgroundImage: `url(${product.img})`}}>
         <Link to={`marketplace/${product.title}`} className='shadow'>
           <h3>{product.title}</h3>
           <h3>View  product</h3>

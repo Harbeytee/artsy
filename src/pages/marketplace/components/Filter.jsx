@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import filter from '../../../assets/icons/filter.svg'
 import drop from '../../../assets/marketplace/drop.webp'
 
+
 export default function Filter() {
   const [open, setOpen] = useState(false)
   const [index, setIndex] = useState(0)
@@ -26,6 +27,7 @@ export default function Filter() {
 
 
   return (
+    
     <aside id="filter" className='hide-mobile'>
           <h4 className='filter-icon'><img src={filter} alt="filter icon" />  Filter</h4>
           <div className="accordions">
@@ -107,5 +109,6 @@ export default function Filter() {
           </div>
 
         </aside>
+        
   )
 }

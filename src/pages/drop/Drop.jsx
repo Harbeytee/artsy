@@ -33,7 +33,7 @@ export default function Drop() {
 
   const drops = dropData.map((item, index) => (
     <div key={index} className="drop-flex">
-        <AnimationOnScroll animateOnce={true}  animateIn='animate__fadeInLeft' className="drop-img" style={{backgroundImage: `url(${item.img})`}}>
+        <AnimationOnScroll offset='0' animateOnce={true}  animateIn='animate__fadeInLeft' className="drop-img" style={{backgroundImage: `url(${item.img})`}}>
 
           <div style={{backgroundColor: changeColour(item.status)}} className="drop-status ">{item.status}</div>
 
@@ -65,7 +65,7 @@ export default function Drop() {
 
         </AnimationOnScroll>
 
-        <AnimationOnScroll animateOnce={true} animateIn='animate__fadeInRight' className='drop-second'>
+        <AnimationOnScroll offset='0' animateOnce={true} animateIn='animate__fadeInRight' className='drop-second'>
           <div style={{backgroundColor: changeColour(item.status)}} className="hide-mobile">{item.status}</div>
           <h4>November 21 at 11 am WAT</h4>
           <h3>{item.name}</h3>
