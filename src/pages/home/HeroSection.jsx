@@ -37,13 +37,8 @@ export default function HeroSection() {
 
     
   const images = sliderData.map((val, index) => {
-
-    //setNum(index)
-
-    
-    
-    
     return (
+      
     <div key={val.id} className="slide-container">
       <div  style={{marginLeft: index + num > sliderData.length - 1 // if index is greater than the sider length -1 image won't show the code sets it back to first image
         ? 

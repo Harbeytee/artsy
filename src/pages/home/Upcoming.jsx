@@ -16,7 +16,7 @@ export default function Upcoming() {
     animation: 'fadeIn 0.3s ease-in-out'/*backgroundColor: src[count].color*/}
 
   const upcoming = src.map((item, index) => (
-    <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInRight" >
+    <AnimationOnScroll key={index} animateOnce={true} animateIn="animate__fadeInRight" >
           <div style={{...bg, display: index == count ? 'block' : 'none'}} className="upcoming">
             <div className='card'>
               <div className='upcoming-title'>

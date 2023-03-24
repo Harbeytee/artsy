@@ -18,10 +18,6 @@ export default function MarketPlace() {
 
   }, [])
 
-  useEffect(() => {
-    console.log(see)
-  
-  }, [see])
   
  
 

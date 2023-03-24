@@ -7,8 +7,8 @@ export default function Artwork({see}) {
   const { art } = useContext(Context)
   const arts = art.filter(val => see ? val.id <= 10 : val.id <= 7).map(val => (
     // val.id !== 1 ? ${val.id == 1 && 'animate__animated animate__fadeInUp'}
-    <AnimationOnScroll offset='0' className={`art-card `} animateOnce={true} animateIn='animate__fadeInUp' >
-      {/* <div className='art-card ' key={val.id}> */}
+    <AnimationOnScroll key={val.id} offset='0'  animateOnce={true} animateIn='animate__fadeInUp' >
+      <div className='art-card ' >
         
           <Link to={`/marketplace/${val.name}`}>
             <div className='art-img' style={{backgroundImage: `url(${val.img})`, backgroundColor: 'gray', backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
@@ -23,7 +23,7 @@ export default function Artwork({see}) {
           </div>
         
      
-     {/* </div> */}
+     </div>
      </AnimationOnScroll>
 
      
