@@ -19,8 +19,6 @@ export default function MarketPlace() {
   }, [])
 
   
- 
-
   return (
     <div id='marketplace'>
       
