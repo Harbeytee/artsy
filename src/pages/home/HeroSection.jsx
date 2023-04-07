@@ -40,12 +40,19 @@ export default function HeroSection() {
     return (
       
     <div key={val.id} className="slide-container">
-      <div  style={{marginLeft: index + num > sliderData.length - 1 // if index is greater than the sider length -1 image won't show the code sets it back to first image
+      <div  style={{marginLeft: index + num > sliderData.length - 1 // if index is greater than the sider length -1 image won't show the code sets it back to first image linear-gradient(90deg, rgba(128, 128, 128, 0.9), rgba(255, 255, 255, 0.1)), 
         ? 
         `-${(num - index) * 320}px` :`-${(index + num) * 320}px`}} className={`slide-images animate__animated animate__${(index + 1) % 2 == 0 ? 'fadeInLeft' : 'fadeInRight'}`}>
         {/* {sliderData.map((item, index) => <img key={index} src={item.img}/>)} */}
-        {sliderData.map((item, index) => <div key={index} style={{backgroundImage: `url(${item.img})`}}>  </div>)}
-        
+        {sliderData.map((item, index) => (
+          <div className='slide-images-inner'>
+            <div  key={index} style={{backgroundImage: `url(${item.img})`}}>
+          
+          </div>
+          
+
+          </div>
+  ))}
 
       </div>
 
@@ -65,6 +72,9 @@ export default function HeroSection() {
 
         
         <div className='hero-mobile animate__animated animate__fadeInUp'>
+          {/* <div style={{opacity: changeVisibility(0), backgroundImage: `url(${heromobile1})`, backgroundColor: 'blue', height: '300px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}} ></div>
+          <div style={{opacity: changeVisibility(1), backgroundImage: `url(${heromobile2})` , backgroundColor: 'red', height: '300px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}} ></div>  
+          <div style={{opacity: changeVisibility(2), backgroundImage: `url(${heromobile3})` , backgroundColor: 'yellow', height: '300px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}} ></div>     */}
           <img style={{opacity: changeVisibility(0)}} src={heromobile1} alt="hands holding a bunch of flowers"  />
           <img style={{opacity: changeVisibility(1)}} src={heromobile2} alt="hands holding a bunch of flowers"  />
           <img style={{opacity: changeVisibility(2)}} src={heromobile3} alt="hands holding a bunch of flowers"  />

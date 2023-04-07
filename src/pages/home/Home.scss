@@ -73,7 +73,10 @@ main {
     //width: 100%;
     padding: 0 0.7rem;
     position: relative;
-    //background-color: red;
+    background-image: linear-gradient(115deg, gray, gray);
+    background-size: 80% 60%;
+    background-repeat: no-repeat;
+    background-position: center;
     overflow: hidden;
     height: 300px;
    img {
@@ -120,6 +123,7 @@ main {
             max-width: 750px;
         }
         .slide {
+            
             display: flex;
             // display: grid;
             // grid-template-columns: 1fr 1fr 1fr 1fr 10px;
@@ -141,7 +145,8 @@ main {
 .slide-images {
     display: flex;
     width: 100%;
-    
+   // background-color: linear-grdient(115deg, gray, gray);
+   // background-color: red;
     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     img {
         margin: 0 0.425rem;
@@ -149,9 +154,9 @@ main {
         //margin-right: 0.85rem;
 
     }
-    div {
+    > div > div {
         //padding: 0 0.425rem;
-        //background-color: gray;
+        
         width: 320px;
         height: 450px;
         flex: 0 0 auto;
@@ -165,8 +170,19 @@ main {
     
     
 }
+.slide-images-inner {
+    background-image: linear-gradient(90deg, rgba(128, 128, 128, 0.9), rgba(128, 128, 128, 0.9));
+    background-size: 97% 60%;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    
+}
 
 .slide-container {
+    
+    background-position: center;
     width: 320px;
     //height: 400px;
     flex: 0 0 auto;
